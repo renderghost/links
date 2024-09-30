@@ -29,18 +29,15 @@ const WorkStatus: React.FC<WorkStatusProps> = ({
 									src='/logo-work.jpeg'
 									alt='Morressier logo'
 									fill
-									style={{ objectFit: 'contain' }}
+									style={{ objectFit: 'cover' }}
 								/>
 							</div>
 							<div>
 								<h3 className='text-xl font-bold text-slate-900 dark:text-white'>
-									Morressier
+									Staff Product Designer
 								</h3>
 								<p className='text-slate-600 dark:text-slate-300'>
-									Staff Product Designer
-								</p>
-								<p className='text-slate-600 dark:text-slate-300'>
-									Berlin, Germany [2019]
+									Morressier, Berlin since 2019
 								</p>
 							</div>
 						</div>
