@@ -16,17 +16,19 @@ const socialLinks: SocialLink[] = [
 		title: 'Figma',
 		url: 'https://figma.com/@renderghost',
 		icon: Figma,
+		description: 'Use my Shared Resources on Figma',
 	},
 	{
 		title: 'Github',
 		url: 'https://github.com/renderghost',
 		icon: Github,
+		description: 'Contribute to Projects on GitHub',
 	},
 	{
 		title: 'Medium',
 		url: 'https://medium.com/@render_ghost',
 		icon: BookOpen,
-		description: 'Read my articles on Medium',
+		description: 'Read my Articles on Medium',
 	},
 	{
 		title: 'LinkedIn',
@@ -84,7 +86,7 @@ const Header: React.FC = () => {
 				className:
 					'text-lg text-slate-700 dark:text-slate-300 text-center max-w-2xl',
 			},
-			'A brief introduction or tagline goes here. Make it concise and impactful.',
+			'Hello there.',
 		),
 		React.createElement(SocialLinks),
 	);
