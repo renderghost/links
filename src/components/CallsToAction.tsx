@@ -4,76 +4,113 @@ import React from 'react';
 import { FilledButton } from './atom/Button';
 import Section from './atom/Section';
 import Headline from './atom/Headline';
-import { Mail, Phone, Calendar, FileText, Download, Users } from 'lucide-react';
+import {
+	CalendarPlus,
+	// FileText,
+	// Download,
+	Cable,
+	LucideIcon,
+	BookmarkCheck,
+	UsersRound,
+	MessageSquareDot,
+} from 'lucide-react';
+
+interface CallToAction {
+	title: string;
+	icon: LucideIcon;
+	onClick: () => void;
+	ariaLabel: string;
+}
+
+const callsToActionList: CallToAction[] = [
+	{
+		title: 'Say Hello',
+		icon: MessageSquareDot,
+		onClick: () => (window.location.href = 'mailto:contact@example.com'),
+		ariaLabel: 'Say Hello',
+	},
+	{
+		title: 'Schedule a Call',
+		icon: CalendarPlus,
+		onClick: () =>
+			window.open('https://calendly.com/barry-prendergast', '_blank'),
+		ariaLabel: 'Schedule a Call',
+	},
+	{
+		title: 'Read on Medium',
+		icon: BookmarkCheck,
+		onClick: () =>
+			window.open('https://medium.com/@render_ghost', '_blank'),
+		ariaLabel: 'Read on Medium',
+	},
+	{
+		title: 'Connect on LinkedIn',
+		icon: UsersRound,
+		onClick: () =>
+			window.open(
+				'https://www.linkedin.com/in/barrymprendergast',
+				'_blank',
+			),
+		ariaLabel: 'Connect on LinkedIn',
+	},
+	// {
+	// 	title: 'Download Whitepaper',
+	// 	icon: FileText,
+	// 	onClick: () => window.open('/whitepaper.pdf', '_blank'),
+	// 	ariaLabel: 'Download Whitepaper',
+	// },
+	// {
+	// 	title: 'Access Resources',
+	// 	icon: Download,
+	// 	onClick: () => window.open('/resources', '_blank'),
+	// 	ariaLabel: 'Access Resources',
+	// },
+	// {
+	// 	title: 'Join Our Community',
+	// 	icon: Users,
+	// 	onClick: () => window.open('/join-community', '_blank'),
+	// 	ariaLabel: 'Join Our Community',
+	// },
+];
+
+const CallToActionButton: React.FC<CallToAction & { isPrimary: boolean }> =
+	React.memo(({ title, icon: Icon, onClick, ariaLabel, isPrimary }) => (
+		<FilledButton
+			variant={isPrimary ? 'primary' : 'secondary'}
+			LeftIcon={Icon}
+			onClick={onClick}
+			aria-label={ariaLabel}
+		>
+			{title}
+		</FilledButton>
+	));
+
+CallToActionButton.displayName = 'CallToActionButton';
 
 const CallsToAction: React.FC = () => (
 	<Section id='calls-to-action' title='How can I help? '>
-		<div className='flex flex-col items-start gap-4 p-16 bg-white dark:bg-slate-800 overflow-hidden'>
-			<Headline />
-			{/* <div className='flex flex-col items-start gap-2'> */}
-			{/* <h2 className='text-2xl font-semibold text-slate-900 dark:text-white'>
-					How can I help you?
-				</h2> */}
-			<div className='flex flex-wrap gap-2'>
-				<FilledButton
-					variant='primary'
-					LeftIcon={Mail}
-					onClick={() =>
-						(window.location.href = 'mailto:contact@example.com')
-					}
-					aria-label='Contact Us'
-				>
-					Contact Us
-				</FilledButton>
-
-				<FilledButton
-					variant='secondary'
-					LeftIcon={Phone}
-					onClick={() => (window.location.href = 'tel:+1234567890')}
-					aria-label='Schedule a Call'
-				>
-					Schedule a Call
-				</FilledButton>
-
-				<FilledButton
-					variant='secondary'
-					LeftIcon={Calendar}
-					onClick={() =>
-						window.open('https://calendly.com/example', '_blank')
-					}
-					aria-label='Book a Demo'
-				>
-					Book a Demo
-				</FilledButton>
-
-				<FilledButton
-					variant='secondary'
-					LeftIcon={FileText}
-					onClick={() => window.open('/whitepaper.pdf', '_blank')}
-					aria-label='Download Whitepaper'
-				>
-					Download Whitepaper
-				</FilledButton>
-
-				<FilledButton
-					variant='secondary'
-					LeftIcon={Download}
-					onClick={() => window.open('/resources', '_blank')}
-					aria-label='Access Resources'
-				>
-					Access Resources
-				</FilledButton>
-
-				<FilledButton
-					variant='secondary'
-					LeftIcon={Users}
-					onClick={() => window.open('/join-community', '_blank')}
-					aria-label='Join Our Community'
-				>
-					Join Our Community
-				</FilledButton>
+		<div className='flex flex-col items-start gap-16 p-16 bg-neutral-100 dark:bg-brand-800 overflow-hidden'>
+			<div className='text-lg font-normal items-center gap-2 flex'>
+				<Cable size={16} />
+				<span>All my key links and details</span>
 			</div>
-			{/* </div> */}
+
+			<Headline />
+
+			<div className='flex flex-col items-start gap-4'>
+				{/* <h2 className='text-lg font-semibold text-brand-900 dark:text-white'>
+					How can I help?
+				</h2> */}
+				<div className='flex flex-wrap gap-3'>
+					{callsToActionList.map((cta, index) => (
+						<CallToActionButton
+							key={cta.title}
+							{...cta}
+							isPrimary={index === 0}
+						/>
+					))}
+				</div>
+			</div>
 		</div>
 	</Section>
 );

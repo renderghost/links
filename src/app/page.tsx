@@ -11,7 +11,7 @@ import Footer from '@/components/Footer';
 const HomePage: React.FC = () => {
 	const isCurrentlyWorking = true;
 	return (
-		<main className='container mx-auto px-0 py-16 gap-8 flex flex-col'>
+		<main className='container mx-auto px-0 py-16 gap-16 flex flex-col'>
 			<Header />
 			<CallsToAction />
 			<WorkStatus isWorking={isCurrentlyWorking} />

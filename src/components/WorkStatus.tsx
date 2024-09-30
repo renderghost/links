@@ -2,7 +2,15 @@
 
 import { FilledButton } from './atom/Button';
 import Image from 'next/image';
-import { Briefcase, Linkedin, FileText } from 'lucide-react';
+import {
+	Briefcase,
+	Linkedin,
+	FileText,
+	Sparkles,
+	BookOpenCheck,
+	GalleryHorizontalEnd,
+	Cable,
+} from 'lucide-react';
 import Section from './atom/Section';
 
 interface WorkStatusProps {
@@ -20,11 +28,15 @@ const WorkStatus: React.FC<WorkStatusProps> = ({
 			className={className}
 			title={isWorking ? 'Current Role' : 'Work Status'}
 		>
-			<div className='bg-white dark:bg-slate-800 overflow-hidden'>
+			<div className='bg-neutral-100 dark:bg-brand-800 overflow-hidden flex flex-col gap-8 p-16'>
 				{isWorking ? (
 					<>
-						<div className='flex flex-col sm:flex-row items-start sm:items-center pl-16 pt-16 pr-16 pb-0'>
-							<div className='w-16 h-16 sm:mr-4 relative flex-shrink-0'>
+						<div className='text-lg font-normal items-center gap-1 flex'>
+							<span>All my key links and details</span>
+							<Cable size={16} />
+						</div>
+						<div className='flex gap-4'>
+							<div className='w-16 h-16 relative flex-shrink-0'>
 								<Image
 									src='/logo-work.jpeg'
 									alt='Morressier logo'
@@ -33,16 +45,16 @@ const WorkStatus: React.FC<WorkStatusProps> = ({
 								/>
 							</div>
 							<div>
-								<h3 className='text-xl font-semibold text-slate-900 dark:text-white'>
+								<h3 className='text-xl font-semibold'>
 									Staff Product Designer
 								</h3>
-								<p className='text-slate-600 dark:text-slate-300'>
+								<p className=''>
 									Morressier, Berlin since 2019
 								</p>
 							</div>
 						</div>
 
-						<p className='pl-16 pt-8 pr-16 pb-0 max-w-screen-lg'>
+						<p className='max-w-screen-lg'>
 							Leading product design for Morressier&apos;s
 							scholarly publishing platform. Balancing strategic
 							vision with hands-on execution, I drive innovation
@@ -51,10 +63,23 @@ const WorkStatus: React.FC<WorkStatusProps> = ({
 							workflows and fostering team growth.
 						</p>
 
-						<div className='flex flex-wrap pl-16 pt-12 pr-16 pb-16 gap-3'>
+						<div className='flex flex-wrap gap-3'>
 							<FilledButton
 								variant='primary'
-								LeftIcon={Briefcase}
+								LeftIcon={BookOpenCheck}
+								onClick={() =>
+									window.open(
+										'https://www.morressier.com/products/journal-manager',
+										'_blank',
+									)
+								}
+								aria-label='Learn about Journal Manager'
+							>
+								Learn about Journal Manager
+							</FilledButton>
+							<FilledButton
+								variant='secondary'
+								LeftIcon={Sparkles}
 								onClick={() =>
 									window.open(
 										'https://www.morressier.com',
@@ -67,22 +92,22 @@ const WorkStatus: React.FC<WorkStatusProps> = ({
 							</FilledButton>
 							<FilledButton
 								variant='secondary'
-								LeftIcon={Linkedin}
+								LeftIcon={GalleryHorizontalEnd}
 								onClick={() =>
 									window.open(
-										'https://www.linkedin.com/company/morressier',
+										'https://www.linkedin.com/in/barrymprendergast',
 										'_blank',
 									)
 								}
-								aria-label='View my LinkedIn'
+								aria-label='View my Resume'
 							>
-								View my LinkedIn
+								View my Resume
 							</FilledButton>
 						</div>
 					</>
 				) : (
 					<>
-						<p className='text-slate-700 dark:text-slate-300 mb-6 p-6'>
+						<p className='text-brand-700 dark:text-brand-300 mb-6 p-6'>
 							I&apos;m actively seeking new opportunities in
 							product design and strategy. Let&apos;s connect!
 						</p>
@@ -106,9 +131,9 @@ const WorkStatus: React.FC<WorkStatusProps> = ({
 										'_blank',
 									)
 								}
-								aria-label='View my LinkedIn'
+								aria-label='Learn about Journal Manager'
 							>
-								View my LinkedIn
+								Learn about Journal Manager
 							</FilledButton>
 							<FilledButton
 								variant='secondary'

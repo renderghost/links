@@ -5,46 +5,45 @@ import React from 'react';
 // Button styles
 const buttonStyles = {
 	base: `
-    inline-flex items-center justify-center px-4 py-2 
-    border border-transparent text-sm font-medium rounded
-    focus:outline-none focus:ring-offset-white focus:ring-2 focus:ring-offset-2 focus:ring-yellow-400
+    inline-flex items-center justify-center px-6 py-3 rounded
+    font-semibold
+    focus:outline-none focus:ring-offset-neutral-100 focus:ring-2 focus:ring-offset-2 focus:ring-attention-500
     transition-colors duration-200 ease-in-out
   `,
 	primary: `
-    bg-slate-900 text-white 
-    hover:bg-slate-800 
-    active:bg-slate-950 
-    focus:ring-slate-500
-    dark:bg-slate-200 dark:text-slate-900
-    dark:hover:bg-slate-300
-    dark:active:bg-slate-100
+    bg-brand-950 text-neutral-100 
+    hover:bg-brand-500 
+    active:bg-brand-950 
+    dark:bg-brand-200 dark:text-brand-900
+    dark:hover:bg-brand-300
+    dark:active:bg-brand-100
   `,
 	secondary: `
-    bg-slate-200 text-slate-900 
-    hover:bg-slate-300 
-    active:bg-slate-400 
-    focus:ring-slate-300
-    dark:bg-slate-700 dark:text-white
-    dark:hover:bg-slate-600
-    dark:active:bg-slate-800
+    bg-brand-100 text-brand-950
+    hover:bg-brand-50
+	hover:text-brand-500
+    active:bg-brand-100
+    dark:bg-brand-700 dark:text-white
+    dark:hover:bg-brand-600
+    dark:active:bg-brand-800
   `,
 	transparent: `
-    bg-transparent text-slate-900 
-    hover:bg-slate-100 
-    active:bg-slate-200 
-    focus:ring-slate-300
+    bg-transparent text-brand-950
+    hover:bg-brand-50
+	hover:text-brand-500
+    active:bg-brand-200 
     dark:text-white
-    dark:hover:bg-slate-800
-    dark:active:bg-slate-700
+    dark:hover:bg-brand-800
+    dark:active:bg-brand-700
   `,
 	card: `
-    bg-white text-slate-900 
-    hover:bg-slate-50 
-    active:bg-slate-100 
-    focus:ring-slate-200
-    dark:bg-slate-800 dark:text-white
-    dark:hover:bg-slate-700
-    dark:active:bg-slate-600
+    bg-neutral-100 text-brand-900 
+    hover:bg-brand-50 
+    active:bg-brand-100 
+    focus:ring-brand-200
+    dark:bg-brand-800 dark:text-white
+    dark:hover:bg-brand-700
+    dark:active:bg-brand-600
   `,
 	disabled: `
     opacity-50 cursor-not-allowed
