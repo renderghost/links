@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
-import { FilledButton } from './Button';
-import Section from './Section';
+import { FilledButton } from './atom/Button';
+import Section from './atom/Section';
 import { Book, Github, Linkedin, Twitter, Youtube, Rss } from 'lucide-react';
 
 const linksList = [

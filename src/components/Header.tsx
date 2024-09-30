@@ -1,5 +1,5 @@
 import React from 'react';
-import SocialLinks from './SocialLinks';
+import SocialLinks from './atom/SocialLinks';
 import Image from 'next/image';
 import { MapPin } from 'lucide-react';
 
@@ -7,7 +7,7 @@ const Header: React.FC = () => (
 	<header className='flex flex-col md:flex-row gap-8' id='header'>
 		{/* First Column */}
 		<div className='flex flex-row flex-auto gap-4 items-center'>
-			<div className='size-20 rounded-lg overflow-hidden flex-shrink-0'>
+			<div className='size-20 overflow-hidden flex-shrink-0'>
 				<Image
 					src='/logo-work.jpeg'
 					alt='Barry Prendergast'

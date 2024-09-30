@@ -1,9 +1,9 @@
 'use client';
 
-import { FilledButton } from './Button';
+import { FilledButton } from './atom/Button';
 import Image from 'next/image';
 import { Briefcase, Linkedin, FileText } from 'lucide-react';
-import Section from './Section';
+import Section from './atom/Section';
 
 interface WorkStatusProps {
 	isWorking: boolean;
@@ -20,10 +20,10 @@ const WorkStatus: React.FC<WorkStatusProps> = ({
 			className={className}
 			title={isWorking ? 'Current Role' : 'Work Status'}
 		>
-			<div className='bg-white dark:bg-slate-800 rounded-lg overflow-hidden'>
+			<div className='bg-white dark:bg-slate-800 overflow-hidden'>
 				{isWorking ? (
 					<>
-						<div className='flex flex-col sm:flex-row items-start sm:items-center pl-8 pt-8 pr-8 pb-0'>
+						<div className='flex flex-col sm:flex-row items-start sm:items-center pl-16 pt-16 pr-16 pb-0'>
 							<div className='w-16 h-16 sm:mr-4 relative flex-shrink-0'>
 								<Image
 									src='/logo-work.jpeg'
@@ -42,7 +42,7 @@ const WorkStatus: React.FC<WorkStatusProps> = ({
 							</div>
 						</div>
 
-						<p className='pl-8 pt-4 pr-8 pb-0'>
+						<p className='pl-16 pt-8 pr-16 pb-0 max-w-screen-lg'>
 							Leading product design for Morressier&apos;s
 							scholarly publishing platform. Balancing strategic
 							vision with hands-on execution, I drive innovation
@@ -51,7 +51,7 @@ const WorkStatus: React.FC<WorkStatusProps> = ({
 							workflows and fostering team growth.
 						</p>
 
-						<div className='flex flex-wrap p-8 space-x-2'>
+						<div className='flex flex-wrap pl-16 pt-12 pr-16 pb-16 gap-3'>
 							<FilledButton
 								variant='primary'
 								LeftIcon={Briefcase}
