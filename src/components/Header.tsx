@@ -1,75 +1,33 @@
-'use client';
-
 import React from 'react';
-import { SquareIconButton } from './Button';
-import { Figma, Github, BookOpen, Briefcase, LucideIcon } from 'lucide-react';
-
-interface SocialLink {
-	title: string;
-	url: string;
-	icon: LucideIcon;
-	description?: string;
-}
-
-const socialLinks: SocialLink[] = [
-	{
-		title: 'Figma',
-		url: 'https://figma.com/@renderghost',
-		icon: Figma,
-		description: 'Use my Shared Resources on Figma',
-	},
-	{
-		title: 'Github',
-		url: 'https://github.com/renderghost',
-		icon: Github,
-		description: 'Contribute to Projects on GitHub',
-	},
-	{
-		title: 'Medium',
-		url: 'https://medium.com/@render_ghost',
-		icon: BookOpen,
-		description: 'Read my Articles on Medium',
-	},
-	{
-		title: 'LinkedIn',
-		url: 'https://www.linkedin.com/in/renderghost/',
-		icon: Briefcase,
-		description: 'Connect with me on LinkedIn',
-	},
-];
-
-const SocialLink: React.FC<SocialLink> = React.memo(
-	({ title, url, icon: Icon, description }) => (
-		<SquareIconButton
-			Icon={Icon}
-			variant='secondary'
-			onClick={() => window.open(url, '_blank', 'noopener,noreferrer')}
-			aria-label={description || title}
-		/>
-	),
-);
-
-SocialLink.displayName = 'SocialLink';
-
-const SocialLinks: React.FC = React.memo(() => (
-	<nav className='flex gap-2' id='social-links'>
-		{socialLinks.map(link => (
-			<SocialLink key={link.title} {...link} />
-		))}
-	</nav>
-));
-
-SocialLinks.displayName = 'SocialLinks';
+import SocialLinks from './atom/SocialLinks';
+import Image from 'next/image';
+import { MapPin } from 'lucide-react';
 
 const Header: React.FC = () => (
-	<header className='flex flex-col items-center py-8' id='header'>
-		<h1 className='text-4xl font-bold text-slate-900 dark:text-white'>
-			Your Name
-		</h1>
-		<p className='text-lg text-slate-700 dark:text-slate-300 text-center max-w-2xl'>
-			Hello there.
-		</p>
-		<SocialLinks />
+	<header className='flex flex-col md:flex-row gap-8' id='header'>
+		{/* First Column */}
+		<div className='flex flex-row flex-auto gap-4 items-center'>
+			<div className='size-20 overflow-hidden flex-shrink-0'>
+				<Image
+					src='/logo-work.jpeg'
+					alt='Barry Prendergast'
+					width={80}
+					height={80}
+					className='object-cover'
+				/>
+			</div>
+			<div className='flex flex-col flex-auto'>
+				<h1 className='text-2xl font-semibold'>Barry Prendergast</h1>
+				<p className='text-gray-600 flex flex-row items-center'>
+					Product & Service Designer &sdot; Berlin, Germany
+					<MapPin size={16} className='ml-1' />
+				</p>
+			</div>
+		</div>
+		{/* Second Column */}
+		<div className='block'>
+			<SocialLinks />
+		</div>
 	</header>
 );
 

@@ -10,11 +10,13 @@ interface SectionProps {
 }
 
 // Section component, reusable for different parts of the page
-const Section: React.FC<SectionProps> = ({ id, title, children }) => (
-	<section id={id} className='mt-12'>
-		<h2 className='text-3xl font-semibold text-slate-900 dark:text-white mb-6'>
+const Section: React.FC<SectionProps> = (
+	{ id, children }, //Add 'title' to ({ id, title, children }) to restore
+) => (
+	<section id={id} className=''>
+		{/* <h2 className='text-3xl font-medium text-slate-900 dark:text-white mb-6'>
 			{title}
-		</h2>
+		</h2> */}
 		{children}
 	</section>
 );
