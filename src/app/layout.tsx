@@ -1,4 +1,6 @@
 import './globals.css';
+// import { dmSans, dmSerifDisplay } from '@/utils/fonts';
+
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -18,7 +20,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang='en' className='dark'>
+		<html lang='en'>
 			<body className='bg-slate-200 dark:bg-slate-900 text-slate-900 dark:text-white'>
 				{children}
 			</body>

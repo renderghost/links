@@ -33,7 +33,7 @@ const WorkStatus: React.FC<WorkStatusProps> = ({
 								/>
 							</div>
 							<div>
-								<h3 className='text-xl font-bold text-slate-900 dark:text-white'>
+								<h3 className='text-xl font-semibold text-slate-900 dark:text-white'>
 									Staff Product Designer
 								</h3>
 								<p className='text-slate-600 dark:text-slate-300'>
