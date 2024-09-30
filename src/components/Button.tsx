@@ -6,8 +6,8 @@ import React from 'react';
 const buttonStyles = {
 	base: `
     inline-flex items-center justify-center px-4 py-2 
-    border border-transparent text-sm font-medium rounded-md 
-    focus:outline-none focus:ring-2 focus:ring-offset-2 
+    border border-transparent text-sm font-medium rounded
+    focus:outline-none focus:ring-offset-white focus:ring-2 focus:ring-offset-2 focus:ring-yellow-400
     transition-colors duration-200 ease-in-out
   `,
 	primary: `
@@ -86,9 +86,9 @@ export const Button: React.FC<ButtonProps> = ({
 		className={`${getButtonClass(variant, disabled)} ${className}`}
 		disabled={disabled}
 	>
-		{LeftIcon && <LeftIcon className='w-5 h-5 mr-2' aria-hidden='true' />}
+		{LeftIcon && <LeftIcon className='w-6 h-6 mr-2' aria-hidden='true' />}
 		{children}
-		{RightIcon && <RightIcon className='w-5 h-5 ml-2' aria-hidden='true' />}
+		{RightIcon && <RightIcon className='w-6 h-6 ml-2' aria-hidden='true' />}
 	</button>
 );
 
@@ -108,6 +108,7 @@ interface SquareIconButtonProps {
 	className?: string;
 	variant?: 'primary' | 'secondary' | 'transparent' | 'card';
 	disabled?: boolean;
+	'aria-label': string;
 }
 
 export const SquareIconButton: React.FC<SquareIconButtonProps> = ({
@@ -116,15 +117,16 @@ export const SquareIconButton: React.FC<SquareIconButtonProps> = ({
 	className = '',
 	variant = 'primary',
 	disabled = false,
+	'aria-label': ariaLabel,
 }) => (
 	<button
 		onClick={onClick}
 		className={`${getButtonClass(
 			variant,
 			disabled,
-		)} w-10 h-10 p-0 ${className}`}
+		)} flex px-2 items-center justify-center ${className}`}
 		disabled={disabled}
-		aria-label='Icon button'
+		aria-label={ariaLabel}
 	>
 		<Icon className='w-6 h-6' aria-hidden='true' />
 	</button>
@@ -135,12 +137,13 @@ export const CardButton: React.FC<ButtonProps> = ({
 	children,
 	onClick,
 	className = '',
+	variant = 'card',
 	disabled = false,
 }) => (
 	<button
 		onClick={onClick}
 		className={`${getButtonClass(
-			'card',
+			variant,
 			disabled,
 		)} w-full text-left flex flex-col p-4 ${className}`}
 		disabled={disabled}

@@ -39,57 +39,38 @@ const socialLinks: SocialLink[] = [
 ];
 
 const SocialLink: React.FC<SocialLink> = React.memo(
-	({ title, url, icon: Icon, description }) => {
-		return React.createElement(
-			'a',
-			{
-				href: url,
-				target: '_blank',
-				rel: 'noopener noreferrer',
-				'aria-label': title,
-				title: description || title,
-			},
-			React.createElement(SquareIconButton, { Icon }),
-		);
-	},
+	({ title, url, icon: Icon, description }) => (
+		<SquareIconButton
+			Icon={Icon}
+			variant='secondary'
+			onClick={() => window.open(url, '_blank', 'noopener,noreferrer')}
+			aria-label={description || title}
+		/>
+	),
 );
 
 SocialLink.displayName = 'SocialLink';
 
-const SocialLinks: React.FC = React.memo(() => {
-	return React.createElement(
-		'nav',
-		{ className: 'flex space-x-4 mt-6', id: 'social-links' },
-		socialLinks.map(link =>
-			React.createElement(SocialLink, { key: link.title, ...link }),
-		),
-	);
-});
+const SocialLinks: React.FC = React.memo(() => (
+	<nav className='flex gap-2' id='social-links'>
+		{socialLinks.map(link => (
+			<SocialLink key={link.title} {...link} />
+		))}
+	</nav>
+));
 
 SocialLinks.displayName = 'SocialLinks';
 
-const Header: React.FC = () => {
-	return React.createElement(
-		'header',
-		{ className: 'flex flex-col items-center py-8', id: 'header' },
-		React.createElement(
-			'h1',
-			{
-				className:
-					'text-4xl font-bold text-slate-900 dark:text-white mb-4',
-			},
-			'Your Name',
-		),
-		React.createElement(
-			'p',
-			{
-				className:
-					'text-lg text-slate-700 dark:text-slate-300 text-center max-w-2xl',
-			},
-			'Hello there.',
-		),
-		React.createElement(SocialLinks),
-	);
-};
+const Header: React.FC = () => (
+	<header className='flex flex-col items-center py-8' id='header'>
+		<h1 className='text-4xl font-bold text-slate-900 dark:text-white'>
+			Your Name
+		</h1>
+		<p className='text-lg text-slate-700 dark:text-slate-300 text-center max-w-2xl'>
+			Hello there.
+		</p>
+		<SocialLinks />
+	</header>
+);
 
 export default Header;
