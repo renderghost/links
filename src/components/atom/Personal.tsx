@@ -27,7 +27,7 @@ const Personal: React.FC = () => {
 					</p>
 				</div>
 				<div className='w-full text-center lg:text-left lg:w-2/4'>
-					<p className='text-lg font-normal text-gray-600 mb-5'>
+					<p className='text-lg mb-4'>
 						<span>
 							Product & Service Designer &sdot; Berlin, Germany
 						</span>

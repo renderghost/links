@@ -52,7 +52,7 @@ const SocialLink: React.FC<SocialLink> = React.memo(
 SocialLink.displayName = 'SocialLink';
 
 const SocialLinks: React.FC = React.memo(() => (
-	<nav className='flex gap-2' id='social-links'>
+	<nav className='flex flex-wrap gap-3' id='social-links'>
 		{socialLinks.map(link => (
 			<SocialLink key={link.title} {...link} />
 		))}
