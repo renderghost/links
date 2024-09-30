@@ -26,7 +26,7 @@ const WorkStatus: React.FC<WorkStatusProps> = ({
 						<div className='flex flex-col sm:flex-row items-start sm:items-center pl-8 pt-8 pr-8 pb-0'>
 							<div className='w-16 h-16 sm:mr-4 relative flex-shrink-0'>
 								<Image
-									src='/public/logo-work.jpeg'
+									src='/logo-work.jpeg'
 									alt='Morressier logo'
 									fill
 									style={{ objectFit: 'contain' }}
