@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { SquareIconButton } from './Button';
-import { Figma, Github, BookOpen, Briefcase } from 'lucide-react';
+import { Figma, Github, BookOpen, Briefcase, ListMusic } from 'lucide-react';
 
 interface SocialLink {
 	title: string;
@@ -36,6 +36,13 @@ const socialLinks: SocialLink[] = [
 		icon: Briefcase,
 		description: 'Connect with me on LinkedIn',
 	},
+	,
+	{
+		title: 'Spotify',
+		url: 'https://open.spotify.com/user/111112791',
+		icon: ListMusic,
+		description: 'Listem to my Spotify Playlists',
+	},
 ];
 
 const SocialLink: React.FC<SocialLink> = React.memo(
@@ -52,7 +59,7 @@ const SocialLink: React.FC<SocialLink> = React.memo(
 SocialLink.displayName = 'SocialLink';
 
 const SocialLinks: React.FC = React.memo(() => (
-	<nav className='flex flex-wrap gap-3' id='social-links'>
+	<nav className='flex flex-row-reverse flex-wrap gap-3' id='social-links'>
 		{socialLinks.map(link => (
 			<SocialLink key={link.title} {...link} />
 		))}

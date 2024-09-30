@@ -28,9 +28,7 @@ const Personal: React.FC = () => {
 				</div>
 				<div className='w-full text-center lg:text-left lg:w-2/4'>
 					<p className='text-lg mb-4'>
-						<span>
-							Product & Service Designer &sdot; Berlin, Germany
-						</span>
+						<span>Product Design Lead &sdot; Berlin, Germany</span>
 						<MapPin size={16} />
 					</p>
 					<SocialLinks />

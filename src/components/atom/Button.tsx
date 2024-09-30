@@ -11,7 +11,7 @@ const buttonStyles = {
     transition-colors duration-200 ease-in-out
   `,
 	primary: `
-    bg-brand-950 text-neutral-100 
+    bg-brand-900 text-neutral-100 
     hover:bg-brand-500 
     active:bg-brand-950 
     dark:bg-brand-200 dark:text-brand-900
@@ -19,29 +19,27 @@ const buttonStyles = {
     dark:active:bg-brand-100
   `,
 	secondary: `
-    bg-brand-100 text-brand-950
-    hover:bg-brand-50
-	hover:text-brand-500
+    bg-brand-50 text-brand-950
+    hover:bg-brand-100 hover:text-brand-500
     active:bg-brand-100
-    dark:bg-brand-700 dark:text-white
+    dark:bg-brand-700 dark:text-neutral-100
     dark:hover:bg-brand-600
     dark:active:bg-brand-800
   `,
 	transparent: `
     bg-transparent text-brand-950
-    hover:bg-brand-50
-	hover:text-brand-500
-    active:bg-brand-200 
-    dark:text-white
-    dark:hover:bg-brand-800
-    dark:active:bg-brand-700
+    hover:bg-brand-100 hover:text-brand-500
+    active:bg-brand-100
+    dark:bg-brand-700 dark:text-neutral-100
+    dark:hover:bg-brand-600
+    dark:active:bg-brand-800
   `,
 	card: `
     bg-neutral-100 text-brand-900 
     hover:bg-brand-50 
     active:bg-brand-100 
     focus:ring-brand-200
-    dark:bg-brand-800 dark:text-white
+    dark:bg-brand-800 dark:text-neutral-100
     dark:hover:bg-brand-700
     dark:active:bg-brand-600
   `,
