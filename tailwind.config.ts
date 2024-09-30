@@ -6,7 +6,7 @@ const config: Config = {
 		extend: {},
 	},
 	plugins: [],
-	darkMode: 'class', // Add this line
+	darkMode: 'media',
 };
 
 export default config;
