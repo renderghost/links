@@ -43,8 +43,8 @@ const projectsList = [
 ];
 
 const Projects: React.FC = () => (
-	<Section id='my-projects' title='My Projects'>
-		<div className='flex flex-wrap -m-2'>
+	<Section id='my-projects' title='Recent Projects'>
+		<div className='flex flex-wrap'>
 			{projectsList.map((project, index) => (
 				<div key={index} className='w-full sm:w-1/2 lg:w-1/3 p-2'>
 					<CardButton

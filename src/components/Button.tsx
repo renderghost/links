@@ -2,40 +2,89 @@
 
 import React from 'react';
 
+// Button styles
+const buttonStyles = {
+	base: `
+    inline-flex items-center justify-center px-4 py-2 
+    border border-transparent text-sm font-medium rounded-md 
+    focus:outline-none focus:ring-2 focus:ring-offset-2 
+    transition-colors duration-200 ease-in-out
+  `,
+	primary: `
+    bg-slate-900 text-white 
+    hover:bg-slate-800 
+    active:bg-slate-950 
+    focus:ring-slate-500
+    dark:bg-slate-200 dark:text-slate-900
+    dark:hover:bg-slate-300
+    dark:active:bg-slate-100
+  `,
+	secondary: `
+    bg-slate-200 text-slate-900 
+    hover:bg-slate-300 
+    active:bg-slate-400 
+    focus:ring-slate-300
+    dark:bg-slate-700 dark:text-white
+    dark:hover:bg-slate-600
+    dark:active:bg-slate-800
+  `,
+	transparent: `
+    bg-transparent text-slate-900 
+    hover:bg-slate-100 
+    active:bg-slate-200 
+    focus:ring-slate-300
+    dark:text-white
+    dark:hover:bg-slate-800
+    dark:active:bg-slate-700
+  `,
+	card: `
+    bg-white text-slate-900 
+    hover:bg-slate-50 
+    active:bg-slate-100 
+    focus:ring-slate-200
+    dark:bg-slate-800 dark:text-white
+    dark:hover:bg-slate-700
+    dark:active:bg-slate-600
+  `,
+	disabled: `
+    opacity-50 cursor-not-allowed
+  `,
+};
+
+const getButtonClass = (
+	variant: 'primary' | 'secondary' | 'transparent' | 'card',
+	isDisabled: boolean = false,
+) => {
+	return `${buttonStyles.base} ${buttonStyles[variant]} ${
+		isDisabled ? buttonStyles.disabled : ''
+	}`.trim();
+};
+
+// Button Props
 interface ButtonProps {
 	children: React.ReactNode;
 	onClick?: () => void;
 	className?: string;
-}
-
-export const TextButton: React.FC<ButtonProps> = ({
-	children,
-	onClick,
-	className,
-}) => (
-	<button
-		onClick={onClick}
-		className={`text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-yellow-500 ${className}`}
-	>
-		{children}
-	</button>
-);
-
-interface FilledButtonProps extends ButtonProps {
+	variant?: 'primary' | 'secondary' | 'transparent' | 'card';
+	disabled?: boolean;
 	LeftIcon?: React.FC<React.SVGProps<SVGSVGElement>>;
 	RightIcon?: React.FC<React.SVGProps<SVGSVGElement>>;
 }
 
-export const FilledButton: React.FC<FilledButtonProps> = ({
+// Base Button Component
+export const Button: React.FC<ButtonProps> = ({
 	children,
 	onClick,
-	className,
+	className = '',
+	variant = 'primary',
+	disabled = false,
 	LeftIcon,
 	RightIcon,
 }) => (
 	<button
 		onClick={onClick}
-		className={`flex items-center px-4 py-2 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white rounded focus:outline-none focus:ring-2 focus:ring-yellow-500 hover:bg-slate-200 dark:hover:bg-slate-700 ${className}`}
+		className={`${getButtonClass(variant, disabled)} ${className}`}
+		disabled={disabled}
 	>
 		{LeftIcon && <LeftIcon className='w-5 h-5 mr-2' aria-hidden='true' />}
 		{children}
@@ -43,34 +92,58 @@ export const FilledButton: React.FC<FilledButtonProps> = ({
 	</button>
 );
 
+// Specific Button Variants
+export const TextButton: React.FC<ButtonProps> = props => (
+	<Button {...props} variant='transparent' />
+);
+
+export const FilledButton: React.FC<ButtonProps> = props => (
+	<Button {...props} />
+);
+
+// Square Icon Button
 interface SquareIconButtonProps {
 	Icon: React.FC<React.SVGProps<SVGSVGElement>>;
 	onClick?: () => void;
 	className?: string;
+	variant?: 'primary' | 'secondary' | 'transparent' | 'card';
+	disabled?: boolean;
 }
 
 export const SquareIconButton: React.FC<SquareIconButtonProps> = ({
 	Icon,
 	onClick,
-	className,
+	className = '',
+	variant = 'primary',
+	disabled = false,
 }) => (
 	<button
 		onClick={onClick}
-		className={`w-10 h-10 flex items-center justify-center bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white rounded focus:outline-none focus:ring-2 focus:ring-yellow-500 hover:bg-slate-200 dark:hover:bg-slate-700 ${className}`}
+		className={`${getButtonClass(
+			variant,
+			disabled,
+		)} w-10 h-10 p-0 ${className}`}
+		disabled={disabled}
 		aria-label='Icon button'
 	>
 		<Icon className='w-6 h-6' aria-hidden='true' />
 	</button>
 );
 
+// Card Button
 export const CardButton: React.FC<ButtonProps> = ({
 	children,
 	onClick,
-	className,
+	className = '',
+	disabled = false,
 }) => (
 	<button
 		onClick={onClick}
-		className={`w-full text-left flex flex-col p-4 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white rounded shadow focus:outline-none focus:ring-2 focus:ring-yellow-500 hover:bg-slate-200 dark:hover:bg-slate-700 ${className}`}
+		className={`${getButtonClass(
+			'card',
+			disabled,
+		)} w-full text-left flex flex-col p-4 ${className}`}
+		disabled={disabled}
 	>
 		{children}
 	</button>
