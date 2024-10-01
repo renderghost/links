@@ -12,6 +12,7 @@ import {
 	ListMusic,
 	PersonStanding,
 	BookType,
+	Ghost,
 	SwatchBook,
 } from 'lucide-react';
 
@@ -45,6 +46,14 @@ const projectsList: Project[] = [
 			'Fake science data that looks real. Perfect for making your science app mockups look legit!',
 		icon: BookType,
 		url: 'https://github.com/Morressier/fictional-design-data',
+	},
+	{
+		title: 'LinkGhost',
+		ariaLabel:
+			'My digital pinboard - all my important links in one tidy place. No spooks, just handy! ',
+		icon: Ghost,
+		url: 'https://linkghost.renderg.host/',
+		sourceUrl: 'https://github.com/renderghost/linkghost',
 	},
 	{
 		title: 'Ramps',
