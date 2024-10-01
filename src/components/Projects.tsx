@@ -12,6 +12,7 @@ import {
 	ListMusic,
 	PersonStanding,
 	BookType,
+	SwatchBook,
 } from 'lucide-react';
 
 interface Project {
@@ -33,7 +34,7 @@ const projectsList: Project[] = [
 	{
 		title: 'Aperture',
 		ariaLabel:
-			'Something about my own personal instagram for my amatuer photos.',
+			'My amatuer snaps gallery where I pretend to be a pro photographer.',
 		icon: Aperture,
 		url: 'https://frame.renderg.host/',
 		sourceUrl: 'https://github.com/renderghost/frame',
@@ -41,13 +42,14 @@ const projectsList: Project[] = [
 	{
 		title: 'Fictional Data',
 		ariaLabel:
-			'Something about Fictional sample data for use in design prototypes for Science products.',
+			'Fake science data that looks real. Perfect for making your science app mockups look legit!',
 		icon: BookType,
 		url: 'https://github.com/Morressier/fictional-design-data',
 	},
 	{
 		title: 'Ramps',
-		ariaLabel: 'Something about an experimental gradient generator.',
+		ariaLabel:
+			'My quirky gradient generator. Because we all want more color.',
 		icon: Radius,
 		url: 'https://ramps.renderg.host/',
 		sourceUrl: 'https://github.com/renderghost/ramps',
@@ -55,30 +57,26 @@ const projectsList: Project[] = [
 	{
 		title: 'Spectra',
 		ariaLabel:
-			'Something about generating hue palettes for design systems.',
-		icon: Aperture,
+			'Color palette magic for design systems. A little color helper elf for interfaces.',
+		icon: SwatchBook,
 		url: 'https://spectra.renderg.host/',
 		sourceUrl: 'https://github.com/renderghost/spectra',
 	},
 	{
 		title: 'Selections',
-		ariaLabel: 'Something about Spotify playlists.',
+		ariaLabel:
+			'My Spotify playlists, but fancier. Warning: May contain questionable music choices!',
 		icon: ListMusic,
 		url: 'https://selections.renderg.host/',
 		sourceUrl: 'https://github.com/renderghost/selections',
 	},
 	{
 		title: 'StrategySchmategy',
-		ariaLabel: 'Something about Generative design strategies.',
+		ariaLabel:
+			'A random design strategy generator. For when you want to leave success to chance!',
 		icon: Shuffle,
 		url: 'https://strategyschmategy.renderg.host/',
 		sourceUrl: 'https://github.com/renderghost/strategy-schmategy',
-	},
-	{
-		title: 'Tri_mph_nt',
-		ariaLabel: 'AI-generated landcapes',
-		icon: Shuffle,
-		url: 'https://www.instagram.com/tri_mph_nt',
 	},
 ];
 
