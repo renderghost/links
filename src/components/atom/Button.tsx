@@ -28,7 +28,7 @@ const buttonStyles = {
   `,
 	transparent: `
     bg-transparent text-brand-950
-    hover:bg-brand-100 hover:text-brand-500
+    hover:bg-brand-50 hover:text-brand-500
     active:bg-brand-100
     dark:bg-brand-700 dark:text-neutral-100
     dark:hover:bg-brand-600

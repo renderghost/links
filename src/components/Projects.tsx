@@ -26,7 +26,7 @@ const projectsList: Project[] = [
 	{
 		title: 'A11y Pixel',
 		ariaLabel:
-			'Something about my own personal instagram for my amatuer photos.',
+			'Invisible Figma component to help document Accessibility attributes in design files at any level of specificity.',
 		icon: PersonStanding,
 		url: 'https://www.figma.com/community/file/1392296486879607254/the-a11y-pixel',
 	},
@@ -68,11 +68,17 @@ const projectsList: Project[] = [
 		sourceUrl: 'https://github.com/renderghost/selections',
 	},
 	{
-		title: 'Strategy Schmategy',
+		title: 'StrategySchmategy',
 		ariaLabel: 'Something about Generative design strategies.',
 		icon: Shuffle,
 		url: 'https://strategyschmategy.renderg.host/',
 		sourceUrl: 'https://github.com/renderghost/strategy-schmategy',
+	},
+	{
+		title: 'Tri_mph_nt',
+		ariaLabel: 'AI-generated landcapes',
+		icon: Shuffle,
+		url: 'https://www.instagram.com/tri_mph_nt',
 	},
 ];
 
@@ -85,16 +91,16 @@ const ProjectCard: React.FC<Project> = ({
 }) => (
 	<div className='bg-neutral-100 dark:bg-brand-950 flex flex-col justify-between gap-8 p-8'>
 		<div className='flex flex-col gap-2'>
-			<div className='flex items-center gap-2'>
-				<Icon className='w-8 h-8' />
-				<h3 className='font-semibold text-2xl'>{title}</h3>
+			<div className='flex items-center gap-3'>
+				<Icon className='w-7 h-' />
+				<h3 className='font-semibold text-xl'>{title}</h3>
 			</div>
 			<p className=''>{ariaLabel}</p>
 		</div>
 		<div className='block'>
 			<div className='flex flex-wrap gap-3'>
 				<FilledButton
-					variant='primary'
+					variant='secondary'
 					RightIcon={ExternalLink}
 					onClick={() => window.open(url, '_blank')}
 					ariaLabel={`View ${title} project`}
@@ -104,7 +110,7 @@ const ProjectCard: React.FC<Project> = ({
 				</FilledButton>
 				{sourceUrl && (
 					<FilledButton
-						variant='secondary'
+						variant='transparent'
 						LeftIcon={Github}
 						onClick={() => window.open(sourceUrl, '_blank')}
 						ariaLabel={`View source code for ${title}`}
@@ -119,7 +125,7 @@ const ProjectCard: React.FC<Project> = ({
 );
 
 const Projects: React.FC = () => (
-	<Section id='my-projects' title='My Favourite Projects'>
+	<Section id='my-projects' title='Special Projects'>
 		<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2'>
 			{projectsList.map((project, index) => (
 				<ProjectCard key={index} {...project} />
