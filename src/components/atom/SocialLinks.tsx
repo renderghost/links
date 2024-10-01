@@ -2,7 +2,14 @@
 
 import React from 'react';
 import { SquareIconButton } from './Button';
-import { Figma, Github, BookOpen, Briefcase, ListMusic } from 'lucide-react';
+import {
+	Figma,
+	Github,
+	Newspaper,
+	Briefcase,
+	ListMusic,
+	Linkedin,
+} from 'lucide-react';
 
 interface SocialLink {
 	title: string;
@@ -27,16 +34,15 @@ const socialLinks: SocialLink[] = [
 	{
 		title: 'Medium',
 		url: 'https://medium.com/@render_ghost',
-		icon: BookOpen,
+		icon: Newspaper,
 		description: 'Read my Articles on Medium',
 	},
 	{
 		title: 'LinkedIn',
 		url: 'https://www.linkedin.com/in/renderghost/',
-		icon: Briefcase,
+		icon: Linkedin,
 		description: 'Connect with me on LinkedIn',
 	},
-	,
 	{
 		title: 'Spotify',
 		url: 'https://open.spotify.com/user/111112791',
@@ -52,6 +58,7 @@ const SocialLink: React.FC<SocialLink> = React.memo(
 			variant='secondary'
 			onClick={() => window.open(url, '_blank', 'noopener,noreferrer')}
 			aria-label={description || title}
+			className='px-3 py-3'
 		/>
 	),
 );

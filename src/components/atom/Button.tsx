@@ -7,7 +7,7 @@ const buttonStyles = {
 	base: `
     inline-flex items-center justify-center px-6 py-3 rounded
     font-semibold
-    focus:outline-none focus:ring-offset-neutral-100 focus:ring-2 focus:ring-offset-2 focus:ring-attention-500
+    focus:outline-none focus:ring-offset-neutral-100 focus:ring-4 focus:ring-offset-2 focus:ring-attention-500
     transition-colors duration-200 ease-in-out
   `,
 	primary: `
