@@ -26,7 +26,7 @@ const linksList = [
 	},
 	{
 		title: 'LinkedIn',
-		url: 'https://www.linkedin.com/in/renderghost/',
+		url: 'https://www.linkedin.com/in/barrymprendergast/',
 		icon: Linkedin,
 		ariaLabel: 'Connect with me on LinkedIn',
 	},
@@ -34,7 +34,7 @@ const linksList = [
 		title: 'Spotify',
 		url: 'https://open.spotify.com/user/111112791',
 		icon: ListMusic,
-		ariaLabel: 'Listem to my Spotify Playlists',
+		ariaLabel: 'Listen to my Spotify Playlists',
 	},
 ];
 
@@ -48,6 +48,7 @@ const OtherLinks: React.FC = () => (
 						LeftIcon={link.icon}
 						onClick={() => window.open(link.url, '_blank')}
 						aria-label={link.ariaLabel}
+						tooltip={link.ariaLabel}
 					>
 						{link.title}
 					</FilledButton>

@@ -4,7 +4,7 @@ import React from 'react';
 import Header from '@/components/Header';
 import Projects from '@/components/Projects';
 import OtherLinks from '@/components/OtherLinks';
-import Footer from '@/components/Footer';
+import CallsToAction from '@/components/CallsToAction';
 
 const HomePage: React.FC = () => {
 	return (
@@ -12,7 +12,7 @@ const HomePage: React.FC = () => {
 			<Header />
 			<Projects />
 			<OtherLinks />
-			<Footer />
+			<CallsToAction />
 		</main>
 	);
 };
