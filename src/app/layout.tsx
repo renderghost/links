@@ -2,6 +2,7 @@ import './globals.css';
 // import { dmSans, dmSerifDisplay } from '@/utils/fonts';
 
 import { Metadata } from 'next';
+import Banner from '@/components/atom/Banner';
 
 export const metadata: Metadata = {
 	title: 'My Profile',
@@ -22,6 +23,7 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body className='bg-brand-50 dark:bg-brand-950 text-brand-950 dark:text-neutral-100'>
+				<Banner />
 				{children}
 			</body>
 		</html>

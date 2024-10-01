@@ -38,7 +38,7 @@ const WorkStatus: React.FC<WorkStatusProps> = ({
 						<div className='flex gap-4'>
 							<div className='w-16 h-16 relative flex-shrink-0'>
 								<Image
-									src='/logo-work.jpeg'
+									src='/avatar-work.svg'
 									alt='Morressier logo'
 									fill
 									style={{ objectFit: 'cover' }}

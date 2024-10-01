@@ -7,6 +7,7 @@ const config: Config = {
 		colors: {
 			neutral: {
 				100: '#ffffff',
+				0: '#000000',
 			},
 			attention: {
 				500: '#facc15',
