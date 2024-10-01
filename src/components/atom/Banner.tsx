@@ -12,13 +12,13 @@ const Banner: React.FC = () => {
 					<span className=''>link.renderg.host</span>
 				</div>
 				<div className='flex items-center gap-2'>
-					<span className=''>Looking for more info about me?</span>
+					<span className=''>This site is for my bio links.</span>
 
 					<a
 						href='#'
 						className='flex items-center gap-1 hover:underline'
 					>
-						<span className='font-medium'>View my Portfolio</span>
+						<span className='font-semibold'>View my Portfolio</span>
 						<ExternalLinkIcon size={16} />
 					</a>
 				</div>

@@ -16,7 +16,7 @@ import {
 
 interface Project {
 	title: string;
-	description: string;
+	ariaLabel: string;
 	icon: React.FC<React.SVGProps<SVGSVGElement>>;
 	url: string;
 	sourceUrl?: string;
@@ -25,14 +25,14 @@ interface Project {
 const projectsList: Project[] = [
 	{
 		title: 'A11y Pixel',
-		description:
+		ariaLabel:
 			'Something about my own personal instagram for my amatuer photos.',
 		icon: PersonStanding,
 		url: 'https://www.figma.com/community/file/1392296486879607254/the-a11y-pixel',
 	},
 	{
 		title: 'Aperture',
-		description:
+		ariaLabel:
 			'Something about my own personal instagram for my amatuer photos.',
 		icon: Aperture,
 		url: 'https://frame.renderg.host/',
@@ -40,21 +40,21 @@ const projectsList: Project[] = [
 	},
 	{
 		title: 'Fictional Data',
-		description:
+		ariaLabel:
 			'Something about Fictional sample data for use in design prototypes for Science products.',
 		icon: BookType,
 		url: 'https://github.com/Morressier/fictional-design-data',
 	},
 	{
 		title: 'Ramps',
-		description: 'Something about an experimental gradient generator.',
+		ariaLabel: 'Something about an experimental gradient generator.',
 		icon: Radius,
 		url: 'https://ramps.renderg.host/',
 		sourceUrl: 'https://github.com/renderghost/ramps',
 	},
 	{
 		title: 'Spectra',
-		description:
+		ariaLabel:
 			'Something about generating hue palettes for design systems.',
 		icon: Aperture,
 		url: 'https://spectra.renderg.host/',
@@ -62,14 +62,14 @@ const projectsList: Project[] = [
 	},
 	{
 		title: 'Selections',
-		description: 'Something about Spotify playlists.',
+		ariaLabel: 'Something about Spotify playlists.',
 		icon: ListMusic,
 		url: 'https://selections.renderg.host/',
 		sourceUrl: 'https://github.com/renderghost/selections',
 	},
 	{
 		title: 'Strategy Schmategy',
-		description: 'Something about Generative design strategies.',
+		ariaLabel: 'Something about Generative design strategies.',
 		icon: Shuffle,
 		url: 'https://strategyschmategy.renderg.host/',
 		sourceUrl: 'https://github.com/renderghost/strategy-schmategy',
@@ -78,7 +78,7 @@ const projectsList: Project[] = [
 
 const ProjectCard: React.FC<Project> = ({
 	title,
-	description,
+	ariaLabel,
 	icon: Icon,
 	url,
 	sourceUrl,
@@ -89,7 +89,7 @@ const ProjectCard: React.FC<Project> = ({
 				<Icon className='w-8 h-8' />
 				<h3 className='font-semibold text-2xl'>{title}</h3>
 			</div>
-			<p className=''>{description}</p>
+			<p className=''>{ariaLabel}</p>
 		</div>
 		<div className='block'>
 			<div className='flex flex-wrap gap-3'>

@@ -3,44 +3,38 @@
 import React from 'react';
 import { FilledButton } from './atom/Button';
 import Section from './atom/Section';
-import { Book, Github, Linkedin, Twitter, Youtube, Rss } from 'lucide-react';
+import { Figma, Github, Newspaper, ListMusic, Linkedin } from 'lucide-react';
 
 const linksList = [
 	{
-		title: 'My Blog',
-		url: 'https://yourblog.com',
-		icon: Book,
-		ariaLabel: 'Visit My Blog',
+		title: 'Figma',
+		url: 'https://figma.com/@renderghost',
+		icon: Figma,
+		ariaLabel: 'Use my Shared Resources on Figma',
 	},
 	{
-		title: 'GitHub',
-		url: 'https://github.com/yourusername',
+		title: 'Github',
+		url: 'https://github.com/renderghost',
 		icon: Github,
-		ariaLabel: 'Check My GitHub',
+		ariaLabel: 'Contribute to Projects on GitHub',
+	},
+	{
+		title: 'Medium',
+		url: 'https://medium.com/@render_ghost',
+		icon: Newspaper,
+		ariaLabel: 'Read my Articles on Medium',
 	},
 	{
 		title: 'LinkedIn',
-		url: 'https://linkedin.com/in/yourusername',
+		url: 'https://www.linkedin.com/in/renderghost/',
 		icon: Linkedin,
-		ariaLabel: 'Connect on LinkedIn',
+		ariaLabel: 'Connect with me on LinkedIn',
 	},
 	{
-		title: 'Twitter',
-		url: 'https://twitter.com/yourusername',
-		icon: Twitter,
-		ariaLabel: 'Follow on Twitter',
-	},
-	{
-		title: 'YouTube',
-		url: 'https://youtube.com/yourchannel',
-		icon: Youtube,
-		ariaLabel: 'Subscribe to My YouTube Channel',
-	},
-	{
-		title: 'RSS Feed',
-		url: 'https://yourblog.com/rss',
-		icon: Rss,
-		ariaLabel: 'Subscribe to RSS Feed',
+		title: 'Spotify',
+		url: 'https://open.spotify.com/user/111112791',
+		icon: ListMusic,
+		ariaLabel: 'Listem to my Spotify Playlists',
 	},
 ];
 

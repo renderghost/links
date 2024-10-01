@@ -8,7 +8,7 @@ interface SocialLink {
 	title: string;
 	url: string;
 	icon: React.FC<React.SVGProps<SVGSVGElement>>;
-	description?: string;
+	ariaLabel: string;
 }
 
 const socialLinks: SocialLink[] = [
@@ -16,42 +16,42 @@ const socialLinks: SocialLink[] = [
 		title: 'Figma',
 		url: 'https://figma.com/@renderghost',
 		icon: Figma,
-		description: 'Use my Shared Resources on Figma',
+		ariaLabel: 'Use my Shared Resources on Figma',
 	},
 	{
 		title: 'Github',
 		url: 'https://github.com/renderghost',
 		icon: Github,
-		description: 'Contribute to Projects on GitHub',
+		ariaLabel: 'Contribute to Projects on GitHub',
 	},
 	{
 		title: 'Medium',
 		url: 'https://medium.com/@render_ghost',
 		icon: Newspaper,
-		description: 'Read my Articles on Medium',
+		ariaLabel: 'Read my Articles on Medium',
 	},
 	{
 		title: 'LinkedIn',
 		url: 'https://www.linkedin.com/in/renderghost/',
 		icon: Linkedin,
-		description: 'Connect with me on LinkedIn',
+		ariaLabel: 'Connect with me on LinkedIn',
 	},
 	{
 		title: 'Spotify',
 		url: 'https://open.spotify.com/user/111112791',
 		icon: ListMusic,
-		description: 'Listem to my Spotify Playlists',
+		ariaLabel: 'Listen to my Spotify Playlists',
 	},
 ];
 
 const SocialLink: React.FC<SocialLink> = React.memo(
-	({ title, url, icon: Icon, description }) => (
+	({ title, url, icon: Icon, ariaLabel }) => (
 		<SquareIconButton
 			Icon={Icon}
 			variant='secondary'
 			onClick={() => window.open(url, '_blank', 'noopener,noreferrer')}
-			aria-label={description || title}
-			className='px-3 py-3'
+			ariaLabel={ariaLabel || title}
+			className=''
 		/>
 	),
 );
