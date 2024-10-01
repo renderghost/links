@@ -15,10 +15,21 @@ const Tooltip: React.FC<TooltipProps> = ({ children, content }) => {
 		if (trigger) {
 			trigger.setAttribute('aria-describedby', 'tooltip');
 		}
+		console.log('Tooltip component mounted');
 	}, []);
 
-	const showTooltip = () => setIsVisible(true);
-	const hideTooltip = () => setIsVisible(false);
+	const showTooltip = () => {
+		console.log('showTooltip called');
+		setIsVisible(true);
+	};
+	const hideTooltip = () => {
+		console.log('hideTooltip called');
+		setIsVisible(false);
+	};
+
+	useEffect(() => {
+		console.log('isVisible changed:', isVisible);
+	}, [isVisible]);
 
 	return (
 		<div className='relative inline-block'>

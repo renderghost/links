@@ -97,7 +97,8 @@ const ProjectCard: React.FC<Project> = ({
 					variant='primary'
 					RightIcon={ExternalLink}
 					onClick={() => window.open(url, '_blank')}
-					aria-label={`View ${title} project`}
+					ariaLabel={`View ${title} project`}
+					tooltip={`View ${title} project`}
 				>
 					View Project
 				</FilledButton>
@@ -106,7 +107,8 @@ const ProjectCard: React.FC<Project> = ({
 						variant='secondary'
 						LeftIcon={Github}
 						onClick={() => window.open(sourceUrl, '_blank')}
-						aria-label={`View source code for ${title}`}
+						ariaLabel={`View source code for ${title}`}
+						tooltip={`View source code for ${title}`}
 					>
 						View Source
 					</FilledButton>

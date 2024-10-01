@@ -32,7 +32,7 @@ const socialLinks: SocialLink[] = [
 	},
 	{
 		title: 'LinkedIn',
-		url: 'https://www.linkedin.com/in/renderghost/',
+		url: 'https://www.linkedin.com/in/barrymprendergast/',
 		icon: Linkedin,
 		ariaLabel: 'Connect with me on LinkedIn',
 	},
@@ -51,6 +51,7 @@ const SocialLink: React.FC<SocialLink> = React.memo(
 			variant='secondary'
 			onClick={() => window.open(url, '_blank', 'noopener,noreferrer')}
 			ariaLabel={ariaLabel || title}
+			tooltip={ariaLabel || title} // Add this line
 			className=''
 		/>
 	),
