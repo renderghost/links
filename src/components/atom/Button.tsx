@@ -1,11 +1,11 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useRef } from 'react';
 
 // Button styles
 const buttonStyles = {
 	base: `
-    inline-flex items-center justify-center px-6 py-3 rounded
+    inline-flex items-center justify-center rounded
     font-semibold
     focus:outline-none focus:ring-offset-neutral-100 focus:ring-4 focus:ring-offset-2 focus:ring-attention-500
     transition-colors duration-200 ease-in-out
@@ -57,6 +57,49 @@ const getButtonClass = (
 	}`.trim();
 };
 
+// Tooltip Component
+interface TooltipProps {
+	children: React.ReactElement;
+	content: string;
+}
+
+const Tooltip: React.FC<TooltipProps> = ({ children, content }) => {
+	const [isVisible, setIsVisible] = useState(false);
+	const triggerRef = useRef<HTMLElement>(null);
+
+	const showTooltip = () => setIsVisible(true);
+	const hideTooltip = () => setIsVisible(false);
+
+	return (
+		<div className='relative inline-block'>
+			{React.cloneElement(children, {
+				ref: triggerRef,
+				onMouseEnter: showTooltip,
+				onMouseLeave: hideTooltip,
+				onFocus: showTooltip,
+				onBlur: hideTooltip,
+			})}
+			{isVisible && (
+				<div
+					role='tooltip'
+					className='absolute z-10 px-2 py-1 text-xs rounded 
+                     bg-black text-white 
+                     dark:bg-white dark:text-black 
+                     transition-opacity duration-150
+                     -translate-x-1/2 left-1/2 bottom-full mb-1
+                     whitespace-nowrap'
+				>
+					{content}
+					<div
+						className='absolute w-2 h-2 bg-black dark:bg-white rotate-45 
+                          -bottom-1 left-1/2 -translate-x-1/2'
+					/>
+				</div>
+			)}
+		</div>
+	);
+};
+
 // Button Props
 interface ButtonProps {
 	children: React.ReactNode;
@@ -66,6 +109,8 @@ interface ButtonProps {
 	disabled?: boolean;
 	LeftIcon?: React.FC<React.SVGProps<SVGSVGElement>>;
 	RightIcon?: React.FC<React.SVGProps<SVGSVGElement>>;
+	ariaLabel?: string;
+	tooltip?: string;
 }
 
 // Base Button Component
@@ -77,17 +122,35 @@ export const Button: React.FC<ButtonProps> = ({
 	disabled = false,
 	LeftIcon,
 	RightIcon,
-}) => (
-	<button
-		onClick={onClick}
-		className={`${getButtonClass(variant, disabled)} ${className}`}
-		disabled={disabled}
-	>
-		{LeftIcon && <LeftIcon className='w-6 h-6 mr-2' aria-hidden='true' />}
-		{children}
-		{RightIcon && <RightIcon className='w-6 h-6 ml-2' aria-hidden='true' />}
-	</button>
-);
+	ariaLabel,
+	tooltip,
+}) => {
+	const buttonContent = (
+		<button
+			onClick={onClick}
+			className={`px-6 py-3 ${getButtonClass(
+				variant,
+				disabled,
+			)} ${className}`}
+			disabled={disabled}
+			aria-label={ariaLabel}
+		>
+			{LeftIcon && (
+				<LeftIcon className='w-6 h-6 mr-2' aria-hidden='true' />
+			)}
+			{children}
+			{RightIcon && (
+				<RightIcon className='w-6 h-6 ml-2' aria-hidden='true' />
+			)}
+		</button>
+	);
+
+	return tooltip ? (
+		<Tooltip content={tooltip}>{buttonContent}</Tooltip>
+	) : (
+		buttonContent
+	);
+};
 
 // Specific Button Variants
 export const TextButton: React.FC<ButtonProps> = props => (
@@ -105,7 +168,8 @@ interface SquareIconButtonProps {
 	className?: string;
 	variant?: 'primary' | 'secondary' | 'transparent' | 'card';
 	disabled?: boolean;
-	'aria-label': string;
+	ariaLabel: string;
+	tooltip?: string;
 }
 
 export const SquareIconButton: React.FC<SquareIconButtonProps> = ({
@@ -114,20 +178,29 @@ export const SquareIconButton: React.FC<SquareIconButtonProps> = ({
 	className = '',
 	variant = 'primary',
 	disabled = false,
-	'aria-label': ariaLabel,
-}) => (
-	<button
-		onClick={onClick}
-		className={`${getButtonClass(
-			variant,
-			disabled,
-		)} flex px-2 items-center justify-center ${className}`}
-		disabled={disabled}
-		aria-label={ariaLabel}
-	>
-		<Icon className='w-6 h-6' aria-hidden='true' />
-	</button>
-);
+	ariaLabel,
+	tooltip,
+}) => {
+	const buttonContent = (
+		<button
+			onClick={onClick}
+			className={`px-3 py-3 ${getButtonClass(
+				variant,
+				disabled,
+			)} flex items-center justify-center ${className}`}
+			disabled={disabled}
+			aria-label={ariaLabel}
+		>
+			<Icon className='w-6 h-6' aria-hidden='true' />
+		</button>
+	);
+
+	return tooltip ? (
+		<Tooltip content={tooltip}>{buttonContent}</Tooltip>
+	) : (
+		buttonContent
+	);
+};
 
 // Card Button
 export const CardButton: React.FC<ButtonProps> = ({
@@ -136,15 +209,26 @@ export const CardButton: React.FC<ButtonProps> = ({
 	className = '',
 	variant = 'card',
 	disabled = false,
-}) => (
-	<button
-		onClick={onClick}
-		className={`${getButtonClass(
-			variant,
-			disabled,
-		)} w-full text-left flex flex-col p-4 ${className}`}
-		disabled={disabled}
-	>
-		{children}
-	</button>
-);
+	ariaLabel,
+	tooltip,
+}) => {
+	const buttonContent = (
+		<button
+			onClick={onClick}
+			className={`${getButtonClass(
+				variant,
+				disabled,
+			)} w-full text-left flex flex-col p-4 ${className}`}
+			disabled={disabled}
+			aria-label={ariaLabel}
+		>
+			{children}
+		</button>
+	);
+
+	return tooltip ? (
+		<Tooltip content={tooltip}>{buttonContent}</Tooltip>
+	) : (
+		buttonContent
+	);
+};

@@ -1,0 +1,55 @@
+import React, { useState, useRef, useEffect } from 'react';
+
+interface TooltipProps {
+	children: React.ReactElement;
+	content: string;
+}
+
+const Tooltip: React.FC<TooltipProps> = ({ children, content }) => {
+	const [isVisible, setIsVisible] = useState(false);
+	const triggerRef = useRef<HTMLElement>(null);
+	const tooltipRef = useRef<HTMLDivElement>(null);
+
+	useEffect(() => {
+		const trigger = triggerRef.current;
+		if (trigger) {
+			trigger.setAttribute('aria-describedby', 'tooltip');
+		}
+	}, []);
+
+	const showTooltip = () => setIsVisible(true);
+	const hideTooltip = () => setIsVisible(false);
+
+	return (
+		<div className='relative inline-block'>
+			{React.cloneElement(children, {
+				ref: triggerRef,
+				onMouseEnter: showTooltip,
+				onMouseLeave: hideTooltip,
+				onFocus: showTooltip,
+				onBlur: hideTooltip,
+			})}
+			{isVisible && (
+				<div
+					ref={tooltipRef}
+					id='tooltip'
+					role='tooltip'
+					className='absolute z-10 px-2 py-1 text-xs rounded 
+                     bg-neutral-0 text-neutral-100 
+                     dark:bg-neutral-100 dark:text-neutral-0 
+                     transition-opacity duration-150
+                     -translate-x-1/2 left-1/2 bottom-full mb-1
+                     whitespace-nowrap'
+				>
+					{content}
+					<div
+						className='absolute w-2 h-2 bg-neutral-0 dark:bg-neutral-100 rotate-45 
+                          -bottom-1 left-1/2 -translate-x-1/2'
+					/>
+				</div>
+			)}
+		</div>
+	);
+};
+
+export default Tooltip;
