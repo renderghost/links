@@ -100,7 +100,7 @@ const ProjectCard: React.FC<Project> = ({
 		<div className='block'>
 			<div className='flex flex-wrap gap-3'>
 				<FilledButton
-					variant='primary'
+					variant='secondary'
 					RightIcon={ExternalLink}
 					onClick={() => window.open(url, '_blank')}
 					ariaLabel={`View ${title} project`}
@@ -110,7 +110,7 @@ const ProjectCard: React.FC<Project> = ({
 				</FilledButton>
 				{sourceUrl && (
 					<FilledButton
-						variant='secondary'
+						variant='transparent'
 						LeftIcon={Github}
 						onClick={() => window.open(sourceUrl, '_blank')}
 						ariaLabel={`View source code for ${title}`}
