@@ -2,14 +2,7 @@
 
 import React from 'react';
 import { SquareIconButton } from './Button';
-import {
-	Figma,
-	Github,
-	Newspaper,
-	Briefcase,
-	ListMusic,
-	Linkedin,
-} from 'lucide-react';
+import { Figma, Github, Newspaper, ListMusic, Linkedin } from 'lucide-react';
 
 interface SocialLink {
 	title: string;
