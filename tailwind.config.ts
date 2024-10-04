@@ -5,6 +5,7 @@ const config: Config = {
 	theme: {
 		extend: {},
 		colors: {
+			transparent: 'transparent',
 			neutral: {
 				100: '#ffffff',
 				0: '#000000',
@@ -28,7 +29,7 @@ const config: Config = {
 		},
 		// fontFamily: {
 		// 	sans: ['DM Sans', 'sans-serif'],
-		// 	serif: ['DM Serif Display', 'serif'],
+		// 	serif: ['DM Serif', 'serif'],
 		// },
 	},
 	plugins: [],
