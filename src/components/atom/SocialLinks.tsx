@@ -48,7 +48,7 @@ const SocialLink: React.FC<SocialLink> = React.memo(
 	({ title, url, icon: Icon, ariaLabel }) => (
 		<SquareIconButton
 			Icon={Icon}
-			variant='secondary'
+			variant='transparent'
 			onClick={() => window.open(url, '_blank', 'noopener,noreferrer')}
 			ariaLabel={ariaLabel || title}
 			tooltip={ariaLabel || title} // Add this line

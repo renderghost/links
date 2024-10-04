@@ -5,46 +5,80 @@ import React, { useState, useRef } from 'react';
 // Button styles
 const buttonStyles = {
 	base: `
-    inline-flex items-center justify-center rounded
-    font-semibold
-    focus:outline-none focus:ring-offset-neutral-100 focus:ring-4 focus:ring-offset-2 focus:ring-attention-500
-    transition-colors duration-200 ease-in-out
+	dark:focus:outline-none
+	dark:focus:ring-4
+	dark:focus:ring-attention-500
+	dark:focus:ring-offset-2
+	dark:focus:ring-offset-brand-950
+	duration-200
+	ease-in-out
+	focus:outline-none
+	focus:ring-4
+	focus:ring-attention-500
+	focus:ring-offset-2
+	focus:ring-offset-neutral-100
+	font-medium
+	inline-flex
+	items-center
+	justify-center
+	rounded
+	transition-colors
+	transition-opacity
   `,
 	primary: `
-    bg-brand-900 text-neutral-100 
-    hover:bg-brand-500 
-    active:bg-brand-950 
-    dark:bg-brand-200 dark:text-brand-900
-    dark:hover:bg-brand-300
-    dark:active:bg-brand-100
+	active:bg-brand-950
+	bg-brand-900
+	dark:active:bg-neutral-100
+	dark:bg-brand-200
+	dark:hover:bg-brand-300
+	dark:text-brand-900
+	hover:bg-brand-500 
+	text-neutral-100 
   `,
 	secondary: `
-    bg-brand-50 text-brand-950
-    hover:bg-brand-100 hover:text-brand-500
-    active:bg-brand-100
-    dark:bg-brand-700 dark:text-neutral-100
-    dark:hover:bg-brand-600
-    dark:active:bg-brand-800
+	bg-brand-100
+	hover:bg-brand-50
+	active:bg-brand-100
+	//
+	dark:bg-brand-800
+	dark:hover:bg-brand-600
+	dark:active:bg-brand-500
+	//
+	text-brand-900
+	hover:text-brand-500
+	//
+	dark:text-brand-100
+	dark:hover:text-brand-100
   `,
 	transparent: `
-    bg-transparent text-brand-950
-    hover:bg-brand-50 hover:text-brand-500
-    active:bg-brand-100
-    dark:bg-brand-700 dark:text-neutral-100
-    dark:hover:bg-brand-600
-    dark:active:bg-brand-800
+	bg-opacity-0
+	hover:bg-brand-50
+	active:bg-opactiy-0
+	//
+	dark:bg-brand-900
+	dark:hover:bg-brand-600
+	dark:active:bg-brand-500
+	//
+	text-brand-950
+	hover:text-brand-500
+	//
+	dark:text-brand-100
+	dark:hover:text-brand-100
   `,
 	card: `
-    bg-neutral-100 text-brand-900 
-    hover:bg-brand-50 
-    active:bg-brand-100 
-    focus:ring-brand-200
-    dark:bg-brand-800 dark:text-neutral-100
-    dark:hover:bg-brand-700
-    dark:active:bg-brand-600
+	active:bg-neutral-100
+	bg-neutral-100
+	dark:active:bg-brand-600
+	dark:bg-brand-800
+	dark:hover:bg-brand-700
+	dark:text-neutral-100
+	focus:ring-brand-200
+	hover:bg-brand-50
+	text-brand-900
   `,
 	disabled: `
-    opacity-50 cursor-not-allowed
+	cursor-not-allowed
+	opacity-50
   `,
 };
 
