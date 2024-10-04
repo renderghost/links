@@ -41,6 +41,13 @@ const projectsList: Project[] = [
 		sourceUrl: 'https://github.com/renderghost/frame',
 	},
 	{
+		title: 'ChattyFile',
+		ariaLabel: 'Chrome Extension to upload larger text files to ChatGPT!',
+		icon: BookType,
+		url: 'https://chromewebstore.google.com/detail/chatty-file-uploader/hkaeghidfjhncjnajpbmdhpcpfhkacmp',
+		sourceUrl: 'https://github.com/renderghost/chattyfile',
+	},
+	{
 		title: 'Fictional Data',
 		ariaLabel:
 			'Fake science data that looks real. Perfect for making your science app mockups look legit!',
@@ -62,6 +69,13 @@ const projectsList: Project[] = [
 		icon: Radius,
 		url: 'https://ramps.renderg.host/',
 		sourceUrl: 'https://github.com/renderghost/ramps',
+	},
+	{
+		title: 'ScienceUX',
+		ariaLabel:
+			'A journal looking into the science behind designing for scientific products.',
+		icon: SwatchBook,
+		url: 'https://scienceux.org/',
 	},
 	{
 		title: 'Spectra',
