@@ -73,7 +73,7 @@ const projectsList: Project[] = [
 		sourceUrl: 'https://github.com/renderghost/ramps',
 	},
 	{
-		title: 'ScienceUX',
+		title: 'Science UX',
 		ariaLabel:
 			'A journal looking into the science behind designing for scientific products.',
 		icon: FlaskConical,
@@ -90,13 +90,13 @@ const projectsList: Project[] = [
 	{
 		title: 'Selections',
 		ariaLabel:
-			'My Spotify playlists, but fancier. Warning: May contain questionable music choices!',
+			'A fancy discovery app for my many many Spotify playlists. Warning: May contain questionable music choices!',
 		icon: ListMusic,
 		url: 'https://selections.renderg.host/',
 		sourceUrl: 'https://github.com/renderghost/selections',
 	},
 	{
-		title: 'StrategySchmategy',
+		title: 'Strategy Schmategy',
 		ariaLabel:
 			'A random design strategy generator. For when you want to leave success to chance!',
 		icon: Shuffle,
@@ -112,13 +112,13 @@ const ProjectCard: React.FC<Project> = ({
 	url,
 	sourceUrl,
 }) => (
-	<div className='bg-neutral-100 dark:bg-brand-950 flex flex-col justify-between gap-8 p-8'>
+	<div className='bg-neutral-100 dark:bg-brand-900 flex flex-col justify-between gap-8 p-8'>
 		<div className='flex flex-col gap-2'>
 			<div className='flex items-center gap-3'>
 				<Icon className='w-7 h-' />
-				<h3 className='font-semibold text-xl'>{title}</h3>
+				<h3 className='font-medium text-xl'>{title}</h3>
 			</div>
-			<p className=''>{ariaLabel}</p>
+			<p className=' text-brand-900 dark:text-brand-100'>{ariaLabel}</p>
 		</div>
 		<div className='block'>
 			<div className='flex flex-wrap gap-3'>
@@ -134,7 +134,7 @@ const ProjectCard: React.FC<Project> = ({
 				{sourceUrl && (
 					<FilledButton
 						variant='transparent'
-						LeftIcon={Github}
+						RightIcon={Github}
 						onClick={() => window.open(sourceUrl, '_blank')}
 						ariaLabel={`View source code for ${title}`}
 						tooltip={`View source code for ${title}`}

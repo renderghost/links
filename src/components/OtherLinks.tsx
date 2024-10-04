@@ -44,7 +44,7 @@ const OtherLinks: React.FC = () => (
 			{linksList.map((link, index) => (
 				<div key={index} className='p-1.5'>
 					<FilledButton
-						variant='secondary'
+						variant='transparent'
 						LeftIcon={link.icon}
 						onClick={() => window.open(link.url, '_blank')}
 						aria-label={link.ariaLabel}
