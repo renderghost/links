@@ -14,6 +14,8 @@ import {
 	BookType,
 	Ghost,
 	SwatchBook,
+	FlaskConical,
+	BotMessageSquare,
 } from 'lucide-react';
 
 interface Project {
@@ -43,7 +45,7 @@ const projectsList: Project[] = [
 	{
 		title: 'ChattyFile',
 		ariaLabel: 'Chrome Extension to upload larger text files to ChatGPT!',
-		icon: BookType,
+		icon: BotMessageSquare,
 		url: 'https://chromewebstore.google.com/detail/chatty-file-uploader/hkaeghidfjhncjnajpbmdhpcpfhkacmp',
 		sourceUrl: 'https://github.com/renderghost/chattyfile',
 	},
@@ -74,7 +76,7 @@ const projectsList: Project[] = [
 		title: 'ScienceUX',
 		ariaLabel:
 			'A journal looking into the science behind designing for scientific products.',
-		icon: SwatchBook,
+		icon: FlaskConical,
 		url: 'https://scienceux.org/',
 	},
 	{
