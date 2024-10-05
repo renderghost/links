@@ -105,7 +105,7 @@ const ProjectCard: React.FC<Project> = ({
 		<div className='block'>
 			<div className='flex flex-wrap gap-3'>
 				<FilledButton
-					variant='secondary'
+					variant='primary'
 					RightIcon={ExternalLink}
 					onClick={() => window.open(url, '_blank')}
 					ariaLabel={`View ${title} project`}
