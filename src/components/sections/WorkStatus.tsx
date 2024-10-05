@@ -1,6 +1,6 @@
 'use client';
 
-import { FilledButton } from './atom/Button';
+import { FilledButton } from '../atom/Button';
 import Image from 'next/image';
 import {
 	Briefcase,
@@ -11,7 +11,7 @@ import {
 	GalleryHorizontalEnd,
 	Cable,
 } from 'lucide-react';
-import Section from './atom/Section';
+import Section from '../atom/Section';
 
 interface WorkStatusProps {
 	isWorking: boolean;
@@ -27,6 +27,7 @@ const WorkStatus: React.FC<WorkStatusProps> = ({
 			id='work-status'
 			className={className}
 			title={isWorking ? 'Current Role' : 'Work Status'}
+			description='tbc'
 		>
 			<div className='bg-brand-white dark:bg-brand-800 overflow-hidden flex flex-col gap-8 p-16'>
 				{isWorking ? (
