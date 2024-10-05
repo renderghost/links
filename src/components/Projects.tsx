@@ -5,11 +5,9 @@ import { FilledButton } from './atom/Button';
 import Section from './atom/Section';
 import {
 	Radius,
-	Aperture,
 	ExternalLink,
 	Github,
 	Shuffle,
-	ListMusic,
 	PersonStanding,
 	BookType,
 	Ghost,
@@ -33,14 +31,6 @@ const projectsList: Project[] = [
 			'Invisible Figma component to help document Accessibility attributes in design files at any level of specificity.',
 		icon: PersonStanding,
 		url: 'https://www.figma.com/community/file/1392296486879607254/the-a11y-pixel',
-	},
-	{
-		title: 'Aperture',
-		ariaLabel:
-			'My amatuer snaps gallery where I pretend to be a pro photographer.',
-		icon: Aperture,
-		url: 'https://frame.renderg.host/',
-		sourceUrl: 'https://github.com/renderghost/frame',
 	},
 	{
 		title: 'ChattyFile',
@@ -88,14 +78,6 @@ const projectsList: Project[] = [
 		sourceUrl: 'https://github.com/renderghost/spectra',
 	},
 	{
-		title: 'Selections',
-		ariaLabel:
-			'A fancy discovery app for my many many Spotify playlists. Warning: May contain questionable music choices!',
-		icon: ListMusic,
-		url: 'https://selections.renderg.host/',
-		sourceUrl: 'https://github.com/renderghost/selections',
-	},
-	{
 		title: 'Strategy Schmategy',
 		ariaLabel:
 			'A random design strategy generator. For when you want to leave success to chance!',
@@ -114,7 +96,7 @@ const ProjectCard: React.FC<Project> = ({
 }) => (
 	<div className='bg-neutral-100 dark:bg-brand-900 flex flex-col justify-between gap-8 p-8'>
 		<div className='flex flex-col gap-2'>
-			<div className='flex items-center gap-3'>
+			<div className='flex items-center gap-2'>
 				<Icon className='w-7 h-' />
 				<h3 className='font-medium text-xl'>{title}</h3>
 			</div>
@@ -148,8 +130,8 @@ const ProjectCard: React.FC<Project> = ({
 );
 
 const Projects: React.FC = () => (
-	<Section id='my-projects' title='Special Projects'>
-		<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2'>
+	<Section id='my-projects' title='The Lab' description='Projects & Platyime'>
+		<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4'>
 			{projectsList.map((project, index) => (
 				<ProjectCard key={index} {...project} />
 			))}
