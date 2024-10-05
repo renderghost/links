@@ -6,10 +6,6 @@ const config: Config = {
 		extend: {},
 		colors: {
 			transparent: 'transparent',
-			neutral: {
-				100: '#ffffff',
-				0: '#000000',
-			},
 			attention: {
 				500: '#facc15',
 			},
@@ -24,8 +20,8 @@ const config: Config = {
 				600: '#0004D6',
 				700: '#0006AD',
 				800: '#000785',
-				900: '#00065C',
-				950: '#000647',
+				900: '#00024b',
+				950: '#000022',
 				black: '#000000',
 			},
 		},

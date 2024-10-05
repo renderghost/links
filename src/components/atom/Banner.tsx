@@ -3,7 +3,7 @@ import { ExternalLinkIcon, Ghost } from 'lucide-react';
 
 const Banner: React.FC = () => {
 	return (
-		<div className='bg-attention-500 text-neutral-0 px-6 py-4'>
+		<div className='bg-attention-500 text-brand-black px-6 py-4'>
 			<div className='mx-auto flex items-center justify-between'>
 				<div className='flex items-center gap-4'>
 					<a
