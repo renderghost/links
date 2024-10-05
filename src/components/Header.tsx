@@ -20,7 +20,7 @@ const Header: React.FC = () => (
 				/>
 			</div>
 			<div className='flex flex-col flex-auto'>
-				<h1 className='text-xl font-bold' itemProp='name'>
+				<h1 className='text-xl font-semibold' itemProp='name'>
 					Barry Prendergast
 				</h1>
 				<div className='text-gray-600 flex flex-row gap-1 items-center'>

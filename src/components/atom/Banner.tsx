@@ -11,7 +11,7 @@ const Banner: React.FC = () => {
 						className='flex items-center gap-1 hover:underline font-semibold'
 					>
 						<Ghost size={16} />
-						<span className='font-semibold'>LinkGhost</span>
+						<span>LinkGhost</span>
 					</a>
 					{/* <span className=''>|</span> */}
 					<span className=''>Links for you to things I do.</span>

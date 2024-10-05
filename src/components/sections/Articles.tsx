@@ -63,7 +63,7 @@ const ArticleCard: React.FC<Article> = ({
 	icon: Icon,
 	url,
 }) => (
-	<div className='flex justify-between gap-8 p-8 bg-brand-white dark:bg-brand-900'>
+	<div className='bg-brand-white dark:bg-brand-900 flex flex-col justify-between gap-8 p-8'>
 		<div className='flex flex-col gap-2 '>
 			<div className='flex items-center gap-2'>
 				<Icon className='w-7 h-7' />
@@ -74,7 +74,7 @@ const ArticleCard: React.FC<Article> = ({
 		<div className='block'>
 			<div className='flex flex-wrap gap-3'>
 				<FilledButton
-					variant='secondary'
+					variant='primary'
 					RightIcon={ExternalLink}
 					onClick={() => window.open(url, '_blank')}
 					ariaLabel={`View ${title} article`}
@@ -93,7 +93,7 @@ const Articles: React.FC = () => (
 		title='Communications'
 		description='Something about Articles, Podcasts & Public Speaking'
 	>
-		<div className='flex flex-col gap-4'>
+		<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4'>
 			{articlesList.map((article, index) => (
 				<ArticleCard key={index} {...article} />
 			))}

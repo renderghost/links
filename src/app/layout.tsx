@@ -55,7 +55,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang='en'>
-			<body className='bg-brand-50 dark:bg-brand-950 text-brand-950 dark:text-brand-white'>
+			<body className='bg-brand-50 dark:bg-brand-950 text-brand-950 dark:text-brand-50'>
 				<Banner />
 				{children}
 			</body>
