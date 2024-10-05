@@ -1,13 +1,11 @@
 'use client';
 
 import React from 'react';
-import { FilledButton } from './atom/Button';
-import Section from './atom/Section';
-import Headline from './atom/Headline';
+import { FilledButton } from '../atom/Button';
+import Section from '../atom/Section';
+import Headline from '../atom/Headline';
 import {
 	CalendarPlus,
-	// FileText,
-	// Download,
 	Cable,
 	LucideIcon,
 	BookmarkCheck,
@@ -88,8 +86,8 @@ const CallToActionButton: React.FC<CallToAction & { isPrimary: boolean }> =
 CallToActionButton.displayName = 'CallToActionButton';
 
 const CallsToAction: React.FC = () => (
-	<Section id='calls-to-action' title='How can I help? '>
-		<div className='flex flex-col items-start gap-16 p-16 bg-neutral-100 dark:bg-brand-800 overflow-hidden'>
+	<Section id='calls-to-action' title='How can I help? ' description='tbc'>
+		<div className='flex flex-col items-start gap-16 p-16 bg-brand-white dark:bg-brand-800 overflow-hidden'>
 			<div className='text-lg font-normal items-center gap-2 flex'>
 				<Cable size={16} />
 				<span>All my key links and details</span>

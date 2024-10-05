@@ -16,7 +16,7 @@ const buttonStyles = {
 	focus:ring-4
 	focus:ring-attention-500
 	focus:ring-offset-2
-	focus:ring-offset-neutral-100
+	focus:ring-offset-brand-white
 	font-medium
 	inline-flex
 	items-center
@@ -28,12 +28,12 @@ const buttonStyles = {
 	primary: `
 	active:bg-brand-950
 	bg-brand-900
-	dark:active:bg-neutral-100
+	dark:active:bg-brand-white
 	dark:bg-brand-200
 	dark:hover:bg-brand-300
 	dark:text-brand-900
 	hover:bg-brand-500 
-	text-neutral-100 
+	text-brand-white 
   `,
 	secondary: `
 	bg-brand-100
@@ -66,12 +66,12 @@ const buttonStyles = {
 	dark:hover:text-brand-100
   `,
 	card: `
-	active:bg-neutral-100
-	bg-neutral-100
+	active:bg-brand-white
+	bg-brand-white
 	dark:active:bg-brand-600
 	dark:bg-brand-800
 	dark:hover:bg-brand-700
-	dark:text-neutral-100
+	dark:text-brand-white
 	focus:ring-brand-200
 	hover:bg-brand-50
 	text-brand-900
@@ -115,15 +115,15 @@ const Tooltip: React.FC<{ content: string; children: React.ReactElement }> = ({
 				<div
 					role='tooltip'
 					className='absolute z-10 px-2 py-1 text-xs rounded 
-                               bg-neutral-0 text-neutral-100 
-                               dark:bg-neutral-100 dark:text-neutral-0 
+                               bg-neutral-0 text-brand-white 
+                               dark:bg-brand-white dark:text-neutral-0 
                                transition-opacity duration-150
                                -translate-x-1/2 left-1/2 bottom-full mb-1
                                whitespace-nowrap'
 				>
 					{content}
 					<div
-						className='absolute w-2 h-2 bg-neutral-0 dark:bg-neutral-100 rotate-45 
+						className='absolute w-2 h-2 bg-neutral-0 dark:bg-brand-white rotate-45 
                                     -bottom-1 left-1/2 -translate-x-1/2'
 					/>
 				</div>

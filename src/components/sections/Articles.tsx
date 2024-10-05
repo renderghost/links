@@ -1,16 +1,15 @@
 'use client';
 
 import React from 'react';
-import { FilledButton } from './atom/Button';
-import Section from './atom/Section';
-import { ExternalLink, Github, Newspaper, Youtube } from 'lucide-react';
+import { FilledButton } from '../atom/Button';
+import Section from '../atom/Section';
+import { ExternalLink, Newspaper, Youtube } from 'lucide-react';
 
 interface Article {
 	title: string;
 	ariaLabel: string;
 	icon: React.FC<React.SVGProps<SVGSVGElement>>;
 	url: string;
-	sourceUrl?: string;
 }
 
 const articlesList: Article[] = [
@@ -63,10 +62,9 @@ const ArticleCard: React.FC<Article> = ({
 	ariaLabel,
 	icon: Icon,
 	url,
-	sourceUrl,
 }) => (
-	<div className='bg-neutral-100 dark:bg-brand-900 flex justify-between gap-8 p-8'>
-		<div className='flex flex-col gap-2'>
+	<div className='flex justify-between gap-8 p-8 bg-brand-white dark:bg-brand-900'>
+		<div className='flex flex-col gap-2 '>
 			<div className='flex items-center gap-2'>
 				<Icon className='w-7 h-7' />
 				<h3 className='font-medium text-xl'>{title}</h3>
@@ -84,17 +82,6 @@ const ArticleCard: React.FC<Article> = ({
 				>
 					View Article
 				</FilledButton>
-				{sourceUrl && (
-					<FilledButton
-						variant='transparent'
-						RightIcon={Github}
-						onClick={() => window.open(sourceUrl, '_blank')}
-						ariaLabel={`View source code for ${title}`}
-						tooltip={`View source code for ${title}`}
-					>
-						View Source
-					</FilledButton>
-				)}
 			</div>
 		</div>
 	</div>
@@ -106,7 +93,7 @@ const Articles: React.FC = () => (
 		title='Communications'
 		description='Something about Articles, Podcasts & Public Speaking'
 	>
-		<div className='flex-col gap-4'>
+		<div className='flex flex-col gap-4'>
 			{articlesList.map((article, index) => (
 				<ArticleCard key={index} {...article} />
 			))}

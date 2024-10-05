@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
-import { FilledButton } from './atom/Button';
-import Section from './atom/Section';
+import { FilledButton } from '../atom/Button';
+import Section from '../atom/Section';
 import {
 	Radius,
 	ExternalLink,
@@ -94,7 +94,7 @@ const ProjectCard: React.FC<Project> = ({
 	url,
 	sourceUrl,
 }) => (
-	<div className='bg-neutral-100 dark:bg-brand-900 flex flex-col justify-between gap-8 p-8'>
+	<div className='bg-brand-white dark:bg-brand-900 flex flex-col justify-between gap-8 p-8'>
 		<div className='flex flex-col gap-2'>
 			<div className='flex items-center gap-2'>
 				<Icon className='w-7 h-' />

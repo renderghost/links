@@ -28,7 +28,7 @@ const WorkStatus: React.FC<WorkStatusProps> = ({
 			className={className}
 			title={isWorking ? 'Current Role' : 'Work Status'}
 		>
-			<div className='bg-neutral-100 dark:bg-brand-800 overflow-hidden flex flex-col gap-8 p-16'>
+			<div className='bg-brand-white dark:bg-brand-800 overflow-hidden flex flex-col gap-8 p-16'>
 				{isWorking ? (
 					<>
 						<div className='text-lg font-normal items-center gap-1 flex'>
