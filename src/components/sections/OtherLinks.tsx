@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
-import { FilledButton } from './atom/Button';
-import Section from './atom/Section';
+import { FilledButton } from '../atom/Button';
+import Section from '../atom/Section';
 import { Figma, Github, Newspaper, ListMusic, Linkedin } from 'lucide-react';
 
 const linksList = [
@@ -39,7 +39,7 @@ const linksList = [
 ];
 
 const OtherLinks: React.FC = () => (
-	<Section id='other-links' title='Other Links'>
+	<Section id='other-links' title='Other Links' description='tbc'>
 		<div className='flex flex-wrap -m-1.5'>
 			{linksList.map((link, index) => (
 				<div key={index} className='p-1.5'>

@@ -18,7 +18,7 @@ const Section: React.FC<SectionProps> = ({
 	children,
 }) => (
 	<section id={id} className='flex flex-col gap-6'>
-		<div className='flex flex-col gap-1 text-brand-950 dark:text-neutral-100'>
+		<div className='flex flex-col gap-1 text-brand-950 dark:text-brand-white'>
 			<h2 className='text-2xl font-semibold'>{title}</h2>
 			<p className=''>{description}</p>
 		</div>

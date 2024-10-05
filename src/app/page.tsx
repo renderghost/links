@@ -2,10 +2,10 @@
 
 import React from 'react';
 import Header from '@/components/Header';
-import Projects from '@/components/Projects';
-import Articles from '@/components/Articles';
-import Creations from '@/components/Creations';
-import OtherLinks from '@/components/OtherLinks';
+import Projects from '@/components/sections/Projects';
+import Articles from '@/components/sections/Articles';
+import Creations from '@/components/sections/Creations';
+import OtherLinks from '@/components/sections/OtherLinks';
 
 const HomePage: React.FC = () => {
 	return (
