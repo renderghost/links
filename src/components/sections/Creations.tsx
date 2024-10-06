@@ -40,7 +40,7 @@ const CreationCard: React.FC<Creation> = ({
 	sourceUrl,
 }) => (
 	<div
-		className='bg-blue-white dark:bg-blue-900 flex flex-col justify-between gap-8 p-8'
+		className='bg-blue-0 dark:bg-blue-900 flex flex-col justify-between gap-8 p-8'
 		itemScope
 		itemType='http://schema.org/CreativeWork'
 	>

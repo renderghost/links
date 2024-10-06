@@ -87,7 +87,7 @@ CallToActionButton.displayName = 'CallToActionButton';
 
 const CallsToAction: React.FC = () => (
 	<Section id='calls-to-action' title='How can I help? ' description='tbc'>
-		<div className='flex flex-col items-start gap-16 p-16 bg-blue-white dark:bg-blue-800 overflow-hidden'>
+		<div className='flex flex-col items-start gap-16 p-16 bg-blue-0 dark:bg-blue-800 overflow-hidden'>
 			<div className='text-lg font-normal items-center gap-2 flex'>
 				<Cable size={16} />
 				<span>All my key links and details</span>
