@@ -17,7 +17,7 @@ const creationsList: Creation[] = [
 	{
 		title: 'Aperture',
 		ariaLabel:
-			'My amatuer snaps gallery where I pretend to be a pro photographer.',
+			'My amateur snaps gallery where I pretend to be a pro photographer.',
 		icon: Aperture,
 		url: 'https://frame.renderg.host/',
 		sourceUrl: 'https://github.com/renderghost/frame',
@@ -39,13 +39,24 @@ const CreationCard: React.FC<Creation> = ({
 	url,
 	sourceUrl,
 }) => (
-	<div className='bg-brand-white dark:bg-brand-900 flex flex-col justify-between gap-8 p-8'>
+	<div
+		className='bg-brand-white dark:bg-brand-900 flex flex-col justify-between gap-8 p-8'
+		itemScope
+		itemType='http://schema.org/CreativeWork'
+	>
 		<div className='flex flex-col gap-2'>
 			<div className='flex items-center gap-2'>
-				<Icon className='w-7 h-' />
-				<h3 className='font-medium text-xl'>{title}</h3>
+				<Icon className='w-7 h-7' />
+				<h3 className='font-medium text-xl' itemProp='name'>
+					{title}
+				</h3>
 			</div>
-			<p className=' text-brand-900 dark:text-brand-100'>{ariaLabel}</p>
+			<p
+				className='text-brand-900 dark:text-brand-100'
+				itemProp='description'
+			>
+				{ariaLabel}
+			</p>
 		</div>
 		<div className='block'>
 			<div className='flex flex-wrap gap-3'>
@@ -71,6 +82,8 @@ const CreationCard: React.FC<Creation> = ({
 				)}
 			</div>
 		</div>
+		<link itemProp='url' href={url} />
+		{sourceUrl && <link itemProp='codeRepository' href={sourceUrl} />}
 	</div>
 );
 
@@ -80,9 +93,21 @@ const Creations: React.FC = () => (
 		title='Creations'
 		description='Artistic works here and there.'
 	>
-		<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4'>
+		<div
+			className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4'
+			itemScope
+			itemType='http://schema.org/ItemList'
+		>
 			{creationsList.map((creation, index) => (
-				<CreationCard key={index} {...creation} />
+				<div
+					key={index}
+					itemProp='itemListElement'
+					itemScope
+					itemType='http://schema.org/ListItem'
+				>
+					<CreationCard {...creation} />
+					<meta itemProp='position' content={`${index + 1}`} />
+				</div>
 			))}
 		</div>
 	</Section>

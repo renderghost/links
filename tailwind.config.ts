@@ -9,7 +9,7 @@ const config: Config = {
 			attention: {
 				500: '#facc15',
 			},
-			brand: {
+			blue: {
 				white: '#FFFFFF',
 				50: '#E5E8FF',
 				100: '#CCCFFF',

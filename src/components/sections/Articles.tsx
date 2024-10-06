@@ -38,7 +38,7 @@ const articlesList: Article[] = [
 		url: 'https://medium.com/design-bootcamp/the-best-portfolio-is-one-that-gets-you-hired-part-1-storytelling-e139d2fd0f12',
 	},
 	{
-		title: 'The Prophetic Lens of Pixar’s Wall-E',
+		title: "The Prophetic Lens of Pixar's Wall-E",
 		ariaLabel: 'About the Future, on Medium',
 		icon: Newspaper,
 		url: 'https://medium.com/@render_ghost/the-prophetic-lens-of-pixars-wall-e-1be009f5f11f',
@@ -51,7 +51,7 @@ const articlesList: Article[] = [
 	},
 	{
 		title: 'Your boss was right not to support your designs',
-		ariaLabel: 'About Design Communicationm, on Bootcamp',
+		ariaLabel: 'About Design Communication, on Bootcamp',
 		icon: Newspaper,
 		url: 'https://medium.com/design-bootcamp/your-boss-was-right-to-not-support-your-design-project-ffc6bb956893',
 	},
@@ -63,13 +63,24 @@ const ArticleCard: React.FC<Article> = ({
 	icon: Icon,
 	url,
 }) => (
-	<div className='bg-brand-white dark:bg-brand-900 flex flex-col justify-between gap-8 p-8'>
+	<div
+		className='bg-brand-white dark:bg-brand-900 flex flex-col justify-between gap-8 p-8'
+		itemScope
+		itemType='http://schema.org/Article'
+	>
 		<div className='flex flex-col gap-2 '>
 			<div className='flex items-center gap-2'>
 				<Icon className='w-7 h-7' />
-				<h3 className='font-medium text-xl'>{title}</h3>
+				<h3 className='font-medium text-xl' itemProp='headline'>
+					{title}
+				</h3>
 			</div>
-			<p className=' text-brand-900 dark:text-brand-100'>{ariaLabel}</p>
+			<p
+				className='text-brand-900 dark:text-brand-100'
+				itemProp='description'
+			>
+				{ariaLabel}
+			</p>
 		</div>
 		<div className='block'>
 			<div className='flex flex-wrap gap-3'>
@@ -84,6 +95,7 @@ const ArticleCard: React.FC<Article> = ({
 				</FilledButton>
 			</div>
 		</div>
+		<link itemProp='url' href={url} />
 	</div>
 );
 
@@ -91,11 +103,23 @@ const Articles: React.FC = () => (
 	<Section
 		id='my-articles'
 		title='Communications'
-		description='Something about Articles, Podcasts & Public Speaking'
+		description='Articles, Podcasts & Public Speaking'
 	>
-		<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4'>
+		<div
+			className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4'
+			itemScope
+			itemType='http://schema.org/ItemList'
+		>
 			{articlesList.map((article, index) => (
-				<ArticleCard key={index} {...article} />
+				<div
+					key={index}
+					itemProp='itemListElement'
+					itemScope
+					itemType='http://schema.org/ListItem'
+				>
+					<ArticleCard {...article} />
+					<meta itemProp='position' content={`${index + 1}`} />
+				</div>
 			))}
 		</div>
 	</Section>

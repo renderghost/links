@@ -7,6 +7,8 @@ const Header: React.FC = () => (
 	<header
 		className='flex flex-col md:flex-row items-center gap-8'
 		id='header'
+		itemScope
+		itemType='http://schema.org/Person'
 	>
 		{/* First Column */}
 		<div className='flex flex-row flex-auto gap-4 items-center'>
@@ -17,6 +19,7 @@ const Header: React.FC = () => (
 					width={64}
 					height={64}
 					className='object-cover'
+					itemProp='image'
 				/>
 			</div>
 			<div className='flex flex-col flex-auto'>
