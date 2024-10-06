@@ -37,7 +37,8 @@ const projectsList: Project[] = [
 		title: 'Bones',
 		ariaLabel: 'Dogfooding my experiments with Design Systems',
 		icon: Atom,
-		url: 'https://www.figma.com/community/file/1392296486879607254/the-a11y-pixel',
+		url: 'https://bones.renderg.host/',
+		sourceUrl: 'https://github.com/renderghost/bones',
 	},
 	{
 		title: 'ChattyFile',
