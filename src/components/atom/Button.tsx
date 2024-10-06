@@ -26,18 +26,18 @@ const buttonStyles = {
 	transition-opacity
   `,
 	primary: `
-	bg-brand-900
-	hover:bg-brand-500 
+	bg-brand-700
+	hover:bg-brand-500
 	active:bg-brand-950
 	//
 	dark:bg-brand-100
 	dark:hover:bg-brand-white
 	dark:active:bg-brand-white
 	//
-	text-brand-900
-	dark:text-brand-700
+	text-brand-100
+	hover:text-brand-white
 	//
-	dark:text-brand-100
+	dark:text-brand-700
 	dark:hover:text-brand-500
   `,
 	secondary: `
@@ -46,25 +46,24 @@ const buttonStyles = {
 	active:bg-brand-100
 	//
 	dark:bg-brand-800
-	dark:hover:bg-brand-600
-	dark:active:bg-brand-500
+	dark:hover:bg-brand-500
+	dark:active:bg-brand-800
 	//
-	text-brand-900
+	text-brand-700
 	hover:text-brand-500
+	active:text-brand-700
 	//
 	dark:text-brand-100
 	dark:hover:text-brand-100
   `,
 	transparent: `
 	bg-opacity-0
-	hover:bg-brand-50
-	active:bg-opactiy-0
 	//
 	dark:bg-brand-900
 	dark:hover:bg-brand-800
 	dark:active:bg-brand-500
 	//
-	text-brand-950
+	text-brand-800
 	hover:text-brand-500
 	//
 	dark:text-brand-100

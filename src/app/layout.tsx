@@ -5,9 +5,9 @@ import { Metadata } from 'next';
 import Banner from '@/components/atom/Banner';
 
 export const metadata: Metadata = {
-	title: 'Barry Prendergast | LinksGhost',
+	title: 'Barry Prendergast | LinksGhost - Product & Service Designer Links',
 	description:
-		"A roll of links for Barry Prendergast's creative and professional projects, public speaking, social profiles, and contact info. Find all relevant links for this Product & Service Designer in one place.",
+		"Explore Barry Prendergast's curated collection of links to creative and professional projects, public speaking engagements, social profiles, and contact information. Your one-stop hub for connecting with this experienced Product & Service Designer.",
 	keywords: [
 		'Barry Prendergast',
 		'product design',
@@ -15,23 +15,34 @@ export const metadata: Metadata = {
 		'public speaking',
 		'social profiles',
 		'contact information',
+		'designer links',
+		'professional portfolio',
 	],
 	openGraph: {
 		type: 'website',
 		locale: 'en_US',
 		url: 'https://links.renderg.host/',
 		siteName: 'Barry Prendergast | LinksGhost',
-		title: 'Barry Prendergast | LinksGhost',
+		title: 'Barry Prendergast | LinksGhost - Product & Service Designer Links',
 		description:
-			'Access all relevant links for Barry Prendergast - projects, talks, social profiles, and more. Your one-stop hub for connecting with this experienced Product & Service Designer.',
+			"Discover Barry Prendergast's curated links to projects, talks, social profiles, and more. Connect with this experienced Product & Service Designer through this comprehensive link hub.",
 		images: [
 			{
 				url: 'https://links.renderg.host/avatar-linksghost-og.jpg',
 				width: 1200,
 				height: 630,
-				alt: 'Barry Prendergast | LinksGhost',
+				alt: 'Barry Prendergast | LinksGhost - Product & Service Designer',
 			},
 		],
+	},
+	twitter: {
+		card: 'summary_large_image',
+		site: '@YourTwitterHandle',
+		creator: '@YourTwitterHandle',
+		title: 'Barry Prendergast | LinksGhost - Product & Service Designer Links',
+		description:
+			"Explore Barry Prendergast's curated links to projects, talks, and profiles. Connect with this experienced Product & Service Designer.",
+		images: ['https://links.renderg.host/avatar-linksghost-og.jpg'],
 	},
 	robots: {
 		index: true,
@@ -55,6 +66,13 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang='en'>
+			<head>
+				<link
+					rel='apple-touch-icon'
+					sizes='180x180'
+					href='/apple-touch-icon.png'
+				/>
+			</head>
 			<body className='bg-brand-50 dark:bg-brand-950 text-brand-950 dark:text-brand-50'>
 				<Banner />
 				{children}
