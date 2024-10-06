@@ -10,7 +10,7 @@ const config: Config = {
 				500: '#facc15',
 			},
 			blue: {
-				white: '#FFFFFF',
+				0: '#FFFFFF',
 				50: '#E5E8FF',
 				100: '#CCCFFF',
 				200: '#999EFF',
@@ -22,7 +22,7 @@ const config: Config = {
 				800: '#000785',
 				900: '#00024b',
 				950: '#000022',
-				black: '#000000',
+				1000: '#000000',
 			},
 		},
 		// fontFamily: {

@@ -73,7 +73,7 @@ export default function RootLayout({
 					href='/apple-touch-icon.png'
 				/>
 			</head>
-			<body className='bg-brand-50 dark:bg-brand-950 text-brand-950 dark:text-brand-50'>
+			<body className='bg-blue-50 dark:bg-blue-950 text-blue-950 dark:text-blue-50'>
 				<Banner />
 				{children}
 			</body>

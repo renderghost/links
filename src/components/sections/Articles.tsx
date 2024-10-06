@@ -64,7 +64,7 @@ const ArticleCard: React.FC<Article> = ({
 	url,
 }) => (
 	<div
-		className='bg-brand-white dark:bg-brand-900 flex flex-col justify-between gap-8 p-8'
+		className='bg-blue-white dark:bg-blue-900 flex flex-col justify-between gap-8 p-8'
 		itemScope
 		itemType='http://schema.org/Article'
 	>
@@ -76,7 +76,7 @@ const ArticleCard: React.FC<Article> = ({
 				</h3>
 			</div>
 			<p
-				className='text-brand-900 dark:text-brand-100'
+				className='text-blue-900 dark:text-blue-100'
 				itemProp='description'
 			>
 				{ariaLabel}
