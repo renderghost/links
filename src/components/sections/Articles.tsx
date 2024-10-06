@@ -64,7 +64,7 @@ const ArticleCard: React.FC<Article> = ({
 	url,
 }) => (
 	<div
-		className='bg-blue-0 dark:bg-blue-900 flex flex-col justify-between gap-8 p-8'
+		className='bg-blue-0 dark:bg-blue-900 flex flex-col flex-grow justify-between gap-8 p-8'
 		itemScope
 		itemType='http://schema.org/Article'
 	>
@@ -116,6 +116,7 @@ const Articles: React.FC = () => (
 					itemProp='itemListElement'
 					itemScope
 					itemType='http://schema.org/ListItem'
+					className='flex flex-col flex-grow'
 				>
 					<ArticleCard {...article} />
 					<meta itemProp='position' content={`${index + 1}`} />

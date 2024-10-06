@@ -39,7 +39,11 @@ const linksList = [
 ];
 
 const OtherLinks: React.FC = () => (
-	<Section id='other-links' title='Other Links' description='tbc'>
+	<Section
+		id='other-links'
+		title='Other Links'
+		description='Just some other Links'
+	>
 		<div className='flex flex-wrap -m-1.5'>
 			{linksList.map((link, index) => (
 				<div key={index} className='p-1.5'>
