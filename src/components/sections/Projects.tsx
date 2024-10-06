@@ -150,7 +150,11 @@ const ProjectCard: React.FC<Project> = ({
 );
 
 const Projects: React.FC = () => (
-	<Section id='my-projects' title='The Lab' description='Projects & Playtime'>
+	<Section
+		id='my-lab'
+		title='The Lab'
+		description='Learning through playing with code.. '
+	>
 		<div
 			className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4'
 			itemScope

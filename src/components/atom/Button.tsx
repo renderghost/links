@@ -16,7 +16,7 @@ const buttonStyles = {
 	focus:ring-4
 	focus:ring-attention-500
 	focus:ring-offset-2
-	focus:ring-offset-blue-white
+	focus:ring-offset-blue-0
 	font-medium
 	inline-flex
 	items-center
@@ -31,11 +31,11 @@ const buttonStyles = {
 	active:bg-blue-950
 	//
 	dark:bg-blue-100
-	dark:hover:bg-blue-white
-	dark:active:bg-blue-white
+	dark:hover:bg-blue-0
+	dark:active:bg-blue-0
 	//
 	text-blue-100
-	hover:text-blue-white
+	hover:text-blue-0
 	//
 	dark:text-blue-700
 	dark:hover:text-blue-500
@@ -67,15 +67,15 @@ const buttonStyles = {
 	hover:text-blue-500
 	//
 	dark:text-blue-100
-	dark:hover:text-blue-white
+	dark:hover:text-blue-0
   `,
 	card: `
-	active:bg-blue-white
-	bg-blue-white
+	active:bg-blue-0
+	bg-blue-0
 	dark:active:bg-blue-600
 	dark:bg-blue-800
 	dark:hover:bg-blue-700
-	dark:text-blue-white
+	dark:text-blue-0
 	focus:ring-blue-200
 	hover:bg-blue-50
 	text-blue-900
@@ -119,15 +119,15 @@ const Tooltip: React.FC<{ content: string; children: React.ReactElement }> = ({
 				<div
 					role='tooltip'
 					className='absolute z-10 px-2 py-1 text-xs rounded
-                               bg-blue-1000 text-blue-white
-                               dark:bg-blue-white dark:text-blue-1000
+                               bg-blue-1000 text-blue-0
+                               dark:bg-blue-0 dark:text-blue-1000
                                transition-opacity duration-150
                                -translate-x-1/2 left-1/2 bottom-full mb-1
                                whitespace-nowrap'
 				>
 					{content}
 					<div
-						className='absolute w-2 h-2 bg-blue-1000 dark:bg-blue-white rotate-45 
+						className='absolute w-2 h-2 bg-blue-1000 dark:bg-blue-0 rotate-45 
                                     -bottom-1 left-1/2 -translate-x-1/2'
 					/>
 				</div>
