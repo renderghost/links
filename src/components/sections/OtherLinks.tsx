@@ -49,7 +49,7 @@ const OtherLinks: React.FC = () => (
 				<div key={index} className='p-1.5'>
 					<FilledButton
 						variant='transparent'
-						LeftIcon={link.icon}
+						RightIcon={link.icon}
 						onClick={() => window.open(link.url, '_blank')}
 						aria-label={link.ariaLabel}
 						tooltip={link.ariaLabel}
