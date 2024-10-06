@@ -9,14 +9,14 @@ const buttonStyles = {
 	dark:focus:ring-4
 	dark:focus:ring-attention-500
 	dark:focus:ring-offset-2
-	dark:focus:ring-offset-brand-950
+	dark:focus:ring-offset-blue-950
 	duration-200
 	ease-in-out
 	focus:outline-none
 	focus:ring-4
 	focus:ring-attention-500
 	focus:ring-offset-2
-	focus:ring-offset-brand-white
+	focus:ring-offset-blue-white
 	font-medium
 	inline-flex
 	items-center
@@ -26,59 +26,59 @@ const buttonStyles = {
 	transition-opacity
   `,
 	primary: `
-	bg-brand-700
-	hover:bg-brand-500
-	active:bg-brand-950
+	bg-blue-700
+	hover:bg-blue-500
+	active:bg-blue-950
 	//
-	dark:bg-brand-100
-	dark:hover:bg-brand-white
-	dark:active:bg-brand-white
+	dark:bg-blue-100
+	dark:hover:bg-blue-white
+	dark:active:bg-blue-white
 	//
-	text-brand-100
-	hover:text-brand-white
+	text-blue-100
+	hover:text-blue-white
 	//
-	dark:text-brand-700
-	dark:hover:text-brand-500
+	dark:text-blue-700
+	dark:hover:text-blue-500
   `,
 	secondary: `
-	bg-brand-100
-	hover:bg-brand-50
-	active:bg-brand-100
+	bg-blue-100
+	hover:bg-blue-50
+	active:bg-blue-100
 	//
-	dark:bg-brand-800
-	dark:hover:bg-brand-500
-	dark:active:bg-brand-800
+	dark:bg-blue-800
+	dark:hover:bg-blue-500
+	dark:active:bg-blue-800
 	//
-	text-brand-700
-	hover:text-brand-500
-	active:text-brand-700
+	text-blue-700
+	hover:text-blue-500
+	active:text-blue-700
 	//
-	dark:text-brand-100
-	dark:hover:text-brand-100
+	dark:text-blue-100
+	dark:hover:text-blue-100
   `,
 	transparent: `
 	bg-opacity-0
 	//
-	dark:bg-brand-900
-	dark:hover:bg-brand-800
-	dark:active:bg-brand-500
+	dark:bg-blue-900
+	dark:hover:bg-blue-800
+	dark:active:bg-blue-500
 	//
-	text-brand-800
-	hover:text-brand-500
+	text-blue-800
+	hover:text-blue-500
 	//
-	dark:text-brand-100
-	dark:hover:text-brand-white
+	dark:text-blue-100
+	dark:hover:text-blue-white
   `,
 	card: `
-	active:bg-brand-white
-	bg-brand-white
-	dark:active:bg-brand-600
-	dark:bg-brand-800
-	dark:hover:bg-brand-700
-	dark:text-brand-white
-	focus:ring-brand-200
-	hover:bg-brand-50
-	text-brand-900
+	active:bg-blue-white
+	bg-blue-white
+	dark:active:bg-blue-600
+	dark:bg-blue-800
+	dark:hover:bg-blue-700
+	dark:text-blue-white
+	focus:ring-blue-200
+	hover:bg-blue-50
+	text-blue-900
   `,
 	disabled: `
 	cursor-not-allowed
@@ -119,15 +119,15 @@ const Tooltip: React.FC<{ content: string; children: React.ReactElement }> = ({
 				<div
 					role='tooltip'
 					className='absolute z-10 px-2 py-1 text-xs rounded
-                               bg-brand-black text-brand-white
-                               dark:bg-brand-white dark:text-brand-black
+                               bg-blue-1000 text-blue-white
+                               dark:bg-blue-white dark:text-blue-1000
                                transition-opacity duration-150
                                -translate-x-1/2 left-1/2 bottom-full mb-1
                                whitespace-nowrap'
 				>
 					{content}
 					<div
-						className='absolute w-2 h-2 bg-brand-black dark:bg-brand-white rotate-45 
+						className='absolute w-2 h-2 bg-blue-1000 dark:bg-blue-white rotate-45 
                                     -bottom-1 left-1/2 -translate-x-1/2'
 					/>
 				</div>

@@ -29,7 +29,7 @@ const WorkStatus: React.FC<WorkStatusProps> = ({
 			title={isWorking ? 'Current Role' : 'Work Status'}
 			description='tbc'
 		>
-			<div className='bg-brand-white dark:bg-brand-800 overflow-hidden flex flex-col gap-8 p-16'>
+			<div className='bg-blue-white dark:bg-blue-800 overflow-hidden flex flex-col gap-8 p-16'>
 				{isWorking ? (
 					<>
 						<div className='text-lg font-normal items-center gap-1 flex'>
@@ -108,7 +108,7 @@ const WorkStatus: React.FC<WorkStatusProps> = ({
 					</>
 				) : (
 					<>
-						<p className='text-brand-700 dark:text-brand-300 mb-6 p-6'>
+						<p className='text-blue-700 dark:text-blue-300 mb-6 p-6'>
 							I&apos;m actively seeking new opportunities in
 							product design and strategy. Let&apos;s connect!
 						</p>
