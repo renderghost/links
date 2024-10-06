@@ -102,7 +102,7 @@ const ProjectCard: React.FC<Project> = ({
 	sourceUrl,
 }) => (
 	<div
-		className='bg-blue-0 dark:bg-blue-900 flex flex-col justify-between gap-8 p-8'
+		className='bg-blue-0 dark:bg-blue-900 flex flex-col flex-grow justify-between gap-8 p-8'
 		itemScope
 		itemType='http://schema.org/SoftwareApplication'
 	>
@@ -153,7 +153,7 @@ const Projects: React.FC = () => (
 	<Section
 		id='my-lab'
 		title='The Lab'
-		description='Learning through playing with code.. '
+		description='Learning through playing with code.'
 	>
 		<div
 			className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4'
@@ -166,6 +166,7 @@ const Projects: React.FC = () => (
 					itemProp='itemListElement'
 					itemScope
 					itemType='http://schema.org/ListItem'
+					className='flex flex-col flex-grow'
 				>
 					<ProjectCard {...project} />
 					<meta itemProp='position' content={`${index + 1}`} />

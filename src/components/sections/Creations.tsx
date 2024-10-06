@@ -40,7 +40,7 @@ const CreationCard: React.FC<Creation> = ({
 	sourceUrl,
 }) => (
 	<div
-		className='bg-blue-0 dark:bg-blue-900 flex flex-col justify-between gap-8 p-8'
+		className='bg-blue-0 dark:bg-blue-900 flex flex-col flex-grow justify-between gap-8 p-8'
 		itemScope
 		itemType='http://schema.org/CreativeWork'
 	>
@@ -104,6 +104,7 @@ const Creations: React.FC = () => (
 					itemProp='itemListElement'
 					itemScope
 					itemType='http://schema.org/ListItem'
+					className='flex flex-col flex-grow'
 				>
 					<CreationCard {...creation} />
 					<meta itemProp='position' content={`${index + 1}`} />
