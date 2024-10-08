@@ -35,7 +35,7 @@ const linksList = [
 		title: 'Morressier',
 		url: 'https://www.morressier.com',
 		icon: Sparkles,
-		ariaLabel: 'Check out where I work',
+		ariaLabel: 'Check out my work at Morressier',
 	},
 	{
 		title: 'LinkedIn',
