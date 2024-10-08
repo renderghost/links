@@ -10,9 +10,7 @@ import {
 	Shuffle,
 	PersonStanding,
 	BookType,
-	Ghost,
 	SwatchBook,
-	FlaskConical,
 	BotMessageSquare,
 	Atom,
 } from 'lucide-react';
@@ -55,27 +53,12 @@ const projectsList: Project[] = [
 		url: 'https://github.com/Morressier/fictional-design-data',
 	},
 	{
-		title: 'LinkGhost',
-		ariaLabel:
-			'My digital pinboard - all my important links in one tidy place. No spooks, just handy! ',
-		icon: Ghost,
-		url: 'https://linkghost.renderg.host/',
-		sourceUrl: 'https://github.com/renderghost/linkghost',
-	},
-	{
 		title: 'Ramps',
 		ariaLabel:
 			'My quirky gradient generator. Because we all want more color.',
 		icon: Radius,
 		url: 'https://ramps.renderg.host/',
 		sourceUrl: 'https://github.com/renderghost/ramps',
-	},
-	{
-		title: 'Science UX',
-		ariaLabel:
-			'A journal looking into the science behind designing for scientific products.',
-		icon: FlaskConical,
-		url: 'https://scienceux.org/',
 	},
 	{
 		title: 'Spectra',
@@ -154,7 +137,7 @@ const Projects: React.FC = () => (
 	<Section
 		id='my-lab'
 		title='The Lab'
-		description='Learning through playing with code.'
+		description='Learning through playing with constantly-breaking code.'
 	>
 		<div
 			className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4'

@@ -2,7 +2,14 @@
 
 import React from 'react';
 import { SquareIconButton } from './Button';
-import { Figma, Github, Newspaper, ListMusic, Linkedin } from 'lucide-react';
+import {
+	Figma,
+	Sparkles,
+	Github,
+	Newspaper,
+	ListMusic,
+	Linkedin,
+} from 'lucide-react';
 
 interface SocialLink {
 	title: string;
@@ -29,6 +36,12 @@ const socialLinks: SocialLink[] = [
 		url: 'https://medium.com/@render_ghost',
 		icon: Newspaper,
 		ariaLabel: 'Read my Articles on Medium',
+	},
+	{
+		title: 'Morressier',
+		url: 'https://www.morressier.com',
+		icon: Sparkles,
+		ariaLabel: 'Check out where I work',
 	},
 	{
 		title: 'LinkedIn',
