@@ -44,6 +44,12 @@ const articlesList: Article[] = [
 		url: 'https://medium.com/@render_ghost/the-prophetic-lens-of-pixars-wall-e-1be009f5f11f',
 	},
 	{
+		title: 'Traditional academic citation links are bad for Science.',
+		ariaLabel: 'About the Integrity, on LinkedIn',
+		icon: Newspaper,
+		url: 'https://www.linkedin.com/pulse/traditional-academic-citation-links-bad-science-barry-prendergast-ls4ef/',
+	},
+	{
 		title: 'Will AI Destroy Designer Jobs?',
 		ariaLabel: 'About Human Experience, on Lost in Semantics',
 		icon: Youtube,
