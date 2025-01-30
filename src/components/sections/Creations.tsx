@@ -40,7 +40,7 @@ const CreationCard: React.FC<Creation> = ({
 	sourceUrl,
 }) => (
 	<div
-		className='bg-blue-0 dark:bg-blue-900 flex flex-col flex-grow justify-between gap-8 p-8'
+		className='bg-white dark:bg-blue-800 flex flex-col flex-grow justify-between gap-8 p-8'
 		itemScope
 		itemType='http://schema.org/CreativeWork'
 	>
@@ -61,7 +61,7 @@ const CreationCard: React.FC<Creation> = ({
 		<div className='block'>
 			<div className='flex flex-wrap gap-3'>
 				<FilledButton
-					variant='primary'
+					variant='secondary'
 					RightIcon={ExternalLink}
 					onClick={() => window.open(url, '_blank')}
 					ariaLabel={`View ${title} creation`}

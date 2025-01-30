@@ -45,17 +45,37 @@ const Tooltip: React.FC<TooltipProps> = ({ children, content }) => {
 					ref={tooltipRef}
 					id='tooltip'
 					role='tooltip'
-					className='absolute z-10 px-2 py-1 text-xs rounded 
-                     bg-blue-1000 text-blue-0 
-                     dark:bg-blue-0 dark:text-blue-1000 
-                     transition-opacity duration-150
-                     -translate-x-1/2 left-1/2 bottom-full mb-1
-                     whitespace-nowrap'
+					className='
+						-translate-x-1/2
+						absolute
+						bg-blue-950
+						dark:bg-white
+						text-blue-50
+						dark:text-blue-950
+						duration-150
+						bottom-full
+						left-1/2
+						mb-1
+						px-2 py-1
+						rounded
+						text-s
+						transition-opacity
+						whitespace-nowrap
+						z-10
+						'
 				>
 					{content}
 					<div
-						className='absolute w-2 h-2 bg-blue-1000 dark:bg-blue-0 rotate-45 
-                          -bottom-1 left-1/2 -translate-x-1/2'
+						className='
+						absolute
+						w-2
+						h-2
+						bg-blue-950
+						dark:bg-blue-50
+						rotate-45
+						-bottom-1
+						left-1/2
+						-translate-x-1/2'
 					/>
 				</div>
 			)}

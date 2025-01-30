@@ -70,7 +70,7 @@ const ArticleCard: React.FC<Article> = ({
 	url,
 }) => (
 	<div
-		className='bg-blue-0 dark:bg-blue-900 flex flex-col flex-grow justify-between gap-8 p-8'
+		className='bg-white dark:bg-blue-800 flex flex-col flex-grow justify-between gap-8 p-8'
 		itemScope
 		itemType='http://schema.org/Article'
 	>
@@ -91,7 +91,7 @@ const ArticleCard: React.FC<Article> = ({
 		<div className='block'>
 			<div className='flex flex-wrap gap-3'>
 				<FilledButton
-					variant='primary'
+					variant='secondary'
 					RightIcon={ExternalLink}
 					onClick={() => window.open(url, '_blank')}
 					ariaLabel={`View ${title} article`}
