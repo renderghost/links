@@ -5,18 +5,16 @@ import React, { useState, useRef } from 'react';
 // Button styles
 const buttonStyles = {
 	base: `
-	dark:focus:outline-none
-	dark:focus:ring-4
-	dark:focus:ring-yellow-500
-	dark:focus:ring-offset-2
-	dark:focus:ring-offset-blue-950
 	duration-200
 	ease-in-out
 	focus:outline-none
-	focus:ring-4
-	focus:ring-yellow-500
+	focus:ring-2
 	focus:ring-offset-2
+	focus:ring-yellow-500
 	focus:ring-offset-white
+	dark:focus:outline-none
+	dark:focus:ring-yellow-500
+	dark:focus:ring-offset-blue-950
 	font-medium
 	inline-flex
 	items-center
@@ -29,48 +27,56 @@ const buttonStyles = {
 	bg-blue-700
 	hover:bg-blue-500
 	active:bg-blue-950
-	//
+	focus:bg-blue-500
 	dark:bg-blue-100
 	dark:hover:bg-white
 	dark:active:bg-white
-	//
+	dark:focus:bg-white
 	text-blue-100
 	hover:text-blue-950
-	//
+	focus:text-blue-950
 	dark:text-blue-700
 	dark:hover:text-blue-500
+	dark:focus:text-blue-500
   `,
 	secondary: `
 	bg-blue-100
 	hover:bg-blue-50
 	active:bg-blue-100
-	//
+	focus:bg-blue-50
 	dark:bg-blue-800
 	dark:hover:bg-blue-500
 	dark:active:bg-blue-800
-	//
+	dark:focus:bg-blue-500
 	text-blue-700
 	hover:text-blue-500
 	active:text-blue-700
-	//
-	dark:text-blue-100
-	dark:hover:text-blue-100
-	dark:active:text-blue-100
-  `,
-	transparent: `
-	bg-opacity-0
-	//
-	dark:bg-blue-900
-	dark:hover:bg-blue-800
-	dark:active:bg-blue-500
-	//
-	text-blue-700
-	hover:text-blue-500
-	active:text-blue-700
-	//
+	focus:text-blue-500
 	dark:text-blue-100
 	dark:hover:text-white
 	dark:active:text-blue-100
+	dark:focus:text-white
+  `,
+	transparent: `
+	bg-opacity-0
+	hover:bg-opacity-0
+	active:bg-opacity-0
+	focus:bg-opacity-0
+
+	dark:bg-blue-900
+	dark:hover:bg-blue-800
+	dark:active:bg-blue-900
+	dark:focus:bg-blue-800
+
+	text-blue-700
+	hover:text-blue-500
+	active:text-blue-700
+	focus:text-blue-500
+
+	dark:text-blue-200
+	dark:hover:text-white
+	dark:active:text-blue-100
+	dark:focus:text-white
   `,
 	card: `
 	active:bg-white

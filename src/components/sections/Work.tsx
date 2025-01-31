@@ -5,7 +5,7 @@ import { FilledButton } from '../atom/Button';
 import Section from '../atom/Section';
 import { Aperture, ExternalLink, Github, ListMusic } from 'lucide-react';
 
-interface Creation {
+interface Work {
 	title: string;
 	ariaLabel: string;
 	icon: React.FC<React.SVGProps<SVGSVGElement>>;
@@ -13,17 +13,16 @@ interface Creation {
 	sourceUrl?: string;
 }
 
-const creationsList: Creation[] = [
+const creationsList: Work[] = [
 	{
-		title: 'Aperture',
+		title: 'Brandwatch VIZIA',
 		ariaLabel:
 			'My amateur snaps gallery where I pretend to be a pro photographer.',
 		icon: Aperture,
-		url: 'https://frame.renderg.host/',
-		sourceUrl: 'https://github.com/renderghost/frame',
+		url: 'https://www.brandwatch.com/products/vizia/',
 	},
 	{
-		title: 'Selections',
+		title: 'Morressier Publishing Engine',
 		ariaLabel:
 			'A fancy discovery app for my many many Spotify playlists. Warning: May contain questionable music choices!',
 		icon: ListMusic,
@@ -32,7 +31,7 @@ const creationsList: Creation[] = [
 	},
 ];
 
-const CreationCard: React.FC<Creation> = ({
+const WorkCard: React.FC<Work> = ({
 	title,
 	ariaLabel,
 	icon: Icon,
@@ -67,7 +66,7 @@ const CreationCard: React.FC<Creation> = ({
 					ariaLabel={`View ${title} creation`}
 					tooltip={`View ${title} creation`}
 				>
-					View Creation
+					View Work
 				</FilledButton>
 				{sourceUrl && (
 					<FilledButton
@@ -87,7 +86,7 @@ const CreationCard: React.FC<Creation> = ({
 	</div>
 );
 
-const Creations: React.FC = () => (
+const Works: React.FC = () => (
 	<Section
 		id='my-creations'
 		title='Creative Works'
@@ -106,7 +105,7 @@ const Creations: React.FC = () => (
 					itemType='http://schema.org/ListItem'
 					className='flex flex-col flex-grow'
 				>
-					<CreationCard {...creation} />
+					<WorkCard {...creation} />
 					<meta itemProp='position' content={`${index + 1}`} />
 				</div>
 			))}
@@ -114,4 +113,4 @@ const Creations: React.FC = () => (
 	</Section>
 );
 
-export default Creations;
+export default Works;
