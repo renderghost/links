@@ -102,10 +102,10 @@ const ArticleCard: React.FC<Article> = ({
 					variant='secondary'
 					RightIcon={ExternalLink}
 					onClick={() => window.open(url, '_blank')}
-					ariaLabel={`View ${title} article`}
-					// tooltip={`View ${title} article`}
+					ariaLabel={`View article`}
+					// tooltip={`View article`}
 				>
-					View
+					View Article
 				</FilledButton>
 			</div>
 		</div>
@@ -120,7 +120,7 @@ const Articles: React.FC = () => (
 		description='A selection of my favourite articles, podcasts & public speaking.'
 	>
 		<div
-			className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1'
+			className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-1'
 			itemScope
 			itemType='http://schema.org/ItemList'
 		>

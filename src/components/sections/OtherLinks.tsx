@@ -3,14 +3,7 @@
 import React from 'react';
 import { FilledButton } from '../atom/Button';
 import Section from '../atom/Section';
-import {
-	Figma,
-	Github,
-	Newspaper,
-	ListMusic,
-	Linkedin,
-	Sparkles,
-} from 'lucide-react';
+import { Figma, Github, Newspaper, Linkedin, Sparkles } from 'lucide-react';
 
 const linksList = [
 	{
@@ -43,12 +36,6 @@ const linksList = [
 		icon: Linkedin,
 		ariaLabel: 'Connect with me on LinkedIn',
 	},
-	{
-		title: 'Spotify',
-		url: 'https://open.spotify.com/user/111112791',
-		icon: ListMusic,
-		ariaLabel: 'Listen to my Spotify Playlists',
-	},
 ];
 
 const OtherLinks: React.FC = () => (
@@ -62,7 +49,7 @@ const OtherLinks: React.FC = () => (
 				<div key={index} className='p-1.5'>
 					<FilledButton
 						variant='transparent'
-						RightIcon={link.icon}
+						LeftIcon={link.icon}
 						onClick={() => window.open(link.url, '_blank')}
 						aria-label={link.ariaLabel}
 						tooltip={link.ariaLabel}
