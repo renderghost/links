@@ -27,7 +27,7 @@ const Banner: React.FC = () => {
 						'
 				>
 					<a
-						href='https://link.renderg.host'
+						href='https://links.renderg.host'
 						className='
 							flex
 							items-center
