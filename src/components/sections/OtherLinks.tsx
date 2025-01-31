@@ -3,7 +3,7 @@
 import React from 'react';
 import { FilledButton } from '../atom/Button';
 import Section from '../atom/Section';
-import { Figma, Github, Newspaper, Linkedin, Sparkles } from 'lucide-react';
+import { Figma, Github, Newspaper, Linkedin } from 'lucide-react';
 
 const linksList = [
 	{
@@ -25,12 +25,6 @@ const linksList = [
 		ariaLabel: 'Read my Articles on Medium',
 	},
 	{
-		title: 'Morressier',
-		url: 'https://www.morressier.com',
-		icon: Sparkles,
-		ariaLabel: 'Check out my work at Morressier',
-	},
-	{
 		title: 'LinkedIn',
 		url: 'https://www.linkedin.com/in/barrymprendergast/',
 		icon: Linkedin,
@@ -41,8 +35,8 @@ const linksList = [
 const OtherLinks: React.FC = () => (
 	<Section
 		id='other-links'
-		title='Other Links'
-		description='Just some other Links'
+		title='Profiles'
+		description='Links to my Social profiles'
 	>
 		<div className='flex flex-wrap -m-1.5'>
 			{linksList.map((link, index) => (
