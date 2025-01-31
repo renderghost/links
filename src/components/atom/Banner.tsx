@@ -3,7 +3,7 @@ import { Ghost } from 'lucide-react';
 
 const Banner: React.FC = () => {
 	return (
-		<div className='bg-yellow-400 text-black text-sm px-6 py-4 '>
+		<div className='bg-yellow-400 text-black px-6 py-4 '>
 			<div className='container mx-auto flex flex-col sm:flex-row gap-1 sm:gap-2'>
 				<a
 					href='https://links.renderg.host'
