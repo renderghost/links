@@ -1,11 +1,10 @@
 import React from 'react';
 import SocialLinks from './atom/SocialLinks';
 import Image from 'next/image';
-import { MapPin } from 'lucide-react';
 
 const Hero: React.FC = () => (
-	<section className='bg-white dark:bg-blue-900'>
-		<div className='container flex flex-col mx-auto py-16 gap-2'>
+	<section className='flex flex-col py-16 px-4 sm:px-0  bg-white dark:bg-blue-900'>
+		<div className='container mx-auto flex flex-col gap-4'>
 			<div className='flex flex-row flex-auto gap-4 items-center'>
 				<div className='size-16 overflow-hidden rounded-full flex-shrink-0'>
 					<Image
@@ -21,26 +20,17 @@ const Hero: React.FC = () => (
 					<h2 className='text-2xl font-semibold' itemProp='name'>
 						Barry Prendergast
 					</h2>
-					<div className='text-gray-600 flex flex-row gap-1 items-center'>
-						<p className=''>
-							<span itemProp='jobTitle'>
-								Product & Service Designer
-							</span>
-						</p>
-						<p className='mr-1.5 ml-1.5'>|</p>
+					<div className='flex flex-col sm:flex-row gap-px sm:gap-2'>
+						<p itemProp='jobTitle'>Product Designer</p>
+						<p className='hidden sm:inline'>|</p>
 						<address
-							className='flex items-center gap-px not-italic'
+							className='flex items-center not-italic gap-1'
 							itemProp='address'
 							itemScope
 							itemType='http://schema.org/PostalAddress'
 						>
-							<MapPin
-								size={16}
-								className='mr-0.5'
-								aria-hidden='true'
-							/>
 							<span itemProp='addressLocality'>Berlin</span>
-							<span className='mr-0.5'>,</span>
+							<span>,</span>
 							<span itemProp='addressCountry'>Germany</span>
 						</address>
 					</div>

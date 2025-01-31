@@ -3,7 +3,14 @@
 import React from 'react';
 import { FilledButton } from '../atom/Button';
 import Section from '../atom/Section';
-import { Aperture, ExternalLink, Github, ListMusic } from 'lucide-react';
+import {
+	Aperture,
+	Shuffle,
+	ExternalLink,
+	Github,
+	Radius,
+	ListMusic,
+} from 'lucide-react';
 
 interface Creation {
 	title: string;
@@ -23,12 +30,28 @@ const creationsList: Creation[] = [
 		sourceUrl: 'https://github.com/renderghost/frame',
 	},
 	{
+		title: 'Ramps',
+		ariaLabel:
+			'My quirky gradient generator. Because we all want more color.',
+		icon: Radius,
+		url: 'https://ramps.renderg.host/',
+		sourceUrl: 'https://github.com/renderghost/ramps',
+	},
+	{
 		title: 'Selections',
 		ariaLabel:
 			'A fancy discovery app for my many many Spotify playlists. Warning: May contain questionable music choices!',
 		icon: ListMusic,
 		url: 'https://selections.renderg.host/',
 		sourceUrl: 'https://github.com/renderghost/selections',
+	},
+	{
+		title: 'Strategy Schmategy',
+		ariaLabel:
+			'A random design strategy generator. For when you want to leave success to chance!',
+		icon: Shuffle,
+		url: 'https://strategyschmategy.renderg.host/',
+		sourceUrl: 'https://github.com/renderghost/strategy-schmategy',
 	},
 ];
 
@@ -90,11 +113,11 @@ const CreationCard: React.FC<Creation> = ({
 const Creations: React.FC = () => (
 	<Section
 		id='my-creations'
-		title='Creative Works'
-		description='Things made for fun.'
+		title='Creations'
+		description='Things I made for fun.'
 	>
 		<div
-			className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1'
+			className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-1'
 			itemScope
 			itemType='http://schema.org/ItemList'
 		>
