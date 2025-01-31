@@ -114,7 +114,7 @@ const Creations: React.FC = () => (
 	<Section
 		id='my-creations'
 		title='Creations'
-		description='Things I made for fun.'
+		description='Links to things I made for fun.'
 	>
 		<div
 			className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-1'

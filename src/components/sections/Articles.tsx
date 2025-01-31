@@ -117,7 +117,7 @@ const Articles: React.FC = () => (
 	<Section
 		id='my-articles'
 		title='Discussions'
-		description='A selection of my favourite articles, podcasts & public speaking.'
+		description='Links to my favourite articles, podcasts & public speaking.'
 	>
 		<div
 			className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-1'
