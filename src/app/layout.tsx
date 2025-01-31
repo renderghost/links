@@ -4,6 +4,7 @@ import './globals.css';
 import { Metadata } from 'next';
 import Banner from '@/components/atom/Banner';
 import Hero from '@/components/Hero';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 export const metadata: Metadata = {
 	title: 'Barry Prendergast | LinksGhost - Product & Service Designer Links',
@@ -68,12 +69,14 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<head>
+				<GoogleAnalytics gaId='G-ZH7DCE3DV3' />
 				<link
 					rel='apple-touch-icon'
 					sizes='180x180'
 					href='/apple-touch-icon.png'
 				/>
 			</head>
+
 			<body className='bg-blue-25 dark:bg-blue-950 text-blue-950 dark:text-blue-25 transition-colors duration-300'>
 				<Banner />
 				<Hero />
