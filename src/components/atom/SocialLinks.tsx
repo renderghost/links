@@ -2,14 +2,7 @@
 
 import React from 'react';
 import { SquareIconButton } from './Button';
-import {
-	Figma,
-	Sparkles,
-	Github,
-	Newspaper,
-	ListMusic,
-	Linkedin,
-} from 'lucide-react';
+import { Figma, Github, CalendarPlus, Newspaper, Linkedin } from 'lucide-react';
 
 interface SocialLink {
 	title: string;
@@ -20,40 +13,34 @@ interface SocialLink {
 
 const socialLinks: SocialLink[] = [
 	{
-		title: 'Figma',
-		url: 'https://figma.com/@renderghost',
-		icon: Figma,
-		ariaLabel: 'Use my Shared Resources on Figma',
+		title: 'Calendly',
+		url: 'https://calendly.com/barry-prendergast',
+		icon: CalendarPlus,
+		ariaLabel: 'Schedule a Call',
+	},
+	{
+		title: 'LinkedIn',
+		url: 'https://linkedin.com/in/barrymprendergast',
+		icon: Linkedin,
+		ariaLabel: 'Connect on LinkedIn',
 	},
 	{
 		title: 'Github',
 		url: 'https://github.com/renderghost',
 		icon: Github,
-		ariaLabel: 'Contribute to Projects on GitHub',
+		ariaLabel: 'Collaborate on GitHub',
 	},
 	{
 		title: 'Medium',
 		url: 'https://medium.com/@render_ghost',
 		icon: Newspaper,
-		ariaLabel: 'Read my Articles on Medium',
+		ariaLabel: 'Read Articles on Medium',
 	},
 	{
-		title: 'Morressier',
-		url: 'https://www.morressier.com',
-		icon: Sparkles,
-		ariaLabel: 'Check out my work at Morressier',
-	},
-	{
-		title: 'LinkedIn',
-		url: 'https://www.linkedin.com/in/barrymprendergast/',
-		icon: Linkedin,
-		ariaLabel: 'Connect with me on LinkedIn',
-	},
-	{
-		title: 'Spotify',
-		url: 'https://open.spotify.com/user/111112791',
-		icon: ListMusic,
-		ariaLabel: 'Listen to my Spotify Playlists',
+		title: 'Figma',
+		url: 'https://figma.com/@renderghost',
+		icon: Figma,
+		ariaLabel: 'Import my Figma Assets',
 	},
 ];
 
@@ -73,7 +60,7 @@ const SocialLink: React.FC<SocialLink> = React.memo(
 SocialLink.displayName = 'SocialLink';
 
 const SocialLinks: React.FC = React.memo(() => (
-	<nav className='flex flex-row-reverse flex-wrap gap-3' id='social-links'>
+	<nav className='flex flex-row flex-wrap gap-3' id='social-links'>
 		{socialLinks.map(link => (
 			<SocialLink key={link.title} {...link} />
 		))}

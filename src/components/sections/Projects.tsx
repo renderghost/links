@@ -136,11 +136,11 @@ const ProjectCard: React.FC<Project> = ({
 const Projects: React.FC = () => (
 	<Section
 		id='my-lab'
-		title='The Lab'
+		title='Experimentation Lab'
 		description='Learning through playing with constantly-breaking code.'
 	>
 		<div
-			className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4'
+			className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1'
 			itemScope
 			itemType='http://schema.org/ItemList'
 		>

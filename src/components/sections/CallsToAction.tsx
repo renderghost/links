@@ -2,11 +2,10 @@
 
 import React from 'react';
 import { FilledButton } from '../atom/Button';
-import Section from '../atom/Section';
 import Headline from '../atom/Headline';
 import {
 	CalendarPlus,
-	Cable,
+	// Cable,
 	LucideIcon,
 	BookmarkCheck,
 	UsersRound,
@@ -86,31 +85,29 @@ const CallToActionButton: React.FC<CallToAction & { isPrimary: boolean }> =
 CallToActionButton.displayName = 'CallToActionButton';
 
 const CallsToAction: React.FC = () => (
-	<Section id='calls-to-action' title='How can I help? ' description='tbc'>
-		<div className='flex flex-col items-start gap-16 p-16 bg-blue-0 dark:bg-blue-800 overflow-hidden'>
-			<div className='text-lg font-normal items-center gap-2 flex'>
-				<Cable size={16} />
-				<span>All my key links and details</span>
-			</div>
+	<div className='flex flex-col items-start gap-16 overflow-hidden'>
+		{/* <div className='text-lg font-normal items-center gap-2 flex'>
+			<Cable size={16} />
+			<span>All my key links and details</span>
+		</div> */}
 
-			<Headline />
+		<Headline />
 
-			<div className='flex flex-col items-start gap-4'>
-				{/* <h2 className='text-lg font-semibold text-blue-900 dark:text-white'>
+		<div className='flex flex-col items-start gap-4'>
+			{/* <h2 className='text-lg font-semibold text-blue-900 dark:text-white'>
 					How can I help?
 				</h2> */}
-				<div className='flex flex-wrap gap-3'>
-					{callsToActionList.map((cta, index) => (
-						<CallToActionButton
-							key={cta.title}
-							{...cta}
-							isPrimary={index === 0}
-						/>
-					))}
-				</div>
+			<div className='flex flex-wrap gap-3'>
+				{callsToActionList.map((cta, index) => (
+					<CallToActionButton
+						key={cta.title}
+						{...cta}
+						isPrimary={index === 0}
+					/>
+				))}
 			</div>
 		</div>
-	</Section>
+	</div>
 );
 
 export default CallsToAction;

@@ -14,50 +14,58 @@ interface Article {
 
 const articlesList: Article[] = [
 	{
-		title: 'Addressing Bugbears with Innovations in Peer Review',
-		ariaLabel: 'About Tech Opportunities, for Peer Review Week',
+		title: 'Addressing Bugbears in Peer Review',
+		ariaLabel:
+			'Industry panel examining AI in academic peer review, discussing the potential benefits and challenges for scholarly publishing.',
 		icon: Youtube,
 		url: 'https://www.youtube.com/watch?v=msdC5Mi1ZC0',
 	},
 	{
 		title: 'Letting the country be its own map.',
-		ariaLabel: 'About Design Systems for Prototyper',
+		ariaLabel:
+			'Discusses how traditional design tools produce unnecessary deliverables and suggests a future where "pattern studios" support working directly with web materials.',
 		icon: Newspaper,
 		url: 'https://medium.com/framer-prototyping/letting-the-country-be-its-own-map-d723b47b5ecc',
 	},
 	{
 		title: 'Mastering the art of AI collaboration',
-		ariaLabel: 'About Prompting, on Medium',
+		ariaLabel:
+			'Provides tips for effective AI collaboration, emphasising clear communication, specific instructions, and treating AI tools as human colleagues to achieve better results.',
 		icon: Newspaper,
 		url: 'https://medium.com/design-bootcamp/mastering-the-art-of-ai-collaboration-8eb422bb05ea',
 	},
 	{
 		title: 'The best Portfolio is one that gets you hired',
-		ariaLabel: 'About Storytelling, on Bootcamp',
+		ariaLabel:
+			'Guides designers to create effective portfolios through storytelling, focussing on authentic narratives about metrics, challenges and impact rather than just showing outputs.',
 		icon: Newspaper,
 		url: 'https://medium.com/design-bootcamp/the-best-portfolio-is-one-that-gets-you-hired-part-1-storytelling-e139d2fd0f12',
 	},
 	{
 		title: "The Prophetic Lens of Pixar's Wall-E",
-		ariaLabel: 'About the Future, on Medium',
+		ariaLabel:
+			'WALL-E depicts our likely future: a world of technological dependence, environmental ruin, and corporate control of humanity.',
 		icon: Newspaper,
 		url: 'https://medium.com/@render_ghost/the-prophetic-lens-of-pixars-wall-e-1be009f5f11f',
 	},
 	{
-		title: 'Traditional academic citation links are bad for Science.',
-		ariaLabel: 'About the Integrity, on LinkedIn',
+		title: 'Traditional citations are bad for Science.',
+		ariaLabel:
+			'Explains why traditional academic citations are inferior to standard web links, harming SEO, readability, accessibility and machine processing.',
 		icon: Newspaper,
 		url: 'https://www.linkedin.com/pulse/traditional-academic-citation-links-bad-science-barry-prendergast-ls4ef/',
 	},
 	{
 		title: 'Will AI Destroy Designer Jobs?',
-		ariaLabel: 'About Human Experience, on Lost in Semantics',
+		ariaLabel:
+			'A deep dive into the impact of AI on design and creativity, exploring how designers can adapt an maintain human elements like vision, taste, and curiosity.',
 		icon: Youtube,
 		url: 'https://www.youtube.com/watch?v=84DCE1wqWOc',
 	},
 	{
-		title: 'Your boss was right not to support your designs',
-		ariaLabel: 'About Design Communication, on Bootcamp',
+		title: 'Your boss was right not to support your design',
+		ariaLabel:
+			'Designers must frame their work around business metrics —costs, acquisition, retention— rather than design theory to gain stakeholder support.',
 		icon: Newspaper,
 		url: 'https://medium.com/design-bootcamp/your-boss-was-right-to-not-support-your-design-project-ffc6bb956893',
 	},
@@ -70,7 +78,7 @@ const ArticleCard: React.FC<Article> = ({
 	url,
 }) => (
 	<div
-		className='bg-white dark:bg-blue-800 flex flex-col flex-grow justify-between gap-8 p-8'
+		className='bg-white dark:bg-blue-900 flex flex-col flex-grow justify-between gap-8 p-8'
 		itemScope
 		itemType='http://schema.org/Article'
 	>
@@ -95,9 +103,9 @@ const ArticleCard: React.FC<Article> = ({
 					RightIcon={ExternalLink}
 					onClick={() => window.open(url, '_blank')}
 					ariaLabel={`View ${title} article`}
-					tooltip={`View ${title} article`}
+					// tooltip={`View ${title} article`}
 				>
-					View Article
+					View
 				</FilledButton>
 			</div>
 		</div>
@@ -108,11 +116,11 @@ const ArticleCard: React.FC<Article> = ({
 const Articles: React.FC = () => (
 	<Section
 		id='my-articles'
-		title='Communications'
-		description='Articles, Podcasts & Public Speaking'
+		title='Discussions'
+		description='A selection of my favourite articles, podcasts & public speaking.'
 	>
 		<div
-			className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4'
+			className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1'
 			itemScope
 			itemType='http://schema.org/ItemList'
 		>

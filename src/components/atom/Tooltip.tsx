@@ -46,7 +46,7 @@ const Tooltip: React.FC<TooltipProps> = ({ children, content }) => {
 					id='tooltip'
 					role='tooltip'
 					className='
-						-translate-x-1/2
+						translate-x-1/2
 						absolute
 						bg-blue-950
 						dark:bg-white
@@ -73,9 +73,9 @@ const Tooltip: React.FC<TooltipProps> = ({ children, content }) => {
 						bg-blue-950
 						dark:bg-blue-50
 						rotate-45
-						-bottom-1
+						bottom-1
 						left-1/2
-						-translate-x-1/2'
+						translate-x-1/2'
 					/>
 				</div>
 			)}
