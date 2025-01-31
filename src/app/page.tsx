@@ -1,12 +1,10 @@
 'use client';
 
 import React from 'react';
+import Creations from '@/components/sections/Creations';
 import Projects from '@/components/sections/Projects';
 import Articles from '@/components/sections/Articles';
-import Creations from '@/components/sections/Creations';
 import OtherLinks from '@/components/sections/OtherLinks';
-// import CallsToAction from '@/components/sections/CallsToAction';
-// import WorkStatus from '@/components/sections/WorkStatus';
 
 const HomePage: React.FC = () => {
 	return (
