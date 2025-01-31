@@ -120,7 +120,7 @@ const Projects: React.FC = () => (
 	<Section
 		id='my-lab'
 		title='Design Tools'
-		description='Learning through playing with constantly-breaking code.'
+		description='Links to things I made for work.'
 	>
 		<div
 			className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-1'
