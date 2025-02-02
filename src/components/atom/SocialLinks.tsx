@@ -28,19 +28,19 @@ const socialLinks: SocialLink[] = [
 		title: 'Github',
 		url: 'https://github.com/renderghost',
 		icon: Github,
-		ariaLabel: 'Collaborate on GitHub',
+		ariaLabel: 'Projects on GitHub',
 	},
 	{
 		title: 'Medium',
 		url: 'https://medium.com/@render_ghost',
 		icon: Newspaper,
-		ariaLabel: 'Read Articles on Medium',
+		ariaLabel: 'Articles on Medium',
 	},
 	{
 		title: 'Figma',
 		url: 'https://figma.com/@renderghost',
 		icon: Figma,
-		ariaLabel: 'Import my Figma Assets',
+		ariaLabel: 'Design Assets on Figma',
 	},
 ];
 
