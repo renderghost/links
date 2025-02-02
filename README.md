@@ -1,2 +1,2 @@
-# linkghost
-My Personal LinkTree
+# linksghost
+My Personal Links Roll App
