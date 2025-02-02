@@ -2,9 +2,9 @@ import './globals.css';
 // import { dmSans, dmSerifDisplay } from '@/utils/fonts';
 
 import { Metadata } from 'next';
+import Script from 'next/script';
 import Banner from '@/components/atom/Banner';
 import Hero from '@/components/Hero';
-import { GoogleAnalytics } from '@next/third-parties/google';
 
 export const metadata: Metadata = {
 	title: 'Barry Prendergast | LinksGhost - Product & Service Designer Links',
@@ -69,7 +69,19 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<head>
-				<GoogleAnalytics gaId='G-ZH7DCE3DV3' />
+				<Script
+					async
+					src='https://www.googletagmanager.com/gtag/js?id=G-MEJT73VLVW'
+					strategy='afterInteractive'
+				/>
+				<Script id='google-analytics' strategy='afterInteractive'>
+					{`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-MEJT73VLVW');
+          `}
+				</Script>
 				<link
 					rel='apple-touch-icon'
 					sizes='180x180'
