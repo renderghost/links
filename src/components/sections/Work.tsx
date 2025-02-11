@@ -13,7 +13,7 @@ interface Work {
 	sourceUrl?: string;
 }
 
-const creationsList: Work[] = [
+const worksList: Work[] = [
 	{
 		title: 'Brandwatch VIZIA',
 		ariaLabel:
@@ -88,16 +88,16 @@ const WorkCard: React.FC<Work> = ({
 
 const Works: React.FC = () => (
 	<Section
-		id='my-creations'
-		title='Creative Works'
-		description='Things made for fun.'
+		id='my-works'
+		title='Professional Work'
+		description='Things made for money.'
 	>
 		<div
 			className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1'
 			itemScope
 			itemType='http://schema.org/ItemList'
 		>
-			{creationsList.map((creation, index) => (
+			{worksList.map((creation, index) => (
 				<div
 					key={index}
 					itemProp='itemListElement'
