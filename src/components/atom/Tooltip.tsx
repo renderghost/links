@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 
 interface TooltipProps {
-	children: React.ReactElement;
 	content: string;
+	children: React.ReactNode;
 }
 
 const Tooltip: React.FC<TooltipProps> = ({ children, content }) => {
@@ -11,71 +11,48 @@ const Tooltip: React.FC<TooltipProps> = ({ children, content }) => {
 	const tooltipRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
-		const trigger = triggerRef.current;
-		if (trigger) {
-			trigger.setAttribute('aria-describedby', 'tooltip');
+		if (triggerRef.current) {
+			triggerRef.current.setAttribute('aria-describedby', 'tooltip');
 		}
-		console.log('Tooltip component mounted');
 	}, []);
 
-	const showTooltip = () => {
-		console.log('showTooltip called');
-		setIsVisible(true);
-	};
-	const hideTooltip = () => {
-		console.log('hideTooltip called');
-		setIsVisible(false);
-	};
+	const showTooltip = () => setIsVisible(true);
+	const hideTooltip = () => setIsVisible(false);
 
-	useEffect(() => {
-		console.log('isVisible changed:', isVisible);
-	}, [isVisible]);
+	let childWithProps = children;
+	if (React.isValidElement(children)) {
+		childWithProps = React.cloneElement(children, {
+			ref: triggerRef,
+			onMouseEnter: showTooltip,
+			onMouseLeave: hideTooltip,
+			onFocus: showTooltip,
+			onBlur: hideTooltip,
+		} as React.Attributes);
+	}
 
 	return (
 		<div className='relative inline-block'>
-			{React.cloneElement(children, {
-				ref: triggerRef,
-				onMouseEnter: showTooltip,
-				onMouseLeave: hideTooltip,
-				onFocus: showTooltip,
-				onBlur: hideTooltip,
-			})}
+			{childWithProps}
 			{isVisible && (
 				<div
 					ref={tooltipRef}
 					id='tooltip'
 					role='tooltip'
 					className='
-						translate-x-1/2
-						absolute
-						bg-blue-950
-						dark:bg-white
-						text-blue-50
-						dark:text-blue-950
-						duration-150
-						bottom-full
-						left-1/2
-						mb-1
-						px-2 py-1
-						rounded
-						text-s
-						transition-opacity
-						whitespace-nowrap
-						z-10
-						'
+            absolute left-1/2 bottom-full mb-1 z-10
+            w-auto translate-x-[-50%] px-2 py-1 text-s
+            rounded transition-opacity duration-150 whitespace-nowrap
+            bg-blue-950 text-blue-50 dark:bg-white dark:text-blue-950
+          '
 				>
 					{content}
 					<div
 						className='
-						absolute
-						w-2
-						h-2
-						bg-blue-950
-						dark:bg-blue-50
-						rotate-45
-						bottom-1
-						left-1/2
-						translate-x-1/2'
+              absolute w-2 h-2
+              bg-blue-950 dark:bg-white
+              rotate-45
+              -bottom-1 left-1/2 translate-x-[-50%]
+            '
 					/>
 				</div>
 			)}
