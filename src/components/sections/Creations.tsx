@@ -7,6 +7,7 @@ import {
 	Aperture,
 	Shuffle,
 	ExternalLink,
+	KeyboardMusic,
 	Github,
 	Radius,
 	ListMusic,
@@ -30,10 +31,10 @@ const creationsList: Creation[] = [
 		sourceUrl: 'https://github.com/renderghost/frame',
 	},
 	{
-		title: 'Aperture',
+		title: 'Endlesss Studio OSC',
 		ariaLabel:
 			'Fully-featured TOUCH OSC controller for Endlesss Studio, the multiplayer music app for MacOS.',
-		icon: Aperture,
+		icon: KeyboardMusic,
 		url: 'https://github.com/renderghost/endlesss-studio-osc',
 	},
 	{
