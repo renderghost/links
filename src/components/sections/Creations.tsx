@@ -30,6 +30,13 @@ const creationsList: Creation[] = [
 		sourceUrl: 'https://github.com/renderghost/frame',
 	},
 	{
+		title: 'Aperture',
+		ariaLabel:
+			'Fully-featured TOUCH OSC controller for Endlesss Studio, the multiplayer music app for MacOS.',
+		icon: Aperture,
+		url: 'https://github.com/renderghost/endlesss-studio-osc',
+	},
+	{
 		title: 'Ramps',
 		ariaLabel:
 			'My quirky gradient generator. Because we all want more color.',
@@ -65,8 +72,7 @@ const CreationCard: React.FC<Creation> = ({
 	<div
 		className='bg-white dark:bg-blue-900 flex flex-col flex-grow justify-between gap-8 p-8'
 		itemScope
-		itemType='http://schema.org/CreativeWork'
-	>
+		itemType='http://schema.org/CreativeWork'>
 		<div className='flex flex-col gap-2'>
 			<div className='flex items-center gap-2'>
 				<Icon className='w-7 h-7' />
@@ -76,8 +82,7 @@ const CreationCard: React.FC<Creation> = ({
 			</div>
 			<p
 				className='text-blue-900 dark:text-blue-100'
-				itemProp='description'
-			>
+				itemProp='description'>
 				{ariaLabel}
 			</p>
 		</div>
@@ -88,8 +93,7 @@ const CreationCard: React.FC<Creation> = ({
 					RightIcon={ExternalLink}
 					onClick={() => window.open(url, '_blank')}
 					ariaLabel={`View ${title} creation`}
-					tooltip={`View ${title} creation`}
-				>
+					tooltip={`View ${title} creation`}>
 					View Creation
 				</FilledButton>
 				{sourceUrl && (
@@ -98,8 +102,7 @@ const CreationCard: React.FC<Creation> = ({
 						RightIcon={Github}
 						onClick={() => window.open(sourceUrl, '_blank')}
 						ariaLabel={`View source code for ${title}`}
-						tooltip={`View source code for ${title}`}
-					>
+						tooltip={`View source code for ${title}`}>
 						View Source
 					</FilledButton>
 				)}
@@ -114,21 +117,18 @@ const Creations: React.FC = () => (
 	<Section
 		id='my-creations'
 		title='Creations'
-		description='Links to things I made for fun.'
-	>
+		description='Links to things I made for fun.'>
 		<div
 			className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-1'
 			itemScope
-			itemType='http://schema.org/ItemList'
-		>
+			itemType='http://schema.org/ItemList'>
 			{creationsList.map((creation, index) => (
 				<div
 					key={index}
 					itemProp='itemListElement'
 					itemScope
 					itemType='http://schema.org/ListItem'
-					className='flex flex-col flex-grow'
-				>
+					className='flex flex-col flex-grow'>
 					<CreationCard {...creation} />
 					<meta itemProp='position' content={`${index + 1}`} />
 				</div>
