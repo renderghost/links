@@ -39,19 +39,19 @@ const Tooltip: React.FC<TooltipProps> = ({ children, content }) => {
 					id='tooltip'
 					role='tooltip'
 					className='
-            absolute left-1/2 bottom-full mb-1 z-10
-            w-auto translate-x-[-50%] px-2 py-1 text-s
-            rounded transition-opacity duration-150 whitespace-nowrap
-            bg-bones-black text-bones-white dark:bg-bones-white dark:text-bones-black
-          '>
+					absolute left-1/2 bottom-full mb-1 z-10
+					w-auto translate-x-[-50%] px-2 py-1 text-s
+					rounded transition-opacity duration-150 whitespace-nowrap
+					bg-bones-black dark:bg-bones-white text-bones-white dark:text-bones-black
+				'>
 					{content}
 					<div
 						className='
-              absolute w-2 h-2
-              bg-bones-black dark:bg-bones-white
-              rotate-45
-              -bottom-1 left-1/2 translate-x-[-50%]
-            '
+						absolute w-2 h-2
+						bg-bones-black dark:bg-bones-white text-bones-white dark:text-bones-black
+						rotate-45
+						-bottom-1 left-1/2 translate-x-[-50%]
+						'
 					/>
 				</div>
 			)}
