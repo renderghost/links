@@ -3,7 +3,7 @@ import { Ghost } from 'lucide-react';
 
 const Banner: React.FC = () => {
 	return (
-		<div className='bg-yellow-400 text-black px-6 py-4 '>
+		<div className='bg-bones-yellow text-bones-black px-6 py-4 '>
 			<div className='container mx-auto flex flex-col sm:flex-row gap-1 sm:gap-2'>
 				<a
 					href='https://links.renderg.host'
@@ -20,9 +20,8 @@ const Banner: React.FC = () => {
 							focus:ring-2
 							focus:ring-black
 							focus:ring-offset-4
-							focus:ring-offset-yellow-400
-							'
-				>
+							focus:ring-offset-bones-yellow
+							'>
 					<Ghost size={16} />
 					<h1 className='font-semibold'>LinksGhost</h1>
 				</a>

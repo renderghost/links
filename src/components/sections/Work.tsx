@@ -39,10 +39,9 @@ const WorkCard: React.FC<Work> = ({
 	sourceUrl,
 }) => (
 	<div
-		className='bg-white dark:bg-blue-900 flex flex-col flex-grow justify-between gap-8 p-8'
+		className='bg-bones-white dark:bg-bones-black flex flex-col flex-grow justify-between gap-8 p-8'
 		itemScope
-		itemType='http://schema.org/CreativeWork'
-	>
+		itemType='http://schema.org/CreativeWork'>
 		<div className='flex flex-col gap-2'>
 			<div className='flex items-center gap-2'>
 				<Icon className='w-7 h-7' />
@@ -51,9 +50,8 @@ const WorkCard: React.FC<Work> = ({
 				</h3>
 			</div>
 			<p
-				className='text-blue-900 dark:text-blue-100'
-				itemProp='description'
-			>
+				className='text-bones-black dark:text-bones-white'
+				itemProp='description'>
 				{ariaLabel}
 			</p>
 		</div>
@@ -64,8 +62,7 @@ const WorkCard: React.FC<Work> = ({
 					RightIcon={ExternalLink}
 					onClick={() => window.open(url, '_blank')}
 					ariaLabel={`View ${title} creation`}
-					tooltip={`View ${title} creation`}
-				>
+					tooltip={`View ${title} creation`}>
 					View Work
 				</FilledButton>
 				{sourceUrl && (
@@ -74,8 +71,7 @@ const WorkCard: React.FC<Work> = ({
 						RightIcon={Github}
 						onClick={() => window.open(sourceUrl, '_blank')}
 						ariaLabel={`View source code for ${title}`}
-						tooltip={`View source code for ${title}`}
-					>
+						tooltip={`View source code for ${title}`}>
 						View Source
 					</FilledButton>
 				)}
@@ -90,21 +86,18 @@ const Works: React.FC = () => (
 	<Section
 		id='my-works'
 		title='Professional Work'
-		description='Things made for money.'
-	>
+		description='Things made for money.'>
 		<div
 			className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1'
 			itemScope
-			itemType='http://schema.org/ItemList'
-		>
+			itemType='http://schema.org/ItemList'>
 			{worksList.map((creation, index) => (
 				<div
 					key={index}
 					itemProp='itemListElement'
 					itemScope
 					itemType='http://schema.org/ListItem'
-					className='flex flex-col flex-grow'
-				>
+					className='flex flex-col flex-grow'>
 					<WorkCard {...creation} />
 					<meta itemProp='position' content={`${index + 1}`} />
 				</div>

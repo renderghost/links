@@ -3,7 +3,7 @@ import SocialLinks from './atom/SocialLinks';
 import Image from 'next/image';
 
 const Hero: React.FC = () => (
-	<section className='flex flex-col py-16 px-4 sm:px-0  bg-white dark:bg-blue-900'>
+	<section className='flex flex-col py-16 px-4 sm:px-0  bg-bones-white dark:bg-bones-blue'>
 		<div className='container mx-auto flex flex-col gap-4'>
 			<div className='flex flex-row flex-auto gap-4 items-center'>
 				<div className='size-16 overflow-hidden rounded-full flex-shrink-0'>
@@ -27,8 +27,7 @@ const Hero: React.FC = () => (
 							className='flex items-center not-italic gap-1'
 							itemProp='address'
 							itemScope
-							itemType='http://schema.org/PostalAddress'
-						>
+							itemType='http://schema.org/PostalAddress'>
 							<span itemProp='addressLocality'>Berlin</span>
 							<span>,</span>
 							<span itemProp='addressCountry'>Germany</span>

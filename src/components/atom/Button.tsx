@@ -10,11 +10,11 @@ const buttonStyles = {
 	focus:outline-none
 	focus:ring-2
 	focus:ring-offset-2
-	focus:ring-yellow-500
+	focus:ring-bones-yellow
 	focus:ring-offset-white
 	dark:focus:outline-none
-	dark:focus:ring-yellow-500
-	dark:focus:ring-offset-blue-950
+	dark:focus:ring-bones-yellow
+	dark:focus:ring-offset-bones-black
 	font-medium
 	inline-flex
 	items-center
@@ -24,37 +24,37 @@ const buttonStyles = {
 	transition-opacity
   `,
 	primary: `
-	bg-blue-700
-	hover:bg-blue-500
-	active:bg-blue-950
-	focus:bg-blue-500
-	dark:bg-blue-100
-	dark:hover:bg-white
-	dark:active:bg-white
-	dark:focus:bg-white
-	text-blue-100
-	hover:text-blue-950
-	focus:text-blue-950
-	dark:text-blue-700
-	dark:hover:text-blue-500
-	dark:focus:text-blue-500
+	bg-bones-mediumblue
+	hover:bg-bones-blue
+	active:bg-bones-black
+	focus:bg-bones-blue
+	dark:bg-bones-white
+	dark:hover:bg-bones-white
+	dark:active:bg-bones-white
+	dark:focus:bg-bones-white
+	text-bones-white
+	hover:text-bones-black
+	focus:text-bones-black
+	dark:text-bones-mediumblue
+	dark:hover:text-bones-blue
+	dark:focus:text-bones-blue
   `,
 	secondary: `
-	bg-blue-100
-	hover:bg-blue-50
-	active:bg-blue-100
-	focus:bg-blue-50
-	dark:bg-blue-800
-	dark:hover:bg-blue-500
-	dark:active:bg-blue-800
-	dark:focus:bg-blue-500
-	text-blue-700
-	hover:text-blue-500
-	active:text-blue-700
-	focus:text-blue-500
-	dark:text-blue-100
+	bg-bones-white
+	hover:bg-bones-white
+	active:bg-bones-white
+	focus:bg-bones-white
+	dark:bg-bones-mediumblue
+	dark:hover:bg-bones-blue
+	dark:active:bg-bones-mediumblue
+	dark:focus:bg-bones-blue
+	text-bones-mediumblue
+	hover:text-bones-blue
+	active:text-bones-mediumblue
+	focus:text-bones-blue
+	dark:text-bones-white
 	dark:hover:text-white
-	dark:active:text-blue-100
+	dark:active:text-bones-white
 	dark:focus:text-white
   `,
 	transparent: `
@@ -63,31 +63,31 @@ const buttonStyles = {
 	active:bg-opacity-0
 	focus:bg-opacity-0
 
-	dark:bg-blue-900
-	dark:hover:bg-blue-800
-	dark:active:bg-blue-900
-	dark:focus:bg-blue-800
+	dark:bg-bones-black
+	dark:hover:bg-bones-mediumblue
+	dark:active:bg-bones-black
+	dark:focus:bg-bones-mediumblue
 
-	text-blue-700
-	hover:text-blue-500
-	active:text-blue-700
-	focus:text-blue-500
+	text-bones-mediumblue
+	hover:text-bones-blue
+	active:text-bones-mediumblue
+	focus:text-bones-blue
 
-	dark:text-blue-200
+	dark:text-bones-cyan
 	dark:hover:text-white
-	dark:active:text-blue-100
+	dark:active:text-bones-white
 	dark:focus:text-white
   `,
 	card: `
-	active:bg-white
-	bg-white
-	dark:active:bg-blue-600
-	dark:bg-blue-800
-	dark:hover:bg-blue-700
+	active:bg-bones-white
+	bg-bones-white
+	dark:active:bg-bones-mediumblue
+	dark:bg-bones-mediumblue
+	dark:hover:bg-bones-mediumblue
 	dark:text-white
-	focus:ring-blue-200
-	hover:bg-blue-50
-	text-blue-900
+	focus:ring-bones-cyan
+	hover:bg-bones-white
+	text-bones-black
   `,
 	disabled: `
 	cursor-not-allowed
@@ -128,15 +128,14 @@ const Tooltip: React.FC<{ content: string; children: React.ReactElement }> = ({
 				<div
 					role='tooltip'
 					className='absolute z-10 px-2 py-1 text-xs rounded
-                               bg-blue-950 text-white
-                               dark:bg-white dark:text-blue-950
+                               bg-bones-black text-white
+                               dark:bg-bones-white dark:text-bones-black
                                transition-opacity duration-150
                                -translate-x-1/2 left-1/2 bottom-full mb-1
-                               whitespace-nowrap'
-				>
+                               whitespace-nowrap'>
 					{content}
 					<div
-						className='absolute w-2 h-2 bg-blue-950 dark:bg-white rotate-45
+						className='absolute w-2 h-2 bg-bones-black dark:bg-bones-white rotate-45
                                     -bottom-1 left-1/2 -translate-x-1/2'
 					/>
 				</div>
@@ -178,8 +177,7 @@ export const Button: React.FC<ButtonProps> = ({
 				disabled,
 			)} ${className}`}
 			disabled={disabled}
-			aria-label={ariaLabel}
-		>
+			aria-label={ariaLabel}>
 			{LeftIcon && (
 				<LeftIcon className='w-6 h-6 mr-2' aria-hidden='true' />
 			)}
@@ -234,8 +232,7 @@ export const SquareIconButton: React.FC<SquareIconButtonProps> = ({
 				disabled,
 			)} flex items-center justify-center ${className}`}
 			disabled={disabled}
-			aria-label={ariaLabel}
-		>
+			aria-label={ariaLabel}>
 			<Icon className='w-6 h-6' aria-hidden='true' />
 		</button>
 	);
@@ -265,8 +262,7 @@ export const CardButton: React.FC<ButtonProps> = ({
 				disabled,
 			)} w-full text-left flex flex-col p-4 ${className}`}
 			disabled={disabled}
-			aria-label={ariaLabel}
-		>
+			aria-label={ariaLabel}>
 			{children}
 		</button>
 	);

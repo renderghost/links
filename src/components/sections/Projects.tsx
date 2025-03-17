@@ -69,10 +69,9 @@ const ProjectCard: React.FC<Project> = ({
 	sourceUrl,
 }) => (
 	<div
-		className='bg-white dark:bg-blue-900 flex flex-col flex-grow justify-between gap-8 p-8'
+		className='bg-bones-white dark:bg-bones-black flex flex-col flex-grow justify-between gap-8 p-8'
 		itemScope
-		itemType='http://schema.org/SoftwareApplication'
-	>
+		itemType='http://schema.org/SoftwareApplication'>
 		<div className='flex flex-col gap-2'>
 			<div className='flex items-center gap-2'>
 				<Icon className='w-7 h-7' />
@@ -81,9 +80,8 @@ const ProjectCard: React.FC<Project> = ({
 				</h3>
 			</div>
 			<p
-				className='text-blue-900 dark:text-blue-100'
-				itemProp='description'
-			>
+				className='text-bones-black dark:text-bones-white'
+				itemProp='description'>
 				{ariaLabel}
 			</p>
 		</div>
@@ -94,8 +92,7 @@ const ProjectCard: React.FC<Project> = ({
 					RightIcon={ExternalLink}
 					onClick={() => window.open(url, '_blank')}
 					ariaLabel={`View ${title} project`}
-					tooltip={`View ${title} project`}
-				>
+					tooltip={`View ${title} project`}>
 					View Project
 				</FilledButton>
 				{sourceUrl && (
@@ -104,8 +101,7 @@ const ProjectCard: React.FC<Project> = ({
 						RightIcon={Github}
 						onClick={() => window.open(sourceUrl, '_blank')}
 						ariaLabel={`View source code for ${title}`}
-						tooltip={`View source code for ${title}`}
-					>
+						tooltip={`View source code for ${title}`}>
 						View Source
 					</FilledButton>
 				)}
@@ -120,21 +116,18 @@ const Projects: React.FC = () => (
 	<Section
 		id='my-lab'
 		title='Design Tools'
-		description='Links to things I made for work.'
-	>
+		description='Links to things I made for work.'>
 		<div
 			className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-1'
 			itemScope
-			itemType='http://schema.org/ItemList'
-		>
+			itemType='http://schema.org/ItemList'>
 			{projectsList.map((project, index) => (
 				<div
 					key={index}
 					itemProp='itemListElement'
 					itemScope
 					itemType='http://schema.org/ListItem'
-					className='flex flex-col flex-grow'
-				>
+					className='flex flex-col flex-grow'>
 					<ProjectCard {...project} />
 					<meta itemProp='position' content={`${index + 1}`} />
 				</div>

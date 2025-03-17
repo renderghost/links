@@ -22,10 +22,6 @@ https: const Status: React.FC<StatusProps> = ({ isWorking }) => {
 		<div className='overflow-hidden flex flex-col gap-8'>
 			{isWorking ? (
 				<>
-					{/* <div className='text-lg font-normal items-center gap-1 flex'>
-						<span>All my key links and details</span>
-						<Cable size={16} />
-					</div> */}
 					<div className='flex gap-4'>
 						<div className='w-16 h-16 relative flex-shrink-0'>
 							<Image
@@ -62,8 +58,7 @@ https: const Status: React.FC<StatusProps> = ({ isWorking }) => {
 									'_blank',
 								)
 							}
-							aria-label='Learn about Journal Manager'
-						>
+							aria-label='Learn about Journal Manager'>
 							Learn about Journal Manager
 						</FilledButton>
 						<FilledButton
@@ -75,8 +70,7 @@ https: const Status: React.FC<StatusProps> = ({ isWorking }) => {
 									'_blank',
 								)
 							}
-							aria-label='Learn about Morressier'
-						>
+							aria-label='Learn about Morressier'>
 							Learn about Morressier
 						</FilledButton>
 						<FilledButton
@@ -88,15 +82,14 @@ https: const Status: React.FC<StatusProps> = ({ isWorking }) => {
 									'_blank',
 								)
 							}
-							aria-label='View my Resume'
-						>
+							aria-label='View my Resume'>
 							View my Resume
 						</FilledButton>
 					</div>
 				</>
 			) : (
 				<>
-					<p className='text-blue-700 dark:text-blue-300 mb-6 p-6'>
+					<p className='text-bones-mediumblue dark:text-bones-cyan mb-6 p-6'>
 						I&apos;m actively seeking new opportunities in product
 						design and strategy. Let&apos;s connect!
 					</p>
@@ -105,8 +98,7 @@ https: const Status: React.FC<StatusProps> = ({ isWorking }) => {
 							variant='primary'
 							LeftIcon={Briefcase}
 							onClick={() => window.open('/portfolio', '_blank')}
-							aria-label='View Portfolio'
-						>
+							aria-label='View Portfolio'>
 							View Portfolio
 						</FilledButton>
 						<FilledButton
@@ -118,16 +110,14 @@ https: const Status: React.FC<StatusProps> = ({ isWorking }) => {
 									'_blank',
 								)
 							}
-							aria-label='Learn about Journal Manager'
-						>
+							aria-label='Learn about Journal Manager'>
 							Learn about Journal Manager
 						</FilledButton>
 						<FilledButton
 							variant='secondary'
 							LeftIcon={FileText}
 							onClick={() => window.open('/cv.pdf', '_blank')}
-							aria-label='Download CV'
-						>
+							aria-label='Download CV'>
 							Download CV
 						</FilledButton>
 					</div>

@@ -76,8 +76,7 @@ const CallToActionButton: React.FC<CallToAction & { isPrimary: boolean }> =
 			variant={isPrimary ? 'primary' : 'secondary'}
 			LeftIcon={Icon}
 			onClick={onClick}
-			aria-label={ariaLabel}
-		>
+			aria-label={ariaLabel}>
 			{title}
 		</FilledButton>
 	));
@@ -94,7 +93,7 @@ const CallsToAction: React.FC = () => (
 		<Headline />
 
 		<div className='flex flex-col items-start gap-4'>
-			{/* <h2 className='text-lg font-semibold text-blue-900 dark:text-white'>
+			{/* <h2 className='text-lg font-semibold text-bones-black dark:text-white'>
 					How can I help?
 				</h2> */}
 			<div className='flex flex-wrap gap-3'>

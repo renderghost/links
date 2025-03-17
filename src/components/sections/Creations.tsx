@@ -71,7 +71,7 @@ const CreationCard: React.FC<Creation> = ({
 	sourceUrl,
 }) => (
 	<div
-		className='bg-white dark:bg-blue-900 flex flex-col flex-grow justify-between gap-8 p-8'
+		className='bg-bones-white dark:bg-bones-black flex flex-col flex-grow justify-between gap-8 p-8'
 		itemScope
 		itemType='http://schema.org/CreativeWork'>
 		<div className='flex flex-col gap-2'>
@@ -82,7 +82,7 @@ const CreationCard: React.FC<Creation> = ({
 				</h3>
 			</div>
 			<p
-				className='text-blue-900 dark:text-blue-100'
+				className='text-bones-black dark:text-bones-white'
 				itemProp='description'>
 				{ariaLabel}
 			</p>

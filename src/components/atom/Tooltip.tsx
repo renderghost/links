@@ -42,14 +42,13 @@ const Tooltip: React.FC<TooltipProps> = ({ children, content }) => {
             absolute left-1/2 bottom-full mb-1 z-10
             w-auto translate-x-[-50%] px-2 py-1 text-s
             rounded transition-opacity duration-150 whitespace-nowrap
-            bg-blue-950 text-blue-50 dark:bg-white dark:text-blue-950
-          '
-				>
+            bg-bones-black text-bones-white dark:bg-bones-white dark:text-bones-black
+          '>
 					{content}
 					<div
 						className='
               absolute w-2 h-2
-              bg-blue-950 dark:bg-white
+              bg-bones-black dark:bg-bones-white
               rotate-45
               -bottom-1 left-1/2 translate-x-[-50%]
             '
