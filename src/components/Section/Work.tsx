@@ -1,9 +1,9 @@
 'use client';
 
 import React from 'react';
-import { FilledButton } from '../Button/Button';
 import Section from '../Section/Section';
-import { Aperture, ExternalLink, Github, ListMusic } from 'lucide-react';
+import Card from '../Card/Card';
+import { Aperture, ListMusic } from 'lucide-react';
 
 interface Work {
 	title: string;
@@ -31,57 +31,6 @@ const worksList: Work[] = [
 	},
 ];
 
-const WorkCard: React.FC<Work> = ({
-	title,
-	ariaLabel,
-	icon: Icon,
-	url,
-	sourceUrl,
-}) => (
-	<div
-		className='bg-bones-white dark:bg-bones-black  flex flex-col flex-grow justify-between gap-8 p-8'
-		itemScope
-		itemType='http://schema.org/CreativeWork'>
-		<div className='flex flex-col gap-2'>
-			<div className='flex items-center gap-2'>
-				<Icon className='w-7 h-7' />
-				<h3 className='font-medium text-xl' itemProp='name'>
-					{title}
-				</h3>
-			</div>
-			<p
-				className='text-bones-black dark:text-bones-white'
-				itemProp='description'>
-				{ariaLabel}
-			</p>
-		</div>
-		<div className='block'>
-			<div className='flex flex-wrap gap-4'>
-				<FilledButton
-					variant='secondary'
-					RightIcon={ExternalLink}
-					onClick={() => window.open(url, '_blank')}
-					ariaLabel={`View ${title} creation`}
-					tooltip={`View ${title} creation`}>
-					View Work
-				</FilledButton>
-				{sourceUrl && (
-					<FilledButton
-						variant='transparent'
-						RightIcon={Github}
-						onClick={() => window.open(sourceUrl, '_blank')}
-						ariaLabel={`View source code for ${title}`}
-						tooltip={`View source code for ${title}`}>
-						View Source
-					</FilledButton>
-				)}
-			</div>
-		</div>
-		<link itemProp='url' href={url} />
-		{sourceUrl && <link itemProp='codeRepository' href={sourceUrl} />}
-	</div>
-);
-
 const Works: React.FC = () => (
 	<Section
 		id='my-works'
@@ -91,14 +40,21 @@ const Works: React.FC = () => (
 			className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'
 			itemScope
 			itemType='http://schema.org/ItemList'>
-			{worksList.map((creation, index) => (
+			{worksList.map((work, index) => (
 				<div
 					key={index}
 					itemProp='itemListElement'
 					itemScope
 					itemType='http://schema.org/ListItem'
-					className='flex flex-col flex-grow'>
-					<WorkCard {...creation} />
+					className='cardRack'>
+					<Card
+						title={work.title}
+						description={work.ariaLabel}
+						icon={work.icon}
+						schemaType='CreativeWork'
+						url={work.url}
+						sourceUrl={work.sourceUrl}
+					/>
 					<meta itemProp='position' content={`${index + 1}`} />
 				</div>
 			))}

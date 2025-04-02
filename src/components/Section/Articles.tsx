@@ -1,9 +1,11 @@
 'use client';
 
 import React from 'react';
-import { FilledButton } from '../Button/Button';
+
 import Section from './Section';
-import { ExternalLink, Newspaper, Youtube } from 'lucide-react';
+import Card from '../Card/Card';
+
+import { Newspaper, Youtube } from 'lucide-react';
 
 interface Article {
 	title: string;
@@ -71,43 +73,6 @@ const articlesList: Article[] = [
 	},
 ];
 
-const ArticleCard: React.FC<Article> = ({
-	title,
-	ariaLabel,
-	icon: Icon,
-	url,
-}) => (
-	<div className='card' itemScope itemType='http://schema.org/Article'>
-		<div className='flex flex-col gap-2 '>
-			<div className='flex items-center gap-2'>
-				<Icon className='w-7 h-7' />
-				<h3 className='text-xl font-medium' itemProp='headline'>
-					{title}
-				</h3>
-			</div>
-			<p
-				className='text-bones-black dark:text-bones-white'
-				itemProp='description'>
-				{ariaLabel}
-			</p>
-		</div>
-		<div className='block'>
-			<div className='flex flex-wrap gap-4'>
-				<FilledButton
-					variant='secondary'
-					RightIcon={ExternalLink}
-					onClick={() => window.open(url, '_blank')}
-					ariaLabel={`View article`}
-					// tooltip={`View article`}
-				>
-					View Article
-				</FilledButton>
-			</div>
-		</div>
-		<link itemProp='url' href={url} />
-	</div>
-);
-
 const Articles: React.FC = () => (
 	<Section
 		id='my-articles'
@@ -124,7 +89,13 @@ const Articles: React.FC = () => (
 					itemScope
 					itemType='http://schema.org/ListItem'
 					className='flex flex-col flex-grow'>
-					<ArticleCard {...article} />
+					<Card
+						title={article.title}
+						description={article.ariaLabel}
+						icon={article.icon}
+						schemaType='Article'
+						url={article.url}
+					/>
 					<meta itemProp='position' content={`${index + 1}`} />
 				</div>
 			))}
