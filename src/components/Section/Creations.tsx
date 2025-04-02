@@ -1,11 +1,19 @@
 'use client';
 
 import React from 'react';
-import { FilledButton } from '../atom/Button';
-import Section from '../atom/Section';
-import { Aperture, ExternalLink, Github, ListMusic } from 'lucide-react';
+import { FilledButton } from '../Button/Button';
+import Section from '../Section/Section';
+import {
+	Aperture,
+	Shuffle,
+	ExternalLink,
+	KeyboardMusic,
+	Github,
+	Radius,
+	ListMusic,
+} from 'lucide-react';
 
-interface Work {
+interface Creation {
 	title: string;
 	ariaLabel: string;
 	icon: React.FC<React.SVGProps<SVGSVGElement>>;
@@ -13,35 +21,56 @@ interface Work {
 	sourceUrl?: string;
 }
 
-const worksList: Work[] = [
+const creationsList: Creation[] = [
 	{
-		title: 'Brandwatch VIZIA',
+		title: 'Aperture',
 		ariaLabel:
 			'My amateur snaps gallery where I pretend to be a pro photographer.',
 		icon: Aperture,
-		url: 'https://www.brandwatch.com/products/vizia/',
+		url: 'https://frame.renderg.host/',
+		sourceUrl: 'https://github.com/renderghost/frame',
 	},
 	{
-		title: 'Morressier Publishing Engine',
+		title: 'Endlesss Studio OSC',
+		ariaLabel:
+			'Fully-featured TOUCH OSC controller for Endlesss Studio, the multiplayer music app for MacOS.',
+		icon: KeyboardMusic,
+		url: 'https://github.com/renderghost/endlesss-studio-osc',
+	},
+	{
+		title: 'Ramps',
+		ariaLabel:
+			'My quirky gradient generator. Because we all want more color.',
+		icon: Radius,
+		url: 'https://ramps.renderg.host/',
+		sourceUrl: 'https://github.com/renderghost/ramps',
+	},
+	{
+		title: 'Selections',
 		ariaLabel:
 			'A fancy discovery app for my many many Spotify playlists. Warning: May contain questionable music choices!',
 		icon: ListMusic,
 		url: 'https://selections.renderg.host/',
 		sourceUrl: 'https://github.com/renderghost/selections',
 	},
+	{
+		title: 'Strategy Schmategy',
+		ariaLabel:
+			'A random design strategy generator. For when you want to leave success to chance!',
+		icon: Shuffle,
+		url: 'https://strategyschmategy.renderg.host/',
+		sourceUrl: 'https://github.com/renderghost/strategy-schmategy',
+	},
 ];
 
-const WorkCard: React.FC<Work> = ({
+const CreationCard: React.FC<Creation> = ({
 	title,
 	ariaLabel,
 	icon: Icon,
 	url,
 	sourceUrl,
 }) => (
-	<div
-		className='bg-bones-white dark:bg-bones-black flex flex-col flex-grow justify-between gap-8 p-8'
-		itemScope
-		itemType='http://schema.org/CreativeWork'>
+	<div className='card' itemScope itemType='http://schema.org/CreativeWork'>
 		<div className='flex flex-col gap-2'>
 			<div className='flex items-center gap-2'>
 				<Icon className='w-7 h-7' />
@@ -56,14 +85,14 @@ const WorkCard: React.FC<Work> = ({
 			</p>
 		</div>
 		<div className='block'>
-			<div className='flex flex-wrap gap-3'>
+			<div className='flex flex-wrap gap-4'>
 				<FilledButton
 					variant='secondary'
 					RightIcon={ExternalLink}
 					onClick={() => window.open(url, '_blank')}
 					ariaLabel={`View ${title} creation`}
 					tooltip={`View ${title} creation`}>
-					View Work
+					View Creation
 				</FilledButton>
 				{sourceUrl && (
 					<FilledButton
@@ -82,23 +111,23 @@ const WorkCard: React.FC<Work> = ({
 	</div>
 );
 
-const Works: React.FC = () => (
+const Creations: React.FC = () => (
 	<Section
-		id='my-works'
-		title='Professional Work'
-		description='Things made for money.'>
+		id='my-creations'
+		title='Creations'
+		description='Links to things I made for fun.'>
 		<div
-			className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1'
+			className='cardRack'
 			itemScope
 			itemType='http://schema.org/ItemList'>
-			{worksList.map((creation, index) => (
+			{creationsList.map((creation, index) => (
 				<div
 					key={index}
 					itemProp='itemListElement'
 					itemScope
 					itemType='http://schema.org/ListItem'
 					className='flex flex-col flex-grow'>
-					<WorkCard {...creation} />
+					<CreationCard {...creation} />
 					<meta itemProp='position' content={`${index + 1}`} />
 				</div>
 			))}
@@ -106,4 +135,4 @@ const Works: React.FC = () => (
 	</Section>
 );
 
-export default Works;
+export default Creations;

@@ -1,12 +1,24 @@
-import React from 'react';
-import SocialLinks from './atom/SocialLinks';
-import Image from 'next/image';
+'use client';
 
-const Hero: React.FC = () => (
-	<section className='flex flex-col py-16 px-4 sm:px-0  bg-bones-white dark:bg-bones-blue'>
-		<div className='container mx-auto flex flex-col gap-4'>
-			<div className='flex flex-row flex-auto gap-4 items-center'>
-				<div className='size-16 overflow-hidden rounded-full flex-shrink-0'>
+import React from 'react';
+import SocialLinks from '../SocialLinks/SocialLinks';
+import Image from 'next/image';
+import type { HeroProps } from './Hero.types';
+import {
+	heroSection,
+	heroContainer,
+	heroHeader,
+	heroAvatar,
+	heroName,
+	heroDetails,
+	heroAddress,
+} from './Hero.styles';
+
+const Hero: React.FC<HeroProps> = () => (
+	<section className={heroSection}>
+		<div className={heroContainer}>
+			<div className={heroHeader}>
+				<div className={heroAvatar}>
 					<Image
 						src='/avatar-me.jpg'
 						alt='Barry Prendergast'
@@ -17,14 +29,14 @@ const Hero: React.FC = () => (
 					/>
 				</div>
 				<div className='flex flex-col flex-auto'>
-					<h2 className='text-2xl font-semibold' itemProp='name'>
+					<h2 className={heroName} itemProp='name'>
 						Barry Prendergast
 					</h2>
-					<div className='flex flex-col sm:flex-row gap-px sm:gap-2'>
+					<div className={heroDetails}>
 						<p itemProp='jobTitle'>Product Designer</p>
 						<p className='hidden sm:inline'>|</p>
 						<address
-							className='flex items-center not-italic gap-1'
+							className={heroAddress}
 							itemProp='address'
 							itemScope
 							itemType='http://schema.org/PostalAddress'>

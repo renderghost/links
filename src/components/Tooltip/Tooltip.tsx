@@ -1,9 +1,8 @@
-import React, { useState, useRef, useEffect } from 'react';
+'use client';
 
-interface TooltipProps {
-	content: string;
-	children: React.ReactNode;
-}
+import React, { useState, useRef, useEffect } from 'react';
+import type { TooltipProps } from './Tooltip.types';
+import { tooltipWrapper, tooltipContent, tooltipArrow } from './Tooltip.styles';
 
 const Tooltip: React.FC<TooltipProps> = ({ children, content }) => {
 	const [isVisible, setIsVisible] = useState(false);
@@ -31,28 +30,16 @@ const Tooltip: React.FC<TooltipProps> = ({ children, content }) => {
 	}
 
 	return (
-		<div className='relative inline-block'>
+		<div className={tooltipWrapper}>
 			{childWithProps}
 			{isVisible && (
 				<div
 					ref={tooltipRef}
 					id='tooltip'
 					role='tooltip'
-					className='
-					absolute left-1/2 bottom-full mb-1 z-10
-					w-auto translate-x-[-50%] px-2 py-1 text-s
-					rounded transition-opacity duration-150 whitespace-nowrap
-					bg-bones-black dark:bg-bones-white text-bones-white dark:text-bones-black
-				'>
+					className={tooltipContent}>
 					{content}
-					<div
-						className='
-						absolute w-2 h-2
-						bg-bones-black dark:bg-bones-white text-bones-white dark:text-bones-black
-						rotate-45
-						-bottom-1 left-1/2 translate-x-[-50%]
-						'
-					/>
+					<div className={tooltipArrow} />
 				</div>
 			)}
 		</div>

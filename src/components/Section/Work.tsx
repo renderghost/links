@@ -1,19 +1,11 @@
 'use client';
 
 import React from 'react';
-import { FilledButton } from '../atom/Button';
-import Section from '../atom/Section';
-import {
-	Aperture,
-	Shuffle,
-	ExternalLink,
-	KeyboardMusic,
-	Github,
-	Radius,
-	ListMusic,
-} from 'lucide-react';
+import { FilledButton } from '../Button/Button';
+import Section from '../Section/Section';
+import { Aperture, ExternalLink, Github, ListMusic } from 'lucide-react';
 
-interface Creation {
+interface Work {
 	title: string;
 	ariaLabel: string;
 	icon: React.FC<React.SVGProps<SVGSVGElement>>;
@@ -21,49 +13,25 @@ interface Creation {
 	sourceUrl?: string;
 }
 
-const creationsList: Creation[] = [
+const worksList: Work[] = [
 	{
-		title: 'Aperture',
+		title: 'Brandwatch VIZIA',
 		ariaLabel:
 			'My amateur snaps gallery where I pretend to be a pro photographer.',
 		icon: Aperture,
-		url: 'https://frame.renderg.host/',
-		sourceUrl: 'https://github.com/renderghost/frame',
+		url: 'https://www.brandwatch.com/products/vizia/',
 	},
 	{
-		title: 'Endlesss Studio OSC',
-		ariaLabel:
-			'Fully-featured TOUCH OSC controller for Endlesss Studio, the multiplayer music app for MacOS.',
-		icon: KeyboardMusic,
-		url: 'https://github.com/renderghost/endlesss-studio-osc',
-	},
-	{
-		title: 'Ramps',
-		ariaLabel:
-			'My quirky gradient generator. Because we all want more color.',
-		icon: Radius,
-		url: 'https://ramps.renderg.host/',
-		sourceUrl: 'https://github.com/renderghost/ramps',
-	},
-	{
-		title: 'Selections',
+		title: 'Morressier Publishing Engine',
 		ariaLabel:
 			'A fancy discovery app for my many many Spotify playlists. Warning: May contain questionable music choices!',
 		icon: ListMusic,
 		url: 'https://selections.renderg.host/',
 		sourceUrl: 'https://github.com/renderghost/selections',
 	},
-	{
-		title: 'Strategy Schmategy',
-		ariaLabel:
-			'A random design strategy generator. For when you want to leave success to chance!',
-		icon: Shuffle,
-		url: 'https://strategyschmategy.renderg.host/',
-		sourceUrl: 'https://github.com/renderghost/strategy-schmategy',
-	},
 ];
 
-const CreationCard: React.FC<Creation> = ({
+const WorkCard: React.FC<Work> = ({
 	title,
 	ariaLabel,
 	icon: Icon,
@@ -71,7 +39,7 @@ const CreationCard: React.FC<Creation> = ({
 	sourceUrl,
 }) => (
 	<div
-		className='bg-bones-white dark:bg-bones-black flex flex-col flex-grow justify-between gap-8 p-8'
+		className='bg-bones-white dark:bg-bones-black  flex flex-col flex-grow justify-between gap-8 p-8'
 		itemScope
 		itemType='http://schema.org/CreativeWork'>
 		<div className='flex flex-col gap-2'>
@@ -88,14 +56,14 @@ const CreationCard: React.FC<Creation> = ({
 			</p>
 		</div>
 		<div className='block'>
-			<div className='flex flex-wrap gap-3'>
+			<div className='flex flex-wrap gap-4'>
 				<FilledButton
 					variant='secondary'
 					RightIcon={ExternalLink}
 					onClick={() => window.open(url, '_blank')}
 					ariaLabel={`View ${title} creation`}
 					tooltip={`View ${title} creation`}>
-					View Creation
+					View Work
 				</FilledButton>
 				{sourceUrl && (
 					<FilledButton
@@ -114,23 +82,23 @@ const CreationCard: React.FC<Creation> = ({
 	</div>
 );
 
-const Creations: React.FC = () => (
+const Works: React.FC = () => (
 	<Section
-		id='my-creations'
-		title='Creations'
-		description='Links to things I made for fun.'>
+		id='my-works'
+		title='Professional Work'
+		description='Things made for money.'>
 		<div
-			className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-1'
+			className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'
 			itemScope
 			itemType='http://schema.org/ItemList'>
-			{creationsList.map((creation, index) => (
+			{worksList.map((creation, index) => (
 				<div
 					key={index}
 					itemProp='itemListElement'
 					itemScope
 					itemType='http://schema.org/ListItem'
 					className='flex flex-col flex-grow'>
-					<CreationCard {...creation} />
+					<WorkCard {...creation} />
 					<meta itemProp='position' content={`${index + 1}`} />
 				</div>
 			))}
@@ -138,4 +106,4 @@ const Creations: React.FC = () => (
 	</Section>
 );
 
-export default Creations;
+export default Works;

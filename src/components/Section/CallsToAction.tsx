@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
-import { FilledButton } from '../atom/Button';
-import Headline from '../atom/Headline';
+import { FilledButton } from '../Button/Button';
+import Headline from '../Headline/Headline';
 import {
 	CalendarPlus,
 	// Cable,
@@ -96,7 +96,7 @@ const CallsToAction: React.FC = () => (
 			{/* <h2 className='text-lg font-semibold text-bones-black dark:text-white'>
 					How can I help?
 				</h2> */}
-			<div className='flex flex-wrap gap-3'>
+			<div className='flex flex-wrap gap-4'>
 				{callsToActionList.map((cta, index) => (
 					<CallToActionButton
 						key={cta.title}

@@ -3,8 +3,8 @@ import './globals.css';
 
 import { Metadata } from 'next';
 import Script from 'next/script';
-import Banner from '@/components/atom/Banner';
-import Hero from '@/components/Hero';
+import Banner from '@/components/Banner/Banner';
+import Hero from '@/components/Hero/Hero';
 
 export const metadata: Metadata = {
 	title: 'Barry Prendergast | LinksGhost - Product & Service Designer Links',
@@ -89,7 +89,7 @@ export default function RootLayout({
 				/>
 			</head>
 
-			<body className='bg-bones-whitesmoke dark:bg-bones-midnightblue text-bones-black dark:text-bones-white transition-colors duration-300'>
+			<body className='transition-colors duration-300 bg-bones-whitesmoke dark:bg-bones-black text-bones-black dark:text-bones-white'>
 				<Banner />
 				<Hero />
 				{children}

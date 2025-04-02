@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
-import { FilledButton } from '../atom/Button';
-import Section from '../atom/Section';
+import { FilledButton } from '../Button/Button';
+import Section from './Section';
 import { ExternalLink, Newspaper, Youtube } from 'lucide-react';
 
 interface Article {
@@ -77,14 +77,11 @@ const ArticleCard: React.FC<Article> = ({
 	icon: Icon,
 	url,
 }) => (
-	<div
-		className='bg-bones-white dark:bg-bones-black flex flex-col flex-grow justify-between gap-8 p-8'
-		itemScope
-		itemType='http://schema.org/Article'>
+	<div className='card' itemScope itemType='http://schema.org/Article'>
 		<div className='flex flex-col gap-2 '>
 			<div className='flex items-center gap-2'>
 				<Icon className='w-7 h-7' />
-				<h3 className='font-medium text-xl' itemProp='headline'>
+				<h3 className='text-xl font-medium' itemProp='headline'>
 					{title}
 				</h3>
 			</div>
@@ -95,7 +92,7 @@ const ArticleCard: React.FC<Article> = ({
 			</p>
 		</div>
 		<div className='block'>
-			<div className='flex flex-wrap gap-3'>
+			<div className='flex flex-wrap gap-4'>
 				<FilledButton
 					variant='secondary'
 					RightIcon={ExternalLink}
@@ -117,7 +114,7 @@ const Articles: React.FC = () => (
 		title='Discussions'
 		description='Links to my favourite articles, podcasts & public speaking.'>
 		<div
-			className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-1'
+			className='cardRack'
 			itemScope
 			itemType='http://schema.org/ItemList'>
 			{articlesList.map((article, index) => (

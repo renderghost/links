@@ -1,6 +1,7 @@
 'use client';
 
-import { FilledButton } from './Button';
+import React from 'react';
+import { FilledButton } from '../../Button/Button';
 import Image from 'next/image';
 import {
 	Briefcase,
@@ -9,21 +10,25 @@ import {
 	Sparkles,
 	BookOpenCheck,
 	GalleryHorizontalEnd,
-	// Cable,
 } from 'lucide-react';
+import type { StatusProps } from './Status.types';
+import {
+	statusWrapper,
+	avatarWrapper,
+	jobTitle,
+	seekingMessage,
+	buttonGroup,
+	buttonGroupSeeking,
+	paragraph,
+} from './Status.styles';
 
-interface StatusProps {
-	isWorking: boolean;
-	className?: string;
-}
-
-https: const Status: React.FC<StatusProps> = ({ isWorking }) => {
+const Status: React.FC<StatusProps> = ({ isWorking }) => {
 	return (
-		<div className='overflow-hidden flex flex-col gap-8'>
+		<div className={statusWrapper}>
 			{isWorking ? (
 				<>
 					<div className='flex gap-4'>
-						<div className='w-16 h-16 relative flex-shrink-0'>
+						<div className={avatarWrapper}>
 							<Image
 								src='/avatar-work.svg'
 								alt='Morressier logo'
@@ -32,14 +37,12 @@ https: const Status: React.FC<StatusProps> = ({ isWorking }) => {
 							/>
 						</div>
 						<div>
-							<h3 className='text-xl font-semibold'>
-								Staff Product Designer
-							</h3>
-							<p className=''>Morressier, Berlin since 2019</p>
+							<h3 className={jobTitle}>Staff Product Designer</h3>
+							<p>Morressier, Berlin since 2019</p>
 						</div>
 					</div>
 
-					<p className='max-w-screen-lg'>
+					<p className={paragraph}>
 						Leading product design for Morressier&apos;s scholarly
 						publishing platform. Balancing strategic vision with
 						hands-on execution, I drive innovation in research
@@ -48,7 +51,7 @@ https: const Status: React.FC<StatusProps> = ({ isWorking }) => {
 						team growth.
 					</p>
 
-					<div className='flex flex-wrap gap-3'>
+					<div className={buttonGroup}>
 						<FilledButton
 							variant='primary'
 							LeftIcon={BookOpenCheck}
@@ -89,11 +92,11 @@ https: const Status: React.FC<StatusProps> = ({ isWorking }) => {
 				</>
 			) : (
 				<>
-					<p className='text-bones-mediumblue dark:text-bones-cyan mb-6 p-6'>
+					<p className={seekingMessage}>
 						I&apos;m actively seeking new opportunities in product
 						design and strategy. Let&apos;s connect!
 					</p>
-					<div className='flex flex-wrap p-8 space-x-2'>
+					<div className={buttonGroupSeeking}>
 						<FilledButton
 							variant='primary'
 							LeftIcon={Briefcase}

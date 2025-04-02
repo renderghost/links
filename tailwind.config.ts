@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import plugin from 'tailwindcss/plugin';
 
 const config: Config = {
 	content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
@@ -8,14 +9,15 @@ const config: Config = {
 			bones: {
 				// Monos
 				white: 'white',
-				whitesmoke: 'whitesmoke',
+				whitesmoke: 'color(display-p3 0.929412 0.92549 0.898039/1)',
 				gray: 'gray',
 				dimgray: 'dimgray',
 				slategray: 'slategray',
+				gainsboro: 'gainsboro',
 				black: 'black',
 				// Yellows
 				yellow: 'yellow',
-				gold: 'gold',
+				gold: 'color(display-p3 0.964706 0.823529 0/1)',
 				goldenrod: 'goldenrod',
 				// Blues
 				cyan: 'cyan',
@@ -39,7 +41,20 @@ const config: Config = {
 		// 	serif: ['DM Serif', 'serif'],
 		// },
 	},
-	plugins: [],
+	plugins: [
+		plugin(function ({ addComponents }) {
+			addComponents({
+				'.cardRack': {
+					'@apply grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-px':
+						{},
+				},
+				'.card': {
+					'@apply bg-bones-white dark:bg-bones-midnightblue flex flex-col flex-grow justify-between gap-8 p-8':
+						{},
+				},
+			});
+		}),
+	],
 	darkMode: 'media',
 };
 

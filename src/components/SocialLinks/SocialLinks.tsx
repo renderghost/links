@@ -1,15 +1,10 @@
 'use client';
 
 import React from 'react';
-import { SquareIconButton } from './Button';
+import { SquareIconButton } from '../Button/Button';
 import { Figma, Github, CalendarPlus, Newspaper, Linkedin } from 'lucide-react';
-
-interface SocialLink {
-	title: string;
-	url: string;
-	icon: React.FC<React.SVGProps<SVGSVGElement>>;
-	ariaLabel: string;
-}
+import type { SocialLink } from './SocialLinks.types';
+import { socialLinksWrapper } from './SocialLinks.styles';
 
 const socialLinks: SocialLink[] = [
 	{
@@ -44,25 +39,25 @@ const socialLinks: SocialLink[] = [
 	},
 ];
 
-const SocialLink: React.FC<SocialLink> = React.memo(
+const SocialLinkComponent: React.FC<SocialLink> = React.memo(
 	({ title, url, icon: Icon, ariaLabel }) => (
 		<SquareIconButton
 			Icon={Icon}
 			variant='transparent'
 			onClick={() => window.open(url, '_blank', 'noopener,noreferrer')}
 			ariaLabel={ariaLabel || title}
-			tooltip={ariaLabel || title} // Add this line
+			tooltip={ariaLabel || title}
 			className=''
 		/>
 	),
 );
 
-SocialLink.displayName = 'SocialLink';
+SocialLinkComponent.displayName = 'SocialLink';
 
 const SocialLinks: React.FC = React.memo(() => (
-	<nav className='flex flex-row flex-wrap gap-3' id='social-links'>
+	<nav className={socialLinksWrapper} id='social-links'>
 		{socialLinks.map(link => (
-			<SocialLink key={link.title} {...link} />
+			<SocialLinkComponent key={link.title} {...link} />
 		))}
 	</nav>
 ));
