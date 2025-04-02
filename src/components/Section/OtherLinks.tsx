@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { FilledButton } from '../Button/Button';
+import FilledButton from '../Button/Button';
 import Section from '../Section/Section';
 import { Figma, Github, Newspaper, Linkedin } from 'lucide-react';
 

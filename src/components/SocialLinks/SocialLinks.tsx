@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { SquareIconButton } from '../Button/Button';
+import Button from '../Button/Button';
 import { Figma, Github, CalendarPlus, Newspaper, Linkedin } from 'lucide-react';
 import type { SocialLink } from './SocialLinks.types';
 import { socialLinksWrapper } from './SocialLinks.styles';
@@ -41,13 +41,13 @@ const socialLinks: SocialLink[] = [
 
 const SocialLinkComponent: React.FC<SocialLink> = React.memo(
 	({ title, url, icon: Icon, ariaLabel }) => (
-		<SquareIconButton
-			Icon={Icon}
+		<Button
 			variant='transparent'
 			onClick={() => window.open(url, '_blank', 'noopener,noreferrer')}
 			ariaLabel={ariaLabel || title}
 			tooltip={ariaLabel || title}
-			className=''
+			LeftIcon={Icon}
+			className='px-3 py-3 flex items-center justify-center'
 		/>
 	),
 );

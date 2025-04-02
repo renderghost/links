@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { ExternalLink, Github } from 'lucide-react';
-import { FilledButton } from '../Button/Button';
+import FilledButton from '../Button/Button';
 import type { CardProps } from './Card.types';
 import {
 	cardBase,
