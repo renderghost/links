@@ -1,14 +1,12 @@
 'use client';
 
 import React from 'react';
-import { FilledButton } from '../Button/Button';
 import Section from '../Section/Section';
+import Card from '../Card/Card';
 import {
 	Aperture,
 	Shuffle,
-	ExternalLink,
 	KeyboardMusic,
-	Github,
 	Radius,
 	ListMusic,
 } from 'lucide-react';
@@ -63,54 +61,6 @@ const creationsList: Creation[] = [
 	},
 ];
 
-const CreationCard: React.FC<Creation> = ({
-	title,
-	ariaLabel,
-	icon: Icon,
-	url,
-	sourceUrl,
-}) => (
-	<div className='card' itemScope itemType='http://schema.org/CreativeWork'>
-		<div className='flex flex-col gap-2'>
-			<div className='flex items-center gap-2'>
-				<Icon className='w-7 h-7' />
-				<h3 className='font-medium text-xl' itemProp='name'>
-					{title}
-				</h3>
-			</div>
-			<p
-				className='text-bones-black dark:text-bones-white'
-				itemProp='description'>
-				{ariaLabel}
-			</p>
-		</div>
-		<div className='block'>
-			<div className='flex flex-wrap gap-4'>
-				<FilledButton
-					variant='secondary'
-					RightIcon={ExternalLink}
-					onClick={() => window.open(url, '_blank')}
-					ariaLabel={`View ${title} creation`}
-					tooltip={`View ${title} creation`}>
-					View Creation
-				</FilledButton>
-				{sourceUrl && (
-					<FilledButton
-						variant='transparent'
-						RightIcon={Github}
-						onClick={() => window.open(sourceUrl, '_blank')}
-						ariaLabel={`View source code for ${title}`}
-						tooltip={`View source code for ${title}`}>
-						View Source
-					</FilledButton>
-				)}
-			</div>
-		</div>
-		<link itemProp='url' href={url} />
-		{sourceUrl && <link itemProp='codeRepository' href={sourceUrl} />}
-	</div>
-);
-
 const Creations: React.FC = () => (
 	<Section
 		id='my-creations'
@@ -127,7 +77,14 @@ const Creations: React.FC = () => (
 					itemScope
 					itemType='http://schema.org/ListItem'
 					className='flex flex-col flex-grow'>
-					<CreationCard {...creation} />
+					<Card
+						title={creation.title}
+						description={creation.ariaLabel}
+						icon={creation.icon}
+						schemaType='CreativeWork'
+						url={creation.url}
+						sourceUrl={creation.sourceUrl}
+					/>
 					<meta itemProp='position' content={`${index + 1}`} />
 				</div>
 			))}

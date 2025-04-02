@@ -1,6 +1,8 @@
 'use client';
 
 import React from 'react';
+import { ExternalLink, Github } from 'lucide-react';
+import { FilledButton } from '../Button/Button';
 import type { CardProps } from './Card.types';
 import {
 	cardBase,
@@ -15,10 +17,9 @@ const Card: React.FC<CardProps> = ({
 	title,
 	description,
 	icon: Icon,
-	actions,
-	schemaType = 'CreativeWork',
 	url,
 	sourceUrl,
+	schemaType = 'CreativeWork',
 	className = '',
 }) => {
 	return (
@@ -37,7 +38,32 @@ const Card: React.FC<CardProps> = ({
 					{description}
 				</p>
 			</div>
-			{actions && <div className={cardActions}>{actions}</div>}
+
+			{(url || sourceUrl) && (
+				<div className={cardActions}>
+					{url && (
+						<FilledButton
+							variant='secondary'
+							RightIcon={ExternalLink}
+							onClick={() => window.open(url, '_blank')}
+							ariaLabel={`View ${title}`}
+							tooltip={`View ${title}`}>
+							View
+						</FilledButton>
+					)}
+					{sourceUrl && (
+						<FilledButton
+							variant='transparent'
+							RightIcon={Github}
+							onClick={() => window.open(sourceUrl, '_blank')}
+							ariaLabel={`View source code for ${title}`}
+							tooltip={`View source code for ${title}`}>
+							View Source
+						</FilledButton>
+					)}
+				</div>
+			)}
+
 			{url && <link itemProp='url' href={url} />}
 			{sourceUrl && <link itemProp='codeRepository' href={sourceUrl} />}
 		</div>
