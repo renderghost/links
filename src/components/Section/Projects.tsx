@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
-import { FilledButton } from '../atom/Button';
-import Section from '../atom/Section';
+import { FilledButton } from '../Button/Button';
+import Section from '../Section/Section';
 import {
 	ExternalLink,
 	Github,
@@ -69,7 +69,7 @@ const ProjectCard: React.FC<Project> = ({
 	sourceUrl,
 }) => (
 	<div
-		className='bg-bones-white dark:bg-bones-black flex flex-col flex-grow justify-between gap-8 p-8'
+		className='card'
 		itemScope
 		itemType='http://schema.org/SoftwareApplication'>
 		<div className='flex flex-col gap-2'>
@@ -86,7 +86,7 @@ const ProjectCard: React.FC<Project> = ({
 			</p>
 		</div>
 		<div className='block'>
-			<div className='flex flex-wrap gap-3'>
+			<div className='flex flex-wrap gap-4'>
 				<FilledButton
 					variant='secondary'
 					RightIcon={ExternalLink}
@@ -118,7 +118,7 @@ const Projects: React.FC = () => (
 		title='Design Tools'
 		description='Links to things I made for work.'>
 		<div
-			className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-1'
+			className='cardRack'
 			itemScope
 			itemType='http://schema.org/ItemList'>
 			{projectsList.map((project, index) => (

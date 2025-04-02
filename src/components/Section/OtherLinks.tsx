@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
-import { FilledButton } from '../atom/Button';
-import Section from '../atom/Section';
+import { FilledButton } from '../Button/Button';
+import Section from '../Section/Section';
 import { Figma, Github, Newspaper, Linkedin } from 'lucide-react';
 
 const linksList = [
@@ -36,8 +36,7 @@ const OtherLinks: React.FC = () => (
 	<Section
 		id='other-links'
 		title='Profiles'
-		description='Links to my Social profiles'
-	>
+		description='Links to my Social profiles'>
 		<div className='flex flex-wrap -m-1.5'>
 			{linksList.map((link, index) => (
 				<div key={index} className='p-1.5'>
@@ -46,8 +45,7 @@ const OtherLinks: React.FC = () => (
 						LeftIcon={link.icon}
 						onClick={() => window.open(link.url, '_blank')}
 						aria-label={link.ariaLabel}
-						tooltip={link.ariaLabel}
-					>
+						tooltip={link.ariaLabel}>
 						{link.title}
 					</FilledButton>
 				</div>

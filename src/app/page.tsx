@@ -3,7 +3,7 @@
 import React from 'react';
 import Creations from '@/components/sections/Creations';
 import Projects from '@/components/sections/Projects';
-import Articles from '@/components/sections/Articles';
+import Articles from '@/components/Section/Articles';
 import OtherLinks from '@/components/sections/OtherLinks';
 
 const HomePage: React.FC = () => {
