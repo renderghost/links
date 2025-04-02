@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { FilledButton } from '../../Button/Button';
+import FilledButton from '../Button/Button';
 import Image from 'next/image';
 import {
 	Briefcase,

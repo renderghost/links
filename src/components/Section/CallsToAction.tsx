@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { FilledButton } from '../Button/Button';
+import FilledButton from '../Button/Button';
 import Headline from '../Headline/Headline';
 import {
 	CalendarPlus,
@@ -93,7 +93,7 @@ const CallsToAction: React.FC = () => (
 		<Headline />
 
 		<div className='flex flex-col items-start gap-4'>
-			{/* <h2 className='text-lg font-semibold text-bones-black dark:text-white'>
+			{/* <h2 className='text-lg font-semibold text-bones-black dark:text-bones-white'>
 					How can I help?
 				</h2> */}
 			<div className='flex flex-wrap gap-4'>
