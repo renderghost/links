@@ -89,7 +89,7 @@ export default function RootLayout({
 				/>
 			</head>
 
-			<body className='transition-colors duration-300 bg-bones-whitesmoke dark:bg-bones-black text-bones-black dark:text-bones-white'>
+			<body className='transition-colors duration-300 bg-bones-ghostwhite dark:bg-bones-black text-bones-black dark:text-bones-white'>
 				<Banner />
 				<Hero />
 				{children}

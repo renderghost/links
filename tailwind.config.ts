@@ -8,20 +8,28 @@ const config: Config = {
 		colors: {
 			bones: {
 				// Monos
+				black: 'black', // IN USE
+				dimgray:
+					'color(display-p3 0.156863 0.156863 0.156863 / 1.000000)',
+				gainsboro: 'gainsboro',
+				ghostwhite: 'ghostwhite',
+				gray: 'gray',
+				lightsteelblue: 'lightsteelblue',
+				slategray: 'slategray',
 				white: 'white',
 				whitesmoke: 'color(display-p3 0.929412 0.92549 0.898039/1)',
-				gray: 'gray',
-				dimgray: 'dimgray',
-				slategray: 'slategray',
-				gainsboro: 'gainsboro',
-				black: 'black',
 				// Yellows
-				yellow: 'yellow',
-				gold: 'color(display-p3 0.964706 0.823529 0/1)',
+				yellow: 'color(display-p3 1.000000 1.000000 0.000000 / 1.000000)',
+				gold: 'gold',
+				golde: 'color(display-p3 0.964706 0.823529 0/1)',
 				goldenrod: 'goldenrod',
 				// Blues
+				aliceblue:
+					'color(display-p3 0.941176 0.972549 1.000000 / 1.000000)',
 				cyan: 'cyan',
-				blue: 'blue',
+				lavender: 'lavender', // IN USE
+				lightcyan: 'lightcyan',
+				blue: 'color(display-p3 0.000000 0.000000 1.000000 / 1.000000)', // IN USE
 				mediumblue: 'mediumblue',
 				midnightblue: 'midnightblue',
 				// Reds
