@@ -1,37 +1,117 @@
 /* Button.module.css */
 
 .buttonBase {
-	@apply px-6 py-3 duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 font-medium inline-flex items-center justify-center rounded transition-all;
+	@apply px-6 py-3 duration-200 ease-in-out font-medium inline-flex items-center justify-center rounded-sm transition-all;
 }
-
 .buttonBase:focus {
-	@apply ring-bones-yellow ring-offset-bones-white dark:ring-offset-bones-black;
+	@apply focus:outline-none focus:ring-2 focus:ring-offset-2 ring-bones-yellow ring-offset-bones-white dark:ring-offset-bones-black;
 }
 
+/* --- squareButton --- */
 .squareButton {
 	@apply px-3 py-3 flex items-center justify-center;
 }
+.squareButton:hover {
+}
+.squareButton:active {
+}
+.squareButton:focus {
+}
 
+/* --- cardButton --- */
 .cardButton {
 	@apply w-full text-left flex flex-col p-4;
 }
+.cardButton:hover {
+}
+.cardButton:active {
+}
+.cardButton:focus {
+}
 
+/* --- primary --- */
 .primary {
-	@apply bg-bones-mediumblue text-bones-white hover:bg-bones-blue hover:text-bones-white focus:bg-bones-blue focus:text-bones-white active:bg-bones-mediumblue;
+	@apply bg-bones-mediumblue text-bones-white;
+}
+.primary:hover {
+	@apply hover:bg-bones-blue hover:text-bones-white;
+}
+.primary:active {
+	@apply active:bg-bones-mediumblue;
+}
+.primary:focus {
+	@apply focus:bg-bones-blue focus:text-bones-white;
 }
 
+/* --- secondary --- */
 .secondary {
-	@apply bg-bones-white text-bones-mediumblue dark:bg-bones-mediumblue dark:text-bones-white hover:bg-bones-white hover:text-bones-blue dark:hover:bg-bones-blue dark:hover:text-bones-white active:bg-bones-white active:text-bones-mediumblue dark:active:bg-bones-mediumblue dark:active:text-bones-white focus:bg-bones-white focus:text-bones-blue dark:focus:bg-bones-blue dark:focus:text-bones-white;
+	@apply border-2
+    bg-bones-lavender
+    dark:bg-bones-black
+    text-bones-mediumblue
+    dark:text-bones-white
+    border-bones-mediumblue
+    dark:border-bones-white;
+}
+.secondary:hover {
+	@apply hover:bg-bones-lavender
+    dark:hover:bg-bones-black
+    hover:text-bones-blue
+    hover:border-bones-blue
+    dark:hover:text-bones-yellow
+    dark:hover:border-bones-yellow;
+}
+.secondary:active {
+	@apply active:bg-bones-white
+    active:text-bones-mediumblue
+    dark:active:bg-bones-mediumblue
+    dark:active:text-bones-white;
+}
+.secondary:focus {
+	@apply focus:bg-bones-white focus:text-bones-blue dark:focus:bg-bones-blue dark:focus:text-bones-white;
 }
 
+/* --- transparent --- */
 .transparent {
-	@apply bg-opacity-0 text-bones-mediumblue hover:text-bones-blue focus:text-bones-blue active:text-bones-mediumblue dark:bg-bones-black dark:text-bones-cyan dark:hover:text-bones-white dark:focus:text-bones-white dark:hover:bg-bones-mediumblue dark:focus:bg-bones-mediumblue dark:active:bg-bones-black dark:active:text-bones-white;
+	@apply bg-bones-transparent
+    dark:bg-bones-transparent
+    text-bones-mediumblue
+    dark:text-bones-white;
+}
+.transparent:hover {
+	@apply hover:bg-bones-transparent
+    dark:hover:bg-bones-transparent
+    hover:text-bones-blue
+    dark:hover:text-bones-yellow;
+}
+.transparent:active {
+	@apply active:text-bones-mediumblue dark:active:bg-bones-black dark:active:text-bones-white;
+}
+.transparent:focus {
+	@apply focus:text-bones-blue dark:focus:text-bones-white dark:focus:bg-bones-mediumblue;
 }
 
+/* --- card --- */
 .card {
-	@apply bg-bones-white text-bones-black hover:bg-bones-white focus:ring-bones-cyan active:bg-bones-white dark:bg-bones-mediumblue dark:text-bones-white dark:hover:bg-bones-mediumblue dark:active:bg-bones-mediumblue;
+	@apply bg-bones-white text-bones-black dark:bg-bones-mediumblue dark:text-bones-white;
+}
+.card:hover {
+	@apply hover:bg-bones-white dark:hover:bg-bones-mediumblue;
+}
+.card:active {
+	@apply active:bg-bones-white dark:active:bg-bones-mediumblue;
+}
+.card:focus {
+	@apply focus:ring-bones-cyan;
 }
 
+/* --- disabled --- */
 .disabled {
 	@apply cursor-not-allowed opacity-50;
+}
+.disabled:hover {
+}
+.disabled:active {
+}
+.disabled:focus {
 }

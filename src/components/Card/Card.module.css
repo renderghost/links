@@ -1,0 +1,23 @@
+.card {
+	@apply flex flex-col flex-grow justify-between gap-8 p-8 bg-bones-white dark:bg-bones-dimgray;
+}
+
+.header {
+	@apply flex flex-col gap-2;
+}
+
+.titleRow {
+	@apply flex items-center gap-2;
+}
+
+.title {
+	@apply font-medium text-xl;
+}
+
+.description {
+	@apply text-bones-black dark:text-bones-white;
+}
+
+.actions {
+	@apply flex flex-wrap gap-4;
+}
