@@ -44,7 +44,8 @@
 }
 
 /* --- secondary --- */
-.secondary {
+.secondary,
+.secondary:active {
 	@apply border-2
     bg-bones-lavender
     dark:bg-bones-black
@@ -53,7 +54,8 @@
     border-bones-mediumblue
     dark:border-bones-white;
 }
-.secondary:hover {
+.secondary:hover,
+.secondary:focus {
 	@apply hover:bg-bones-lavender
     dark:hover:bg-bones-black
     hover:text-bones-blue
@@ -61,34 +63,21 @@
     dark:hover:text-bones-yellow
     dark:hover:border-bones-yellow;
 }
-.secondary:active {
-	@apply active:bg-bones-white
-    active:text-bones-mediumblue
-    dark:active:bg-bones-mediumblue
-    dark:active:text-bones-white;
-}
-.secondary:focus {
-	@apply focus:bg-bones-white focus:text-bones-blue dark:focus:bg-bones-blue dark:focus:text-bones-white;
-}
 
 /* --- transparent --- */
-.transparent {
+.transparent,
+.transparent:active {
 	@apply bg-bones-transparent
     dark:bg-bones-transparent
     text-bones-mediumblue
     dark:text-bones-white;
 }
-.transparent:hover {
+.transparent:hover,
+.transparent:focus {
 	@apply hover:bg-bones-transparent
     dark:hover:bg-bones-transparent
     hover:text-bones-blue
     dark:hover:text-bones-yellow;
-}
-.transparent:active {
-	@apply active:text-bones-mediumblue dark:active:bg-bones-black dark:active:text-bones-white;
-}
-.transparent:focus {
-	@apply focus:text-bones-blue dark:focus:text-bones-white dark:focus:bg-bones-mediumblue;
 }
 
 /* --- card --- */
