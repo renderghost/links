@@ -2,7 +2,14 @@
 
 import React from 'react';
 import Button from '../Button/Button';
-import { Figma, Github, CalendarPlus, Newspaper, Linkedin } from 'lucide-react';
+import {
+	Figma,
+	Github,
+	CalendarPlus,
+	Newspaper,
+	Linkedin,
+	CloudSun,
+} from 'lucide-react';
 import type { SocialLink } from './SocialLinks.types';
 import { socialLinksWrapper } from './SocialLinks.styles';
 
@@ -18,6 +25,12 @@ const socialLinks: SocialLink[] = [
 		url: 'https://linkedin.com/in/barrymprendergast',
 		icon: Linkedin,
 		ariaLabel: 'Connect on LinkedIn',
+	},
+	{
+		title: 'BlueSky',
+		url: 'https://bsky.app/profile/renderg.host',
+		icon: CloudSun,
+		ariaLabel: 'Follow on BlueSky',
 	},
 	{
 		title: 'Github',
@@ -47,7 +60,6 @@ const SocialLinkComponent: React.FC<SocialLink> = React.memo(
 			ariaLabel={ariaLabel || title}
 			tooltip={ariaLabel || title}
 			LeftIcon={Icon}
-			className='px-3 py-3 flex items-center justify-center'
 		/>
 	),
 );
