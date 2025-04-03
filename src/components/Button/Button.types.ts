@@ -3,7 +3,7 @@ import type React from 'react';
 export type ButtonVariant = 'primary' | 'secondary' | 'transparent' | 'card';
 
 export interface ButtonProps {
-	children: React.ReactNode;
+	children?: React.ReactNode;
 	onClick?: () => void;
 	className?: string;
 	variant?: ButtonVariant;
@@ -22,4 +22,5 @@ export interface SquareIconButtonProps {
 	disabled?: boolean;
 	ariaLabel: string;
 	tooltip?: string;
+	children?: React.ReactNode;
 }
