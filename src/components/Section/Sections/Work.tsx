@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
-import Section from '../Section/Section';
-import Card from '../Card/Card';
+import Section from '../../Section/Section';
+import Card from '../../Card/Card';
 import { Aperture, ListMusic } from 'lucide-react';
 
 interface Work {
@@ -46,7 +46,7 @@ const Works: React.FC = () => (
 					itemProp='itemListElement'
 					itemScope
 					itemType='http://schema.org/ListItem'
-					className='cardRack'>
+					className='Rack'>
 					<Card
 						title={work.title}
 						description={work.ariaLabel}

@@ -5,4 +5,5 @@ export interface SocialLink {
 	url: string;
 	icon: React.FC<React.SVGProps<SVGSVGElement>>;
 	ariaLabel: string;
+	children?: React.ReactNode;
 }

@@ -1,6 +1,6 @@
 import React from 'react';
-import Section from './Section';
-import Status from '../Status/Status';
+import Section from './../Section';
+import Status from '../../Status/Status';
 
 const WorkStatus: React.FC = () => (
 	<Section

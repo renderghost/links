@@ -4,12 +4,15 @@
 	@apply px-6 py-3 duration-200 ease-in-out font-medium inline-flex items-center justify-center rounded-sm transition-all;
 }
 .buttonBase:focus {
-	@apply focus:outline-none focus:ring-2 focus:ring-offset-2 ring-bones-yellow ring-offset-bones-white dark:ring-offset-bones-black;
+	@apply focus:outline-none focus:ring-2 focus:ring-offset-2 ring-bones-gold ring-offset-bones-white dark:ring-offset-bones-black;
 }
 
 /* --- squareButton --- */
 .squareButton {
-	@apply px-3 py-3 flex items-center justify-center;
+	@apply flex
+    p-3
+    items-center
+    justify-center;
 }
 .squareButton:hover {
 }
@@ -18,29 +21,14 @@
 .squareButton:focus {
 }
 
-/* --- cardButton --- */
-.cardButton {
-	@apply w-full text-left flex flex-col p-4;
-}
-.cardButton:hover {
-}
-.cardButton:active {
-}
-.cardButton:focus {
-}
-
 /* --- primary --- */
-.primary {
+.primary,
+.primary:active {
 	@apply bg-bones-mediumblue text-bones-white;
 }
-.primary:hover {
-	@apply hover:bg-bones-blue hover:text-bones-white;
-}
-.primary:active {
-	@apply active:bg-bones-mediumblue;
-}
+.primary:hover,
 .primary:focus {
-	@apply focus:bg-bones-blue focus:text-bones-white;
+	@apply hover:bg-bones-blue hover:text-bones-white;
 }
 
 /* --- secondary --- */
@@ -48,20 +36,20 @@
 .secondary:active {
 	@apply border-2
     bg-bones-lavender
-    dark:bg-bones-black
-    text-bones-mediumblue
-    dark:text-bones-white
     border-bones-mediumblue
-    dark:border-bones-white;
+    text-bones-mediumblue
+    dark:bg-bones-black
+    dark:border-bones-white
+    dark:text-bones-white;
 }
 .secondary:hover,
 .secondary:focus {
 	@apply hover:bg-bones-lavender
     dark:hover:bg-bones-black
-    hover:text-bones-blue
+    dark:hover:border-bones-gold
+    dark:hover:text-bones-gold
     hover:border-bones-blue
-    dark:hover:text-bones-yellow
-    dark:hover:border-bones-yellow;
+    hover:text-bones-blue;
 }
 
 /* --- transparent --- */
@@ -77,7 +65,7 @@
 	@apply hover:bg-bones-transparent
     dark:hover:bg-bones-transparent
     hover:text-bones-blue
-    dark:hover:text-bones-yellow;
+    dark:hover:text-bones-gold;
 }
 
 /* --- card --- */

@@ -25,7 +25,7 @@ const renderActions = (title: string, url?: string, sourceUrl?: string) => {
 			{sourceUrl && (
 				<FilledButton
 					variant='transparent'
-					RightIcon={Github}
+					LeftIcon={Github}
 					onClick={() => window.open(sourceUrl, '_blank')}
 					ariaLabel={`View source code for ${title}`}
 					tooltip={`View source code for ${title}`}>

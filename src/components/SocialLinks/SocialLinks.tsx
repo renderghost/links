@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import Button from '../Button/Button';
+import ButtonIcon from '../Button/ButtonIcon';
 import {
 	Figma,
 	Github,
@@ -24,42 +24,42 @@ const socialLinks: SocialLink[] = [
 		title: 'LinkedIn',
 		url: 'https://linkedin.com/in/barrymprendergast',
 		icon: Linkedin,
-		ariaLabel: 'Connect on LinkedIn',
+		ariaLabel: 'Chat on LinkedIn',
 	},
 	{
 		title: 'BlueSky',
 		url: 'https://bsky.app/profile/renderg.host',
 		icon: CloudSun,
-		ariaLabel: 'Follow on BlueSky',
+		ariaLabel: 'Chat on BlueSky',
 	},
 	{
 		title: 'Github',
 		url: 'https://github.com/renderghost',
 		icon: Github,
-		ariaLabel: 'Projects on GitHub',
+		ariaLabel: 'Collaborate on GitHub',
 	},
 	{
 		title: 'Medium',
 		url: 'https://medium.com/@render_ghost',
 		icon: Newspaper,
-		ariaLabel: 'Articles on Medium',
+		ariaLabel: 'Read Articles on Medium',
 	},
 	{
 		title: 'Figma',
 		url: 'https://figma.com/@renderghost',
 		icon: Figma,
-		ariaLabel: 'Design Assets on Figma',
+		ariaLabel: 'Collaborate on Figma',
 	},
 ];
 
 const SocialLinkComponent: React.FC<SocialLink> = React.memo(
 	({ title, url, icon: Icon, ariaLabel }) => (
-		<Button
+		<ButtonIcon
 			variant='transparent'
 			onClick={() => window.open(url, '_blank', 'noopener,noreferrer')}
 			ariaLabel={ariaLabel || title}
 			tooltip={ariaLabel || title}
-			LeftIcon={Icon}
+			Icon={Icon}
 		/>
 	),
 );
