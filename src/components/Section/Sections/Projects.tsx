@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
-import Section from '../Section/Section';
-import Card from '../Card/Card';
+import Section from '../../Section/Section';
+import Card from '../../Card/Card';
 import {
 	PersonStanding,
 	BookType,
@@ -64,10 +64,7 @@ const Projects: React.FC = () => (
 		id='my-lab'
 		title='Design Tools'
 		description='Links to things I made for work.'>
-		<div
-			className='cardRack'
-			itemScope
-			itemType='http://schema.org/ItemList'>
+		<div className='Rack' itemScope itemType='http://schema.org/ItemList'>
 			{projectsList.map((project, index) => (
 				<div
 					key={index}

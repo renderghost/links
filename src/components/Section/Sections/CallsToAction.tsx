@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
-import FilledButton from '../Button/Button';
-import Headline from '../Headline/Headline';
+import FilledButton from '../../Button/Button';
+import Headline from '../../Headline/Headline';
 import {
 	CalendarPlus,
 	// Cable,

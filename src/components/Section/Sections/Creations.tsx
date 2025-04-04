@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
-import Section from '../Section/Section';
-import Card from '../Card/Card';
+import Section from '../../Section/Section';
+import Card from '../../Card/Card';
 import {
 	Aperture,
 	Shuffle,
@@ -66,10 +66,7 @@ const Creations: React.FC = () => (
 		id='my-creations'
 		title='Creations'
 		description='Links to things I made for fun.'>
-		<div
-			className='cardRack'
-			itemScope
-			itemType='http://schema.org/ItemList'>
+		<div className='Rack' itemScope itemType='http://schema.org/ItemList'>
 			{creationsList.map((creation, index) => (
 				<div
 					key={index}

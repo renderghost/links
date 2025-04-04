@@ -1,10 +1,10 @@
 'use client';
 
 import React from 'react';
-import Creations from '@/components/Section/Creations';
-import Projects from '@/components/Section/Projects';
-import Articles from '@/components/Section/Articles';
-import OtherLinks from '@/components/Section/OtherLinks';
+import Creations from '@/components/Section/Sections/Creations';
+import Projects from '@/components/Section/Sections/Projects';
+import Articles from '@/components/Section/Sections/Articles';
+// import OtherLinks from '@/components/Section/Sections/OtherLinks';
 
 const HomePage: React.FC = () => {
 	return (
@@ -12,7 +12,7 @@ const HomePage: React.FC = () => {
 			<Creations />
 			<Projects />
 			<Articles />
-			<OtherLinks />
+			{/* <OtherLinks /> */}
 		</main>
 	);
 };
