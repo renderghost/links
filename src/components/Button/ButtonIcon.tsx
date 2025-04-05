@@ -1,8 +1,6 @@
-// src/components/Button/ButtonIcon.tsx
-
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from './Button';
 import styles from './Button.module.css';
 import type { ButtonProps } from './Button.types';
@@ -15,12 +13,26 @@ const ButtonIcon: React.FC<ButtonIconProps> = ({
 	Icon,
 	className = '',
 	...rest
-}) => (
-	<Button
-		{...rest}
-		className={`${styles.squareButton} ${className}`}
-		LeftIcon={Icon}
-	/>
-);
+}) => {
+	const [inHero, setInHero] = useState(false);
+
+	useEffect(() => {
+		const insideHero = document
+			.getElementById('hero')
+			?.contains(document.body);
+		setInHero(insideHero ?? false);
+	}, []);
+
+	return (
+		<Button
+			{...rest}
+			variant='icon'
+			className={`${styles.squareButton} ${
+				inHero ? styles.squareButtonHero : ''
+			} ${className}`}>
+			<Icon />
+		</Button>
+	);
+};
 
 export default ButtonIcon;

@@ -11,6 +11,7 @@ const config: Config = {
 				dimgray:
 					'color(display-p3 0.156863 0.156863 0.156863 / 1.000000)',
 				gainsboro: 'gainsboro',
+				darkgray: 'darkgray',
 				ghostwhite: 'ghostwhite',
 				gray: 'gray',
 				lightsteelblue: 'lightsteelblue',

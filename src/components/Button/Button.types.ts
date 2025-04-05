@@ -1,6 +1,11 @@
 import type React from 'react';
 
-export type ButtonVariant = 'primary' | 'secondary' | 'transparent' | 'outline';
+export type ButtonVariant =
+	| 'primary'
+	| 'secondary'
+	| 'transparent'
+	| 'outline'
+	| 'icon';
 
 export interface ButtonProps {
 	children?: React.ReactNode;

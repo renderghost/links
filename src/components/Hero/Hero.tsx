@@ -26,8 +26,10 @@ const Hero: React.FC<HeroProps> = () => (
 						<p className={styles.heroName} itemProp='name'>
 							Barry Prendergast
 						</p>
-						<p className='text-base' itemProp='jobTitle'>
-							Design Leader | Product Designer | DesignOps
+						<p className={styles.heroDetails} itemProp='jobTitle'>
+							<span>Design Leader</span> <span>|</span>{' '}
+							<span>Product Designer</span> <span>|</span>{' '}
+							<span>DesignOps</span>
 						</p>
 						{/* <address
 							className={heroAddress}
@@ -41,7 +43,7 @@ const Hero: React.FC<HeroProps> = () => (
 				</div>
 
 				<Headline level={1} className={styles.heroHeadline}>
-					Everything I&apos;ve made, for you to click on.
+					Things I&apos;ve made, for you to click on.
 				</Headline>
 
 				<SocialLinks />
