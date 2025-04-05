@@ -1,11 +1,13 @@
 import type React from 'react';
 
-export type ButtonVariant = 'primary' | 'secondary' | 'transparent' | 'card';
+export type ButtonVariant = 'primary' | 'secondary' | 'transparent' | 'outline';
 
 export interface ButtonProps {
 	children?: React.ReactNode;
 	onClick?: () => void;
 	className?: string;
+	href?: string;
+	size?: string;
 	variant?: ButtonVariant;
 	disabled?: boolean;
 	LeftIcon?: React.FC<React.SVGProps<SVGSVGElement>>;

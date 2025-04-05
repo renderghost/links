@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import type { TooltipProps } from './Tooltip.types';
-import { tooltipWrapper, tooltipContent, tooltipArrow } from './Tooltip.styles';
+import styles from './Tooltip.module.css';
 
 const Tooltip: React.FC<TooltipProps> = ({ children, content }) => {
 	const [isVisible, setIsVisible] = useState(false);
@@ -30,16 +30,16 @@ const Tooltip: React.FC<TooltipProps> = ({ children, content }) => {
 	}
 
 	return (
-		<div className={tooltipWrapper}>
+		<div className={styles.tooltipWrapper}>
 			{childWithProps}
 			{isVisible && (
 				<div
 					ref={tooltipRef}
 					id='tooltip'
 					role='tooltip'
-					className={tooltipContent}>
+					className={styles.tooltipContent}>
 					{content}
-					<div className={tooltipArrow} />
+					<div className={styles.tooltipArrow} />
 				</div>
 			)}
 		</div>

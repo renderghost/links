@@ -30,6 +30,7 @@ const config: Config = {
 				lightcyan: 'lightcyan',
 				blue: 'color(display-p3 0.000000 0.000000 1.000000 / 1.000000)', // IN USE
 				mediumblue: 'mediumblue',
+				thistle: 'thistle',
 				midnightblue:
 					'color(display-p3 0.098039 0.098039 0.439216 / 1.000000)',
 				// Reds

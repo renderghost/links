@@ -85,17 +85,16 @@ CallToActionButton.displayName = 'CallToActionButton';
 
 const CallsToAction: React.FC = () => (
 	<div className='flex flex-col items-start gap-16 overflow-hidden'>
-		{/* <div className='text-lg font-normal items-center gap-2 flex'>
+		{/* <div className='flex items-center gap-2 text-lg font-normal'>
 			<Cable size={16} />
 			<span>All my key links and details</span>
 		</div> */}
 
-		<Headline />
+		<Headline level={2} className='headline-class'>
+			Explore My Key Links
+		</Headline>
 
 		<div className='flex flex-col items-start gap-4'>
-			{/* <h2 className='text-lg font-semibold text-bones-black dark:text-bones-white'>
-					How can I help?
-				</h2> */}
 			<div className='flex flex-wrap gap-4'>
 				{callsToActionList.map((cta, index) => (
 					<CallToActionButton

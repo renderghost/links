@@ -1,0 +1,33 @@
+/* Hero.module.css */
+
+.heroSection {
+	@apply flex flex-col py-16 px-4 sm:px-0 bg-bones-blue dark:bg-bones-white/10 text-bones-white dark:text-bones-whitesmoke;
+}
+
+.heroContainer {
+	@apply container mx-auto flex flex-col gap-4;
+}
+
+.heroHeader {
+	@apply flex flex-row flex-auto gap-4 items-center;
+}
+
+.heroAvatar {
+	@apply size-16 overflow-hidden rounded-full flex-shrink-0;
+}
+
+.heroName {
+	@apply text-2xl font-semibold;
+}
+
+.heroHeadline {
+	@apply text-9xl font-extrabold font-sans leading-none;
+}
+
+.heroDetails {
+	@apply flex flex-col sm:flex-row gap-px sm:gap-2;
+}
+
+.heroAddress {
+	@apply flex items-center not-italic gap-1;
+}
