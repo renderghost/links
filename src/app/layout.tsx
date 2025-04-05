@@ -41,7 +41,7 @@ export const metadata: Metadata = {
 		card: 'summary_large_image',
 		site: '@YourTwitterHandle',
 		creator: '@YourTwitterHandle',
-		title: 'Barry Prendergast | LinksGhost - Product & Service Designer Links',
+		title: 'LinksGhost - Link in Bio for Barry Prendergast, Designer, Berlin, Germany',
 		description:
 			"Explore Barry Prendergast's curated links to projects, talks, and profiles. Connect with this experienced Product & Service Designer.",
 		images: ['https://links.renderg.host/avatar-linksghost-og.jpg'],

@@ -4,8 +4,10 @@ export const heroSection = `
   py-16
   px-4
   sm:px-0
-  bg-bones-white
-  dark:bg-bones-black
+  bg-bones-blue
+  dark:bg-bones-
+  text-bones-white
+  dark:text-bones-aliceblue
 `;
 
 export const heroContainer = `
@@ -34,6 +36,13 @@ export const heroAvatar = `
 export const heroName = `
   text-2xl
   font-semibold
+`;
+
+export const heroHeadline = `
+  text-9xl
+  font-extrabold
+  font-sans
+  leading-none
 `;
 
 export const heroDetails = `

@@ -7,20 +7,6 @@
 	@apply focus:outline-none focus:ring-2 focus:ring-offset-2 ring-bones-gold ring-offset-bones-white dark:ring-offset-bones-black;
 }
 
-/* --- squareButton --- */
-.squareButton {
-	@apply flex
-    p-3
-    items-center
-    justify-center;
-}
-.squareButton:hover {
-}
-.squareButton:active {
-}
-.squareButton:focus {
-}
-
 /* --- primary --- */
 .primary,
 .primary:active {
@@ -28,7 +14,7 @@
 }
 .primary:hover,
 .primary:focus {
-	@apply hover:bg-bones-blue hover:text-bones-white;
+	@apply bg-bones-blue text-bones-white;
 }
 
 /* --- secondary --- */
@@ -40,46 +26,44 @@
     text-bones-mediumblue
     dark:bg-bones-black
     dark:border-bones-white
-    dark:text-bones-white;
+    dark:text-bones-whitesmoke;
 }
 .secondary:hover,
 .secondary:focus {
-	@apply hover:bg-bones-lavender
-    dark:hover:bg-bones-black
-    dark:hover:border-bones-gold
-    dark:hover:text-bones-gold
-    hover:border-bones-blue
-    hover:text-bones-blue;
+	@apply bg-bones-white
+    text-bones-blue
+    border-bones-blue
+    dark:bg-bones-black
+    dark:text-bones-white
+    dark:border-bones-white;
 }
 
 /* --- transparent --- */
 .transparent,
-.transparent:active {
+.transparent:active,
+.squareButton,
+.squareButton:active {
 	@apply bg-bones-transparent
-    dark:bg-bones-transparent
     text-bones-mediumblue
-    dark:text-bones-white;
+    dark:bg-bones-transparent
+    dark:text-bones-whitesmoke;
 }
 .transparent:hover,
-.transparent:focus {
-	@apply hover:bg-bones-transparent
-    dark:hover:bg-bones-transparent
-    hover:text-bones-blue
-    dark:hover:text-bones-gold;
+.transparent:focus,
+.squareButton:hover,
+.squareButton:focus {
+	@apply bg-bones-transparent
+    text-bones-blue
+    dark:bg-bones-transparent
+    dark:text-bones-white;
 }
 
-/* --- card --- */
-.card {
-	@apply bg-bones-white text-bones-black dark:bg-bones-mediumblue dark:text-bones-white;
-}
-.card:hover {
-	@apply hover:bg-bones-white dark:hover:bg-bones-mediumblue;
-}
-.card:active {
-	@apply active:bg-bones-white dark:active:bg-bones-mediumblue;
-}
-.card:focus {
-	@apply focus:ring-bones-cyan;
+/* --- squareButton --- */
+.squareButton {
+	@apply flex
+    p-3
+    items-center
+    justify-center;
 }
 
 /* --- disabled --- */

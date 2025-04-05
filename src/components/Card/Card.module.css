@@ -1,5 +1,12 @@
 .card {
-	@apply flex flex-col flex-grow justify-between gap-8 p-8 bg-bones-white dark:bg-bones-black dark:border-2 dark:border-bones-dimgray;
+	@apply flex
+	flex-col
+	flex-grow
+	justify-between
+	gap-8
+	p-8
+	bg-bones-white
+	dark:bg-bones-white/10;
 }
 
 .header {
@@ -11,11 +18,11 @@
 }
 
 .title {
-	@apply font-medium text-xl;
+	@apply font-medium text-xl text-bones-black dark:text-bones-whitesmoke;
 }
 
 .description {
-	@apply text-bones-black dark:text-bones-white;
+	@apply text-bones-black dark:text-bones-gainsboro;
 }
 
 .actions {
