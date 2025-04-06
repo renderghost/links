@@ -46,10 +46,10 @@ const config: Config = {
 				transparent: 'transparent',
 			},
 		},
-		// fontFamily: {
-		// 	sans: ['DM Sans', 'sans-serif'],
-		// 	serif: ['DM Serif', 'serif'],
-		// },
+		fontFamily: {
+			sans: ['DM Sans', 'sans-serif'],
+			serif: ['DM Serif', 'serif'],
+		},
 	},
 
 	darkMode: 'media',
