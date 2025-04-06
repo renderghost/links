@@ -1,5 +1,5 @@
 export const bannerWrapper = `
-  bg-bones-gold
+  bg-bones-yellow
   text-bones-black
   px-6
   py-4
@@ -28,7 +28,7 @@ export const bannerLink = `
   focus:ring-2
   focus:ring-black
   focus:ring-offset-4
-  focus:ring-offset-bones-gold
+  focus:ring-offset-bones-yellow
 `;
 
 export const bannerTitle = `
