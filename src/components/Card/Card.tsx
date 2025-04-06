@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { ArrowUpRight, ExternalLink, Github } from 'lucide-react';
+import { ArrowUpRight, Github } from 'lucide-react';
 import FilledButton from '../Button/Button';
 import type { CardProps } from './Card.types';
 import styles from './Card.module.css';
