@@ -43,7 +43,7 @@ const Hero: React.FC<HeroProps> = () => (
 				</div>
 
 				<Headline level={1} className={styles.heroHeadline}>
-					Things I&apos;ve made, for you to click on.
+					Good things I&apos;ve made, for you to click on.
 				</Headline>
 
 				<SocialLinks />
