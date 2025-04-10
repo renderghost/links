@@ -1,5 +1,5 @@
 /*
-Tooltip.module.css
+Tooltip.module.cssw
 */
 
 .tooltipWrapper {
@@ -10,7 +10,7 @@ Tooltip.module.css
 .tooltipContent {
 	@apply absolute
     bg-bones-black
-    dark:bg-bones-yellow
+    dark:bg-bones-gold
     text-bones-white
     dark:text-bones-black
 
@@ -42,5 +42,5 @@ Tooltip.module.css
 
     translate-x-[-50%]
     bg-bones-black
-    dark:bg-bones-yellow;
+    dark:bg-bones-gold;
 }

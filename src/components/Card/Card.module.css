@@ -18,7 +18,7 @@
 }
 
 .title {
-	@apply font-medium text-xl text-bones-black dark:text-bones-whitesmoke;
+	@apply font-medium text-2xl text-bones-black dark:text-bones-whitesmoke;
 }
 
 .description {
