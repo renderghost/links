@@ -1,0 +1,17 @@
+/* Section.module.css */
+
+.section {
+	@apply flex flex-col px-4 sm:px-0 gap-6;
+}
+
+.header {
+	@apply flex flex-col gap-1;
+}
+
+.title {
+	@apply text-3xl font-sans italic font-extrabold;
+}
+
+.description {
+	@apply text-bones-black dark:text-bones-whitesmoke;
+}

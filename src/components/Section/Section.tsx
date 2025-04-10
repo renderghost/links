@@ -2,7 +2,7 @@
 
 import React from 'react';
 import type { SectionProps } from './Section.types';
-import styles from './Section.styles';
+import styles from './Section.module.css';
 
 const Section: React.FC<SectionProps> = ({
 	id,
