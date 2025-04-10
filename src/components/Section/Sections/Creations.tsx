@@ -8,10 +8,20 @@ import {
 	Shuffle,
 	KeyboardMusic,
 	Radius,
+	Sparkles,
+	LibraryBig,
 	ListMusic,
 } from 'lucide-react';
 
 const creationsList = [
+	{
+		title: 'A Brilliant Noise',
+		description:
+			'Playing with text and image generating LLMs to create an ever evolving science fiction storyline.',
+		icon: Sparkles,
+		url: 'https://strategyschmategy.renderg.host/',
+		sourceUrl: 'https://github.com/renderghost/strategy-schmategy',
+	},
 	{
 		title: 'Aperture',
 		description:
@@ -36,12 +46,11 @@ const creationsList = [
 		sourceUrl: 'https://github.com/renderghost/ramps',
 	},
 	{
-		title: 'Selections',
-		description:
-			'A fancy discovery app for my many many Spotify playlists. Warning: May contain questionable music choices!',
-		icon: ListMusic,
-		url: 'https://selections.renderg.host/',
-		sourceUrl: 'https://github.com/renderghost/selections',
+		title: 'Read',
+		description: 'A list of my all-time favourite books.',
+		icon: LibraryBig,
+		url: 'https://read.renderg.host/',
+		sourceUrl: 'https://github.com/renderghost/read',
 	},
 	{
 		title: 'Strategy Schmategy',
@@ -50,6 +59,14 @@ const creationsList = [
 		icon: Shuffle,
 		url: 'https://strategyschmategy.renderg.host/',
 		sourceUrl: 'https://github.com/renderghost/strategy-schmategy',
+	},
+	{
+		title: 'Selections',
+		description:
+			'A fancy discovery app for my many many Spotify playlists. Warning: May contain questionable music choices!',
+		icon: ListMusic,
+		url: 'https://selections.renderg.host/',
+		sourceUrl: 'https://github.com/renderghost/selections',
 	},
 ];
 
