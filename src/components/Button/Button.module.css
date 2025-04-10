@@ -4,7 +4,7 @@
 	@apply px-6 py-3 duration-200 ease-in-out font-medium inline-flex items-center justify-center rounded-sm transition-all;
 }
 .buttonBase:focus {
-	@apply focus:outline-none focus:ring-2 focus:ring-offset-2 ring-bones-yellow ring-offset-bones-white dark:ring-offset-bones-black;
+	@apply focus:outline-none focus:ring-2 focus:ring-offset-2 ring-bones-yellow dark:ring-bones-gold ring-offset-bones-white dark:ring-offset-bones-black;
 }
 
 /* --- primary --- */
