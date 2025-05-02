@@ -19,8 +19,7 @@ const creationsList = [
 		description:
 			'Playing with text and image generating LLMs to create an ever evolving science fiction storyline.',
 		icon: Sparkles,
-		url: 'https://strategyschmategy.renderg.host/',
-		sourceUrl: 'https://github.com/renderghost/strategy-schmategy',
+		url: 'https://www.instagram.com/tri_mph_nt/',
 	},
 	{
 		title: 'Aperture',

@@ -17,7 +17,7 @@ const projectsList = [
 		description:
 			'Invisible Figma component to help document Accessibility attributes in design files at any level of specificity.',
 		icon: PersonStanding,
-		url: 'https://www.figma.com/community/file/1392296486879607254/the-a11y-pixel',
+		url: 'https://www.figma.com/community/file/1468516979425643600/the-a11y-pixel',
 	},
 	{
 		title: 'Bones',
