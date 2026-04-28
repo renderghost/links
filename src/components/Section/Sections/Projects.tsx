@@ -35,7 +35,7 @@ const projectsList = [
 		sourceUrl: 'https://github.com/renderghost/chattyfile',
 	},
 	{
-		title: 'Fictional Data',
+		title: 'Science Fiction',
 		description:
 			'Fake science data that looks real. Perfect for making your science app mockups look legit!',
 		icon: BookType,
